@@ -1,6 +1,5 @@
 import club.minnced.discord.rpc.*;
 
-
 public class Main {
 	
 	public static DiscordRPC lib;
