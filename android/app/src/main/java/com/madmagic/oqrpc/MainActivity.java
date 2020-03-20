@@ -25,30 +25,39 @@ import kotlin.annotation.Target;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("APICALLER", "starting app");
 
         try {
-            //Request permission for usage monitor
-            requestUsageStatsPermission();
 
-            //Define the context in activityGetter
+            new ApiReceiver();
+            requestUsageStatsPermission();
             ActivityGetter.define(getBaseContext());
 
-            //create config
             new ConfigCreator(getFilesDir());
-
-            //start the apiReceiver and send started to pc
-            new ApiReceiver();
-            new ApiCaller(new JSONObject().put("message", "started"));
+            if (!ConfigCreator.getIp().isEmpty()) {
+                Log.d("APICALLER", "connection checker");
+                ConnectionChecker.run(this);
+            }
 
             //button
-            Button b = findViewById(R.id.button);
-            b.setOnClickListener(e -> {
-                finish();
-                System.exit(0);
+            Button button = findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                    System.exit(0);
+                }
             });
 
-    } catch (Exception ignored) {}
+        }catch (Exception ignored) {}
+    }
 
+
+    public void init() {
+        try {
+            Log.d("APICALLER", "sending online");
+            new ApiCaller(new JSONObject().put("message", "started"));
+        } catch (Exception ignored) {}
     }
 
      void requestUsageStatsPermission() {

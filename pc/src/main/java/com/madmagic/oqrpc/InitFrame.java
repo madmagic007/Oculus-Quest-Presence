@@ -69,7 +69,7 @@ public class InitFrame {
 			}
 			error.setText("found device, but apk is not running on device!");
 
-			ApiSender.ask(Main.getUrl(), new JSONObject().put("address", Main.getip()).put("message", "address"));
+			ApiSender.ask("http://" + ipv4 + ":8080", new JSONObject().put("address", Main.getip()).put("message", "address"));
 			Config.write(new JSONObject().put("address", ipv4));
 			
 		} catch (Exception e) {

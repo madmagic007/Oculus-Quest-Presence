@@ -1,20 +1,14 @@
 package com.madmagic.oqrpc;
 
-
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-
-import com.sun.deploy.util.WinRegistry;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        //create with windows boot
-        String value = "\"" + Config.jarPath() + "\"";
-        WinRegistry.setStringValue(WinRegistry.HKEY_CURRENT_USER, "Software\\Microsoft\\Windows\\CurrentVersion\\Run", "myJar autorun key", value);
-        
         SystemTrayHandler.systemTray();
         Config.init();
+        Config.initStartup();
 
         if (Config.getAddress().isEmpty()) {
             InitFrame.open();

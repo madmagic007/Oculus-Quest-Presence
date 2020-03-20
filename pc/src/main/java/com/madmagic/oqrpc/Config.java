@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.SQLSyntaxErrorException;
 
 import org.json.JSONObject;
 
@@ -64,6 +65,22 @@ public class Config {
 			return new JSONObject();
 		} catch (Exception ignored) {
 			return new JSONObject();
+		}
+	}
+
+	public static void initStartup() {
+		System.out.println(jarPath());
+		try {
+			File file = new File(System.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\oqrpc.bat");
+			if (!file.exists()) {
+				file.createNewFile();
+
+				FileWriter fw = new FileWriter(file);
+				fw.write("start javaw -Xmx200m -jar \"" + jarPath() + "\"");
+				fw.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

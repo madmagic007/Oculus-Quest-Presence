@@ -20,7 +20,7 @@ public class ApiCaller {
             try {
                 String ip = ConfigCreator.getIp();
                 Request r = new Request.Builder()
-                        .url("http://" + ip + ":8080/api/pc" )
+                        .url("http://" + ip + ":8080/api/pc")
                         .post(RequestBody.create(o.toString(4), jT))
                         .build();
                 c.newCall(r).execute();

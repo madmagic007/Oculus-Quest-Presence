@@ -30,6 +30,8 @@ public class Discord {
     }
 
     public static void terminate() {
-        rpc.Discord_ClearPresence();
+        try {
+            rpc.Discord_ClearPresence();
+        } catch (Exception ignored) {}
     }
 }

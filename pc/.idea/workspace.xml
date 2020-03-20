@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="pc:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/pc_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/quest.png" afterDir="false" />
-    </list>
+    <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +39,7 @@
   </component>
   <component name="ProjectId" id="1ZFh21eLeDTLsFpvrXBDw8v8R8L" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -52,15 +55,16 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Documents\coding\java\concepts\OculusQuestRPC\pc\src\main\resources" />
-      <recent name="C:\Users\User\Documents\coding\java\concepts\OculusQuestRPC\pc\src\main\java\com\madmagic\oqrpc" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\coding\java\concepts\OculusQuestRPC\pc\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\pc\out\artifacts\pc_jar" />
+      <recent name="C:\Users\User\Documents\coding\java\concepts\OculusQuestRPC\pc\src\main\resources" />
+      <recent name="C:\Users\User\Documents\coding\java\concepts\OculusQuestRPC\pc\src\main\java\com\madmagic\oqrpc" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -129,10 +133,55 @@
       <option name="project" value="LOCAL" />
       <updated>1584709256285</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="done">
+      <created>1584710820304</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584710820304</updated>
+    </task>
+    <task id="LOCAL-00003" summary="done">
+      <created>1584711342813</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584711342813</updated>
+    </task>
+    <task id="LOCAL-00004" summary="done">
+      <created>1584711630627</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584711630627</updated>
+    </task>
+    <task id="LOCAL-00005" summary="done">
+      <created>1584712292607</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584712292607</updated>
+    </task>
+    <task id="LOCAL-00006" summary="done">
+      <created>1584712323851</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584712323851</updated>
+    </task>
+    <task id="LOCAL-00007" summary="done">
+      <created>1584712330575</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584712330575</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="done" />
     <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
@@ -150,37 +199,38 @@
     </state>
     <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584697771325" />
     <state x="530" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584442098264" />
-    <state x="-1101" y="65" key="CommitChangelistDialog2" timestamp="1584709254267">
-      <screen x="-1440" y="40" width="1440" height="860" />
+    <state x="377" y="65" key="CommitChangelistDialog2" timestamp="1584712328700">
+      <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-1101" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584709254267" />
+    <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584712328700" />
     <state x="-940" y="225" key="FileChooserDialogImpl" timestamp="1584644844912">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
     <state x="-940" y="225" key="FileChooserDialogImpl/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584644844912" />
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1584707768322">
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1584731661321">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584707768322" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584731661321" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584713218099" />
     <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
-    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1584707768321">
+    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1584731661320">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584707768321" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1397" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584731661320" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584713218098" />
     <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
-    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1584707768321">
+    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1584731661320">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584707768321" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1397" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584731661320" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584713218098" />
     <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860@0.40.1600.860" timestamp="1584654858835" />
-    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1584707768322">
+    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1584731661321">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
-    <state width="1397" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584707768322" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1397" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584731661321" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584713218098" />
     <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1584446294920">
       <screen x="0" y="40" width="1600" height="860" />
@@ -198,20 +248,20 @@
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
-    <state x="-1169" y="50" key="SettingsEditor" timestamp="1584709367921">
+    <state x="-1169" y="50" key="SettingsEditor" timestamp="1584722743660">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
-    <state x="-1169" y="50" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584709367921" />
+    <state x="-1169" y="50" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584722743660" />
     <state x="301" y="113" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584441039863" />
     <state x="92" y="132" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1584446266875">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="92" y="132" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446266875" />
-    <state x="588" y="387" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584709895871">
+    <state x="588" y="387" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584710795004">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-911" y="387" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584709233369" />
-    <state x="588" y="387" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584709895871" />
+    <state x="588" y="387" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584710795004" />
     <state x="456" y="215" key="run.anything.popup" timestamp="1584442957012">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
