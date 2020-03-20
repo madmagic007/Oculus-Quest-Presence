@@ -1,3 +1,16 @@
+/*
+	order:
+	details
+	state
+*/
+
 {
-	"com.madmagic.oqrpc": "Setting up presence"
+	"com.madmagic.oqrpc": {
+		"details": "Setting up presence",
+		"state": ""
+	},
+	"com.vankrupt.pavlov": {
+		"details": "Currently playing:",
+		"state": "Pavlov Vr"
+	}
 }
