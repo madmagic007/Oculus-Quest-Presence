@@ -10,7 +10,7 @@
 - install <a href="https://sidequestvr.com/#/download" target="_blank">sidequest</a> on your pc (skip if you already have sidequest installed).
 - Download <a href="https://github.com/tverona1/QuestAppLauncher/releases/tag/v0.10.2" target="_blank">Quest app launcher</a>.
 - Sideload the quest app launcher apk to your quest (skip if already installed), plenty of tutorials on how to sideload apks exist.
-- When your quest is connected to your pc via usb and connected to internet, look in the top left for the wifi ip of your quest and note it down somewere. It should look something like 192.168.1.100.
+- When your quest is connected to your pc via usb and connected to internet, look in the top left corner of the sidequest window for the wifi ip of your quest and note it down somewere. It should look something like 192.168.1.100.
 - From the zip file, sideload the Oculus Quest Discord RPC.ak to your quest.
 - Run oqrpc.exe from the zip file.
 - Once its installed, run the Oculus Quest Discord RPC.jar and a window should pop up asking for the ip of your oculus quest.
