@@ -6,5 +6,33 @@
 	"com.vankrupt.pavlov": {
 		"details": "Currently playing:",
 		"state": "Pavlov Vr"
+	},
+	"aaa.QuestAppLauncher.app": {
+		"details": "Currently playing:",
+		"state": "Quest App Launcher"
+	},
+	"com.beatgames.beatsaber": {
+		"details": "Currently playing:",
+		"state": "Beat Saber"
+	},
+	"com.bigscreenvr.bigscreen": {
+		"details": "Currently playing:",
+		"state": "BigScreen vr"
+	},
+	"com.owlchemylabs.jobsimulator": {
+		"details": "Currently playing:",
+		"state": "Job Simulator"
+	},
+	"com.vrchat.oculus.quest": {
+		"details": "Currently playing:",
+		"state": "Vr Chat"
+	},
+	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
+		"details": "Currently playing:",
+		"state": "Superhot"
+	},
+	"om.AgainstGravity.RecRoom": {
+		"details": "Currently playing:",
+		"state": "RecRoom"
 	}
 }
