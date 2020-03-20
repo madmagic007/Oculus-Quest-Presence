@@ -15,18 +15,17 @@ public class Config {
 	
 	public static void init() {
 		try {
-			String jarName = new File(jarPath()).getName();
-			
-			String mapPath = jarPath().replace(jarName, "");
-			File parrentMap = new File(mapPath);
-			
-			configFile = new File(parrentMap.getAbsolutePath() + "/config.json");
-			if (!configFile.exists()) configFile.createNewFile();
+
+			configFile = new File(System.getenv("APPDATA") + "oqrpc/config.json");
+			if (!configFile.exists()) {
+				configFile.createNewFile();
+				configFile.mkdirs();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static String jarPath() {
 		try {
 			String path = Config.class.getProtectionDomain().getCodeSource().getLocation().getPath();

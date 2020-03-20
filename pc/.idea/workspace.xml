@@ -6,7 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="" />
+    <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Config.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
