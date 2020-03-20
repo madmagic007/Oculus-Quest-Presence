@@ -16,9 +16,8 @@
 - Once its installed, run the Oculus Quest Discord RPC.jar and a window should pop up asking for the ip of your oculus quest.
 - Make sure your oculus quest is powered on and connected to the internet. Next type the ip you noted earlier in the text area and hit validate. if everything is done right, it should say "found device, but apk is not running on devide" (don't close this window yet).
 - Open the quest app launcher on your quest, go to library > unknown sources and look for something called quest app laucnher.
-- In quest app launcher, click on the 2D tab and look for oqrpc.apk and run it.
-- A window should open saying presence is running with a button "terminate presence" below.
-- Go back to your pc and hit the validate button in the window again and it should say something like "apk is running on device, everything ready to go". if that's the case, go back in your quest, hit the terminate presence button and restart the oqrpc apk via quest app laucher.
+- In quest app launcher, click on the 2D tab and look for oqrpc.apk and run it. On the first time running it, it will promp for usage acces(this is so it knows what ap is currently displaying topmost). select oqrpc and toggle it on. Press the B button on your right controller multiple times untill you are in the library again.
+- Go back to your pc and hit the validate button in the window again and it should say something like "apk is running on device, everything ready to go". If that's the case, go back in your quest, hit the terminate presence button and restart the oqrpc apk via quest app laucher.
 - A notification should appear on your computer and if discord is running, it should show that you are playing on your oculus quest!
   
 ---
