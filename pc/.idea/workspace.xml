@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZFh21eLeDTLsFpvrXBDw8v8R8L" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../finished/OculusQuestPresence" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\coding\java\concepts\OculusQuestRPC\pc\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\coding\java\concepts\OculusQuestRPC\pc\src\main\java\com\madmagic\oqrpc" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.madmagic.oqrpc.Application" />
+      <module name="pc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.madmagic.oqrpc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.madmagic.oqrpc.Main" />
+      <module name="pc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.madmagic.oqrpc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Validate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.madmagic.oqrpc.Validate" />
+      <module name="pc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.madmagic.oqrpc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Validate" />
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="" />
+      <created>1584440538456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584440538456</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="392" y="129" key="#Project_Structure" timestamp="1584440923792">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="392" y="129" key="#Project_Structure/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584440923792" />
+    <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584697771325">
+      <screen x="-1440" y="40" width="1440" height="860" />
+    </state>
+    <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584697771325" />
+    <state x="530" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584442098264" />
+    <state x="-940" y="225" key="FileChooserDialogImpl" timestamp="1584644844912">
+      <screen x="-1440" y="40" width="1440" height="860" />
+    </state>
+    <state x="-940" y="225" key="FileChooserDialogImpl/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584644844912" />
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1584700807708">
+      <screen x="-1440" y="40" width="1440" height="860" />
+    </state>
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584700807708" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
+    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1584700807708">
+      <screen x="-1440" y="40" width="1440" height="860" />
+    </state>
+    <state width="1397" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584700807708" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
+    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1584700807707">
+      <screen x="-1440" y="40" width="1440" height="860" />
+    </state>
+    <state width="1397" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584700807707" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860@0.40.1600.860" timestamp="1584654858835" />
+    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1584700807708">
+      <screen x="-1440" y="40" width="1440" height="860" />
+    </state>
+    <state width="1397" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584700807708" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584530673288" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1584446294920">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1584446294920">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1584446294920">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1584446294920">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
+    <state x="301" y="113" key="SettingsEditor" timestamp="1584441039863">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="301" y="113" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584441039863" />
+    <state x="92" y="132" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1584446266875">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="92" y="132" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446266875" />
+    <state x="456" y="215" key="run.anything.popup" timestamp="1584442957012">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="456" y="215" key="run.anything.popup/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584442957012" />
+    <state x="-1057" y="220" width="672" height="678" key="search.everywhere.popup" timestamp="1584545280155">
+      <screen x="-1440" y="40" width="1440" height="860" />
+    </state>
+    <state x="-1057" y="220" width="672" height="678" key="search.everywhere.popup/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584545280155" />
+  </component>
+</project>
