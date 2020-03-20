@@ -7,18 +7,25 @@ public class ApiSender {
 	
 	 private static OkHttpClient c = new OkHttpClient();
 	 private static MediaType jT = MediaType.parse("application/json; charset=utf-8");
-	 public static String ask(String address, JSONObject o) {
+
+	 public static JSONObject ask(String url, JSONObject o) {
+	 	JSONObject ro = new JSONObject();
+		 Request.Builder r = new Request.Builder()
+				 .url(url);
+
+		 if (!o.isEmpty()) {
+		 	r.post(RequestBody.create(jT, o.toString(4)))
+					.build();
+		 }
+
 		 try {
-			 Request r = new Request.Builder()
-					 .url("http://" + address + ":8080")
-					 .post(RequestBody.create(jT, o.toString(4)))
-					 .build();
-			 Response rs = c.newCall(r).execute();
-			 ResponseHandler.handle(new JSONObject(rs.body().string()));
+			 Response rs = c.newCall(r.build()).execute();
+			 ro = new JSONObject(rs.body().string());
+			 ResponseHandler.handle(ro);
 		 } catch (Exception e) {
 			 System.out.println("device not found");
 			 Discord.terminate();
 		 }
-		 return "";
+		 return ro;
 	 }
 }

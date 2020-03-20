@@ -27,7 +27,7 @@ public class Timing {
 
     private static void requester() {
         if (requestTime == 1) {
-            ApiSender.ask(Config.getAddress(), new JSONObject().put("message", "game"));
+            ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "game"));
             requestTimer.cancel();
             startRequester();
         }

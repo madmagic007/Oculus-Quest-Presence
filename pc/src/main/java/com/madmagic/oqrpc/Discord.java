@@ -23,11 +23,6 @@ public class Discord {
         rpc.Discord_UpdatePresence(presence);
     }
 
-    public static void handle(String pName) {
-        //todo api for names
-        changeGame("Currently playing", pName);
-    }
-
     public static void changeGame(String details, String state) {
         presence.details = details;
         presence.state = state;

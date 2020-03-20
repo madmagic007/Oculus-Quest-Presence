@@ -1,7 +1,6 @@
 package com.madmagic.oqrpc;
 
 import java.awt.EventQueue;
-import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 import javax.swing.JFrame;
@@ -70,7 +69,7 @@ public class InitFrame {
 			}
 			error.setText("found device, but apk is not running on device!");
 
-			ApiSender.ask(ipv4, new JSONObject().put("address", Main.getip()).put("message", "address"));
+			ApiSender.ask(Main.getUrl(), new JSONObject().put("address", Main.getip()).put("message", "address"));
 			Config.write(new JSONObject().put("address", ipv4));
 			
 		} catch (Exception e) {

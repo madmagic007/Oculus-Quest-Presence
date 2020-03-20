@@ -22,7 +22,7 @@ public class SystemTrayHandler {
 
             MenuItem send = new MenuItem("manual send");
             send.addActionListener(e -> {
-                     ApiSender.ask(Config.getAddress(), new JSONObject().put("message", "game").put("address", Main.getip()));
+                     ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "game").put("address", Main.getip()));
             });
             menu.add(send);
 
@@ -30,7 +30,7 @@ public class SystemTrayHandler {
             ip.addActionListener(e -> InitFrame.open());
             menu.add(ip);
 
-            Image image = ImageIO.read(new File("src/main/resources/image.png"));
+            Image image = ImageIO.read(new File(SystemTrayHandler.class.getResource("/quest.png").toURI()));
             int trayIconWidth = new TrayIcon(image).getSize().width;
             SystemTray tray = SystemTray.getSystemTray();
             Image ic = image.getScaledInstance(trayIconWidth, -1, Image.SCALE_SMOOTH);
