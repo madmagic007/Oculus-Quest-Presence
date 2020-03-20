@@ -15,12 +15,11 @@ public class Config {
 	
 	public static void init() {
 		try {
+			File path = new File(System.getenv("APPDATA") + "/oqrpc");
+			if (!path.exists()) path.mkdirs();
 
-			configFile = new File(System.getenv("APPDATA") + "/oqrpc/config.json");
-			if (!configFile.exists()) {
-				configFile.createNewFile();
-				configFile.mkdirs();
-			}
+			configFile = new File(path.getAbsolutePath() + "/config.json");
+			if (!configFile.exists())configFile.createNewFile();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
