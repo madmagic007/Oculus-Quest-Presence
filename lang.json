@@ -1,9 +1,3 @@
-/*
-	order:
-	details
-	state
-*/
-
 {
 	"com.madmagic.oqrpc": {
 		"details": "Setting up presence",
