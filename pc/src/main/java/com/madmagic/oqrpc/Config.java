@@ -16,7 +16,7 @@ public class Config {
 	public static void init() {
 		try {
 
-			configFile = new File(System.getenv("APPDATA") + "oqrpc/config.json");
+			configFile = new File(System.getenv("APPDATA") + "/oqrpc/config.json");
 			if (!configFile.exists()) {
 				configFile.createNewFile();
 				configFile.mkdirs();
