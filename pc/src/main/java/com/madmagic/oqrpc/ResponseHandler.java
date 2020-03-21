@@ -12,15 +12,27 @@ public class ResponseHandler {
         if (message.equals("started")) {
             System.out.println("device online");
             Timing.terminate();
-            SystemTrayHandler.notif();
+            SystemTrayHandler.notif("Quest online", "Your Quest is online");
             Discord.init();
             Timing.startRequester();
             Timing.startEnder();
         }
+
+        if (message.equals("ended")) {
+            SystemTrayHandler.notif("Quest offline", "RPC service on your Quest has stopped");
+            Discord.terminate();
+            Timing.terminate();
+        }
+
         if (message.equals("game")) {
             Timing.resetEnder();
             nameHandle(ApiSender.ask("https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/lang.json",
                     new JSONObject()), response.getString("game"));
+        }
+
+        if (message.equals("note")) {
+            String note = response.getString("note");
+            SystemTrayHandler.notif("Message from your Quest", note);
         }
     }
 

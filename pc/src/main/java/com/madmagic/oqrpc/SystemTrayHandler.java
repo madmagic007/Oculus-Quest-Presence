@@ -20,9 +20,9 @@ public class SystemTrayHandler {
             item.addActionListener(e -> System.exit(0));
             menu.add(item);
 
-            MenuItem send = new MenuItem("manual send");
+            MenuItem send = new MenuItem("Request presence to start");
             send.addActionListener(e -> {
-                     ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "game").put("address", Main.getip()));
+                     ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getip()));
             });
             menu.add(send);
 
@@ -42,7 +42,7 @@ public class SystemTrayHandler {
         }
     }
 
-    public static void notif() {
-        icon.displayMessage("Oculus Quest Online", "Your quest is online", TrayIcon.MessageType.INFO);
+    public static void notif(String caption, String text) {
+        icon.displayMessage(caption, text, TrayIcon.MessageType.INFO);
     }
 }

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.madmagic.oqrpc"
-        minSdkVersion 25
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -18,14 +18,9 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
-}
-
-repositories {
-    // ...
-    maven { url 'https://dl.bintray.com/rvalerio/maven' }
 }
 
 dependencies {
@@ -35,9 +30,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.4.1'
-    implementation group: 'org.nanohttpd', name: 'nanohttpd', version: '2.3.0'
     implementation 'com.rvalerio:fgchecker:1.1.0'
-
-
+    implementation group: 'org.nanohttpd', name: 'nanohttpd', version: '2.3.1'
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.4.1'
 }

@@ -25,7 +25,7 @@ public class ApiCaller {
                         .build();
                 c.newCall(r).execute();
             } catch (Exception e) {
-                Log.d("APICALLER", "error " + e.getMessage());
+                Log.d("OQRPC", "error caller" + e.getMessage());
             }
         });
         thread.start();

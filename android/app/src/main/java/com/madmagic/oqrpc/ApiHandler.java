@@ -9,10 +9,13 @@ public class ApiHandler {
     public static JSONObject received(JSONObject o) {
         try {
             String message = o.getString("message");
-            Log.d("APICALLER", "receieved message " + o.toString(4));
 
             if (message.equals("game")) {
                 return new JSONObject().put("game", ActivityGetter.getName()).put("message", "game");
+            }
+
+            if (message.equals("startup")) {
+                return new JSONObject().put("message", "started");
             }
 
             if (o.has("address")) {
@@ -21,7 +24,7 @@ public class ApiHandler {
             }
 
         } catch (Exception e) {
-            Log.d("APICALLER", "error receiever " + e.getMessage());
+            Log.d("OQRPC", "error receiever " + e.getMessage());
         }
         return new JSONObject();
     }

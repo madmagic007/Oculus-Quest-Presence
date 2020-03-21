@@ -29,9 +29,8 @@ public class ApiReceiver extends NanoHTTPD {
 
             r = ApiHandler.received(body).toString(4);
         } catch (Exception e) {
-            Log.d("APICALLER" ,"error" + e.getMessage());
+            Log.d("OQRPC" ,"error" + e.getMessage());
         }
         return newFixedLengthResponse(r);
     }
 }
-

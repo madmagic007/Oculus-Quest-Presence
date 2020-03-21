@@ -55,7 +55,9 @@ public class Timing {
     }
 
     public static void resetEnder() {
-        endTimer.cancel();
+        try {
+            endTimer.cancel();
+        } catch (Exception ignored) {}
         startEnder();
     }
 
