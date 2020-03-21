@@ -24,7 +24,6 @@ import kotlin.annotation.Target;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         Log.d("APICALLER", "starting app");
 
         try {
@@ -38,16 +37,6 @@ import kotlin.annotation.Target;
                 Log.d("APICALLER", "connection checker");
                 ConnectionChecker.run(this);
             }
-
-            //button
-            Button button = findViewById(R.id.button);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                    System.exit(0);
-                }
-            });
 
         }catch (Exception ignored) {}
     }

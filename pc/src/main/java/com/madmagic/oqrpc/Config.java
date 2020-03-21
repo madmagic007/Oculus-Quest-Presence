@@ -28,7 +28,10 @@ public class Config {
 	public static String jarPath() {
 		try {
 			String path = Config.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-	       	return URLDecoder.decode(path, "UTF-8");
+			String r =  URLDecoder.decode(path, "UTF-8");
+
+			if (r.startsWith("/")) return r.replaceFirst("/", "");
+			return r;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "";
