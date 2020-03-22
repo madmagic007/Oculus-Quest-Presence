@@ -32,11 +32,19 @@
 		"state": "Superhot"
 	},
 	"com.oculus.vrshell": {
-		"details": "In oculus home",
+		"details": "Chilling in safespace",
 		"state": ""
 	},
 	"games.b4t.epicrollercoasters.oculus": {
 		"details": "Currently playing:",
 		"state": "Epic Rollercoasters"
+	},
+	"com.android.settings": {
+		"details": "Browsing settings",
+		"state": ""
+	},
+	"com.oculus.os.clearactivity": {
+		"details": "Shutting down",
+		"state": "Turning device off"
 	}
 }
