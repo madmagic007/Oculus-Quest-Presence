@@ -6,7 +6,7 @@
 
 ## How to install
 
-- Dowload the zip file from <a href="https://github.com/madmagic007/Oculus-Quest-Presence/releases/tag/2.0" target="_blank">here</a> and unzip it somwhere.
+- Dowload the latest zip file from <a href="https://github.com/madmagic007/Oculus-Quest-Presence/releases" target="_blank">here</a> and unzip it somwhere.
 - install <a href="https://sidequestvr.com/#/download" target="_blank">sidequest</a> on your pc (skip if you already have sidequest installed).
 - Download <a href="https://github.com/tverona1/QuestAppLauncher/releases/tag/v0.10.2" target="_blank">Quest app launcher</a>.
 - Sideload the quest app launcher apk to your quest (skip if already installed), plenty of tutorials on how to sideload apks exist.
