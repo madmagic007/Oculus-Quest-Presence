@@ -50,4 +50,4 @@
 
 ## Contributing
 
-If you have experience with java/android and would like to help, or if you don't know how to code but you want to help
+If you have experience with java/android and would like to help, or if you don't know how to code but you want to help adding to the lang.json file. Make sure to contact me and i will see what is possible!
