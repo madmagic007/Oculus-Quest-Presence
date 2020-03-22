@@ -6,9 +6,15 @@ import java.net.InetAddress;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        SystemTrayHandler.systemTray();
+
         Config.init();
-        Config.initStartup();
+
+    	try {
+    		if (args[0].equals("boot") && !Config.readBoot()) System.exit(0);
+    	} catch (Exception ignored) {}
+
+    	Config.initStartup();
+        SystemTrayHandler.systemTray();
 
         if (Config.getAddress().isEmpty()) {
             InitFrame.open();

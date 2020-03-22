@@ -19,6 +19,7 @@ public class ResponseHandler {
         }
 
         if (message.equals("ended")) {
+            System.out.println("device offline");
             SystemTrayHandler.notif("Quest offline", "RPC service on your Quest has stopped");
             Discord.terminate();
             Timing.terminate();
@@ -34,11 +35,17 @@ public class ResponseHandler {
             String note = response.getString("note");
             SystemTrayHandler.notif("Message from your Quest", note);
         }
+
+        if (message.equals("connect")) {
+            ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "valid"));
+        }
     }
+    
+    public static StringBuilder sb = new StringBuilder();
 
     public static void nameHandle(JSONObject gitObj, String name) {
         if (!gitObj.has(name)) {
-            System.out.println(name);
+        	sb.append(name).append("\n");
             String toSet = name.split("\\.")[name.split("\\.").length-1];
             Discord.changeGame("Currently playing:", toSet);
             return;

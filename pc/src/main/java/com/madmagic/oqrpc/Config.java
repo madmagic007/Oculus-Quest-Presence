@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.SQLSyntaxErrorException;
 
 import org.json.JSONObject;
 
@@ -45,7 +44,6 @@ public class Config {
 				return write(new JSONObject());
 			} else return new JSONObject(text);
 		} catch (Exception e) {
-			e.printStackTrace();
 			return new JSONObject();
 		}
 	}
@@ -56,7 +54,13 @@ public class Config {
 		else return "";
 	}
 	
-	public static JSONObject write(JSONObject obj) {
+	public static void setAddress(String s) {
+		JSONObject main = read();
+		main.put("address", s);
+		write(main);
+	}
+	
+	private static JSONObject write(JSONObject obj) {
 		System.out.println("write to config");
 		try {
 			if (!configFile.exists()) configFile.createNewFile();
@@ -68,9 +72,18 @@ public class Config {
 			return new JSONObject();
 		}
 	}
+	
+	public static void setBootSetting(boolean toggled) {
+		JSONObject main = read();
+		main.put("startBoot", toggled);
+		write(main);
+	}
+	
+	public static boolean readBoot() {
+		return read().getBoolean("startBoot");
+	}
 
 	public static void initStartup() {
-		System.out.println(jarPath());
 		try {
 			File file = new File(System.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\oqrpc.bat");
 			if (!file.exists()) {
@@ -78,7 +91,7 @@ public class Config {
 			}
 
 			FileWriter fw = new FileWriter(file);
-			fw.write("start javaw -Xmx200m -jar \"" + jarPath() + "\"");
+			fw.write("start javaw -Xmx200m -jar \"" + jarPath() + "\" " + "boot");
 			fw.close();
 
 		} catch (Exception e) {

@@ -19,13 +19,14 @@ public class ApiCaller {
         Thread thread = new Thread(() -> {
             try {
                 String ip = ConfigCreator.getIp();
+                Log.d("OQRPC", "calling " + ip + " with message " + o.toString(4));
                 Request r = new Request.Builder()
                         .url("http://" + ip + ":8080/api/pc")
                         .post(RequestBody.create(o.toString(4), jT))
                         .build();
-                c.newCall(r).execute();
+                c.newCall(r).execute().body().string();
             } catch (Exception e) {
-                Log.d("OQRPC", "error caller" + e.getMessage());
+                Log.d("OQRPC", "error caller " + e.getMessage());
             }
         });
         thread.start();

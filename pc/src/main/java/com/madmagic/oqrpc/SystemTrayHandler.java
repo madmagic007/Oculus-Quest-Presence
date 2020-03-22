@@ -4,7 +4,6 @@ import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
 
 public class SystemTrayHandler {
 
@@ -26,7 +25,7 @@ public class SystemTrayHandler {
             });
             menu.add(send);
 
-            MenuItem ip = new MenuItem("set ip");
+            MenuItem ip = new MenuItem("Open settings");
             ip.addActionListener(e -> InitFrame.open());
             menu.add(ip);
 

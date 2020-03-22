@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class MainService extends Service {
 
@@ -21,28 +23,34 @@ public class MainService extends Service {
     @Override
     public void onCreate() {
         isRunning = true;
-
         Toast.makeText(this, "Service started", Toast.LENGTH_LONG).show();
-        ConnectionChecker.run(this);
+
+        try {
+            new ApiReceiver();
+        } catch (Exception ignored) {}
+
+        new ConfigCreator(getFilesDir());
+        if (!ConfigCreator.getIp().isEmpty()) ConnectionChecker.run(this);
     }
 
     @Override
     public void onDestroy() {
         isRunning = false;
-
         Toast.makeText(this, "Service stopped", Toast.LENGTH_LONG).show();
+
         try {
             new ApiCaller(new JSONObject().put("message", "ended"));
         } catch (Exception ignored) {}
     }
 
-    public void connected() {
-        try {
-            new ConfigCreator(getFilesDir());
-            ActivityGetter.define(getBaseContext());
+    private static boolean accept = true;
 
+    public void connected() {
+        if (!accept) return;
+        accept = false;
+        try {
+            ActivityGetter.define(getBaseContext());
             new ApiCaller(new JSONObject().put("message", "started"));
-            new ApiReceiver();
         } catch (Exception ignored) {}
     }
 }
