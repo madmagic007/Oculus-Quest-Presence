@@ -31,8 +31,12 @@
 		"details": "Currently playing:",
 		"state": "Superhot"
 	},
-	"om.AgainstGravity.RecRoom": {
+	"com.oculus.vrshell": {
+		"details": "In oculus home",
+		"state": ""
+	},
+	"games.b4t.epicrollercoasters.oculus": {
 		"details": "Currently playing:",
-		"state": "RecRoom"
+		"state": "Epic Rollercoasters"
 	}
 }
