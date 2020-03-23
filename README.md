@@ -18,7 +18,7 @@
 - Open the quest app launcher on your quest, go to library > unknown sources and look for something called quest app laucnher.
 - In quest app launcher, click on the 2D tab and look for oqrpc.apk and run it. On the first time running it, it will prompt for usage acces (this is so it knows what ap is currently displaying topmost). select oqrpc and toggle it on. Press the B button on your right controller multiple times untill you are in the library again.
 - Go back to your pc and hit the validate button in the window again and it should say something like "apk is running on device, everything ready to go" (If this doesn't display, then redo the last step), and hit the save button.
-- Restart your quest and wait for a notification to appear on your computer telling it is online and the presence should start.
+- Shut down your quest and turn on again, A notification should appear on your computer telling it is online. If that happened, everything is finished.
 
 ---
 
