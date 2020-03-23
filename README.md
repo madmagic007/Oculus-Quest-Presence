@@ -17,9 +17,8 @@
 - Make sure your oculus quest is powered on and connected to the internet. Next type the ip you noted earlier in the text area and hit validate. if everything is done right, it should say "found device, but apk is not running on devide" (don't close this window yet).
 - Open the quest app launcher on your quest, go to library > unknown sources and look for something called quest app laucnher.
 - In quest app launcher, click on the 2D tab and look for oqrpc.apk and run it. On the first time running it, it will prompt for usage acces (this is so it knows what ap is currently displaying topmost). select oqrpc and toggle it on. Press the B button on your right controller multiple times untill you are in the library again.
-- Go back to your pc and hit the validate button in the window again and it should say something like "apk is running on device, everything ready to go (If this doesn't display, then redo the last step)", and hit the save button.
-- Right click the icon in system tray again and hit "Request presence to start".
-- A notification should appear on your computer and if discord is running, it should show that you are playing on your oculus quest!
+- Go back to your pc and hit the validate button in the window again and it should say something like "apk is running on device, everything ready to go" (If this doesn't display, then redo the last step), and hit the save button.
+- Restart your quest and wait for a notification to appear on your computer telling it is online and the presence should start.
 
 ---
 
