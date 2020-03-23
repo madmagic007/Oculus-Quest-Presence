@@ -80,7 +80,10 @@ public class Config {
 	}
 	
 	public static boolean readBoot() {
-		return read().getBoolean("startBoot");
+		JSONObject main = read();
+		if (main.has("startBoot")) return main.getBoolean("startBoot");
+		setBootSetting(true);
+		return true;
 	}
 
 	public static void initStartup() {

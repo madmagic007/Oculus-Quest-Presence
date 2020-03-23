@@ -7,35 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="fixed more things">
-      <change afterPath="$PROJECT_DIR$/../Oculus Quest RPC.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../android/oqrpc.apk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/ApiCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/ApiCaller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/ApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/ApiHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/ConnectionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/ConnectionChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/madmagic/oqrpc/MainService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lang.json" beforeDir="false" afterPath="$PROJECT_DIR$/../lang.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Oculus Quest RPC.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Oculus Quest RPC.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oqrpc.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../oqrpc.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Oculus Quest Discord RPC.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Oculus Quest Discord RPC.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pc_jar/Oculus Quest Discord RPC.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/InitFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/InitFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/ResponseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/SystemTrayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/SystemTrayHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/pc.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Discord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Discord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/ResponseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/ResponseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/SystemTrayHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/SystemTrayHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/image.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +59,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/pc_jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../DiscordBots/TestBot" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -277,6 +255,10 @@
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="392" y="129" key="#Project_Structure/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584440923792" />
+    <state x="254" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584909902046">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="254" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1600.860@0.40.1600.860" timestamp="1584909902046" />
     <state x="-919" y="259" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584709314723">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
@@ -291,34 +273,35 @@
     </state>
     <state x="-1101" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584734109545" />
     <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584881709777" />
-    <state x="-940" y="225" key="FileChooserDialogImpl" timestamp="1584644844912">
-      <screen x="-1440" y="40" width="1440" height="860" />
+    <state x="556" y="225" key="FileChooserDialogImpl" timestamp="1584908285955">
+      <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-940" y="225" key="FileChooserDialogImpl/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584644844912" />
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1584881374279">
-      <screen x="-1440" y="40" width="1440" height="860" />
+    <state x="556" y="225" key="FileChooserDialogImpl/0.40.1600.860@0.40.1600.860" timestamp="1584908285955" />
+    <state width="1380" height="222" key="GridCell.Tab.0.bottom" timestamp="1584911259036">
+      <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
     <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
-    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1584881374279">
-      <screen x="-1440" y="40" width="1440" height="860" />
+    <state width="1380" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860@0.40.1600.860" timestamp="1584911259036" />
+    <state width="1380" height="222" key="GridCell.Tab.0.center" timestamp="1584911259036">
+      <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
     <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
-    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1584881374279">
-      <screen x="-1440" y="40" width="1440" height="860" />
+    <state width="1380" height="222" key="GridCell.Tab.0.center/0.40.1600.860@0.40.1600.860" timestamp="1584911259036" />
+    <state width="1380" height="222" key="GridCell.Tab.0.left" timestamp="1584911259036">
+      <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
     <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860@0.40.1600.860" timestamp="1584654858835" />
-    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1584881374279">
-      <screen x="-1440" y="40" width="1440" height="860" />
+    <state width="1380" height="222" key="GridCell.Tab.0.left/0.40.1600.860@0.40.1600.860" timestamp="1584911259036" />
+    <state width="1380" height="222" key="GridCell.Tab.0.right" timestamp="1584911259036">
+      <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
     <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860@0.40.1600.860" timestamp="1584654858836" />
+    <state width="1380" height="222" key="GridCell.Tab.0.right/0.40.1600.860@0.40.1600.860" timestamp="1584911259036" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1584446294920">
       <screen x="0" y="40" width="1600" height="860" />
     </state>

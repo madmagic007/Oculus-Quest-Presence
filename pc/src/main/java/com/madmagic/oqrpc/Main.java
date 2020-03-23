@@ -1,11 +1,12 @@
 package com.madmagic.oqrpc;
 
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import org.json.JSONObject;
+
+import java.net.*;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         Config.init();
 
@@ -13,14 +14,20 @@ public class Main {
     		if (args[0].equals("boot") && !Config.readBoot()) System.exit(0);
     	} catch (Exception ignored) {}
 
+        try {
+            new ApiReceiver();
+        } catch (Exception e) {
+            System.exit(0);
+        }
+
     	Config.initStartup();
         SystemTrayHandler.systemTray();
 
         if (Config.getAddress().isEmpty()) {
             InitFrame.open();
+        } else {
+            ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getip()));
         }
-
-        new ApiReceiver();
     }
 
     public static String getip() {
