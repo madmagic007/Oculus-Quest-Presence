@@ -33,9 +33,8 @@
 ##  Things to note & issues im aware of
 
 - If your computer/quest lose internet conection for more than one minute, the presence will stop showing. To restore this right click on the oculus quest rpc icon in the system tray on your computer and hit "Request presence to start".
-- If your computer is turned on after your quest, it wont show the presence untill you manually start the apk via quest app launcher.
-- Both programs "should" automatically start with device boot, but thay may not always the be case. If the presence didn't start but the program on the pc is running, hit the "Request presence to start" button, and if you didnt get a message saying your quest is online, then you have to manually start the app from the quest app launcher.
-- When your quest turns on and if it connects to wifi within 3 minutes of it powering on, it will automatically start displaying the presence on discord. If it's after 3 minutes, you have to manyally start the app.
+- Both programs "should" automatically start with device boot, but thay may not always the be case. If the presence didn't start but the program on the pc is running, hit the "Request presence to start" button, and if you didn't get a message saying your quest is online, then you have to manually start the app from the quest app launcher.
+- When your quest turns on and if it connects to wifi within 3 minutes of it powering on, it will automatically start displaying the presence on discord. If it's after 3 minutes, you have to manually start the app.
 - The way i get the names of the games you are playing is by reading the package name of the current topmost process. For Pavlov this would be "com.vankrupt.pavlov" i use an api that reads the lang.json file found in this repository to get a better looking name, like "Pavlov Vr" in this case. If a package name isn't listed in the lang file, it will show just the last part of that package name, for pavlov that would be just "pavlov". I will try to add as many names as posible, but ofcourse i dont know every game so if you find one, make sure to report it to me.
 
 ---
@@ -51,3 +50,7 @@
 ## Contributing
 
 If you have experience with java/android and would like to help, or if you don't know how to code but you want to help adding to the lang.json file. Make sure to contact me and i will see what is possible!
+
+---
+
+Special thanks to u/FinalFortune_ for helping me out with bug testing and creating a demo/tutorial video.
