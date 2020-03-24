@@ -11,7 +11,8 @@ Video tutorial:
   <a href="https://www.youtube.com/watch?v=omhujeBPCIU"><img src="https://img.youtube.com/vi/omhujeBPCIU/maxresdefault.jpg" alt="Video tutorial"></a>
 </div>
 
-Text tutorial:
+
+
 - Dowload the latest zip file from <a href="https://github.com/madmagic007/Oculus-Quest-Presence/releases" target="_blank">here</a> and unzip it somwhere.
 - install <a href="https://sidequestvr.com/#/download" target="_blank">sidequest</a> on your pc (skip if you already have sidequest installed).
 - Download <a href="https://github.com/tverona1/QuestAppLauncher/releases/tag/v0.10.2" target="_blank">Quest app launcher</a>.
