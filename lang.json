@@ -46,5 +46,17 @@
 	"com.oculus.os.clearactivity": {
 		"details": "Shutting down",
 		"state": "Turning device off"
+	},
+	"com.voidroom.TeaForGod": {
+		"details": "Currently playing:",
+		"state": "Tea For God"
+	},
+	"com.RJdoesVR.SunShardHandDemo": {
+		"details": "Currently playing:",
+		"state": "SunShard Hand Tracking Demo"
+	},
+	"com.pushmatrix.handspace": {
+		"details": "Currently playing:",
+		"state": "HandSpace"
 	}
 }
