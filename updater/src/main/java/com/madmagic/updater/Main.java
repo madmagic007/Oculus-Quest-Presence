@@ -24,7 +24,7 @@ public class Main {
 			String thisPath = getJarDir();
 			File currentThis = new File(thisPath);
 			
-			mainJar = new File(thisPath.replace(currentThis.getName(), "OculusQuestDiscordPresence.jar"));
+			mainJar = new File(thisPath.replace(currentThis.getName(), "Oculus Quest Discord RPC.jar"));
 			FileUtils.copyURLToFile(new URL(url), mainJar);
 			
 		} catch (Exception e) {

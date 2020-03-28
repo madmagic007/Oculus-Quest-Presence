@@ -69,6 +69,8 @@ public class UpdateChecker {
 			}
 			try {
 				Runtime.getRuntime().exec("java -jar " + updater + " " + dlUrl);
+				System.exit(0);
+				frame.dispose();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 				lblNotif.setText("Error running updater");
@@ -76,7 +78,7 @@ public class UpdateChecker {
 		});
 		
 		btnNewButton = new JButton("Cancel");
-		btnNewButton.setBounds(108, 57, 89, 23);
+		btnNewButton.setBounds(170, 57, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(e -> frame.dispose());
 

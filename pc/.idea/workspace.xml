@@ -7,43 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="fixed more things">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/UpdateChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/5.2.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/5.2.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/artifacts/updater_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/dictionaries/User.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/build/classes/java/main/com/madmagic/updater/Gui.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/build/classes/java/main/com/madmagic/updater/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Discord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Discord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oqrpc.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/UpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/quest.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/quest.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/quest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/quest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/quest.ico" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/quest.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/quest.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/quest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../setup.iss" beforeDir="false" afterPath="$PROJECT_DIR$/../setup.iss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,6 +254,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="fixed more things" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="392" y="129" key="#Notifications" timestamp="1585431122771">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="392" y="129" key="#Notifications/0.40.1600.860@0.40.1600.860" timestamp="1585431122771" />
     <state x="392" y="129" key="#Project_Structure" timestamp="1584440923792">
       <screen x="0" y="40" width="1600" height="860" />
     </state>

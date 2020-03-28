@@ -2,15 +2,15 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Oculus Quest Discord RPC"
-#define MyAppVersion "1.0"
+#define MyAppVersion "2.2.0"
 #define MyAppPublisher "MadMagic"
-#define MyAppURL "https://github.com/madmagic007/Oculus-Quest-Presence"
+#define MyAppURL "https://github.com/madmagic007/Oculus-Quest-Presence/releases"
 #define MyAppExeName "Oculus Quest Discord RPC.jar"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{8DC236CB-272C-45F9-BEE7-B140F3CAE254}
+AppId={{1B96BD6E-7816-4159-ADB3-C7B45B3EF9CD}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -18,12 +18,13 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={autopf}\{#MyAppName}
+DefaultDirName={userappdata}\{#MyAppName}
+DisableDirPage=yes
 DisableProgramGroupPage=yes
-; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
-OutputDir=C:\Users\User\Documents
-OutputBaseFilename=oqrpc
+; Remove the following line to run in administrative install mode (install for all users.)
+PrivilegesRequired=lowest
+OutputDir=C:\Users\User\Documents\coding\java\finished\OculusQuestPresence
+OutputBaseFilename=Oqrpc
 SetupIconFile=C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\pc\src\main\resources\quest.ico
 Compression=lzma
 SolidCompression=yes
@@ -37,6 +38,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\pc\Oculus Quest Discord RPC.jar"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\updater\updater.jar"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
