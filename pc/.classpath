@@ -28,5 +28,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/User/Documents/coding/java/zLibs/deploy.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/coding/java/zLibs/mslinks.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

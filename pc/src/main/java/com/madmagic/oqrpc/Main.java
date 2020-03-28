@@ -8,11 +8,17 @@ public class Main {
 
     public static void main(String[] args) {
 
+        try {
+            System.out.println(args[0]);
+        } catch (Exception ignored) {}
+
         Config.init();
 
     	try {
     		if (args[0].equals("boot") && !Config.readBoot()) System.exit(0);
     	} catch (Exception ignored) {}
+
+        new UpdateChecker();
 
         try {
             new ApiReceiver();

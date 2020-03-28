@@ -29,7 +29,7 @@ public class SystemTrayHandler {
             ip.addActionListener(e -> InitFrame.open());
             menu.add(ip);
 
-            Image image = ImageIO.read(SystemTrayHandler.class.getResource("/quest.png"));
+            Image image = ImageIO.read(ClassLoader.getSystemResourceAsStream("resources/quest.png"));
             int trayIconWidth = new TrayIcon(image).getSize().width;
             SystemTray tray = SystemTray.getSystemTray();
             Image ic = image.getScaledInstance(trayIconWidth, -1, Image.SCALE_SMOOTH);

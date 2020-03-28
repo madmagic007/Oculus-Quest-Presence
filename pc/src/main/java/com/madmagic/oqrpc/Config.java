@@ -6,6 +6,7 @@ import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import mslinks.ShellLink;
 import org.json.JSONObject;
 
 public class Config {
@@ -14,10 +15,7 @@ public class Config {
 	
 	public static void init() {
 		try {
-			File path = new File(System.getenv("APPDATA") + "/oqrpc");
-			if (!path.exists()) path.mkdirs();
-
-			configFile = new File(path.getAbsolutePath() + "/config.json");
+			configFile =  new File(jarPath().replace(new File(jarPath()).getName(), "config.json"));
 			if (!configFile.exists())configFile.createNewFile();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -35,6 +33,12 @@ public class Config {
 			e.printStackTrace();
 			return "";
 		}
+	}
+
+	public static String getUpdater() {
+		File file = new File(jarPath().replace(new File(jarPath()).getName(), "Updater.jar"));
+		if (!file.exists()) return "";
+		return file.getAbsolutePath();
 	}
 	
 	private static JSONObject read() {
@@ -88,14 +92,11 @@ public class Config {
 
 	public static void initStartup() {
 		try {
-			File file = new File(System.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\oqrpc.bat");
-			if (!file.exists()) {
-				file.createNewFile();
-			}
+			ShellLink sL = ShellLink.createLink(jarPath());
+			sL.setCMDArgs("boot");
+			
+			sL.saveTo(System.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\oqrpc.lnk");
 
-			FileWriter fw = new FileWriter(file);
-			fw.write("start javaw -Xmx200m -jar \"" + jarPath() + "\" " + "boot");
-			fw.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
