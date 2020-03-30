@@ -58,5 +58,9 @@
 	"com.pushmatrix.handspace": {
 		"details": "Currently playing:",
 		"state": "HandSpace"
+	},
+	"com.google.android.apps.youtube.vr.oculus": {
+		"details": "Watching Youtube",
+		"state": ""
 	}
 }
