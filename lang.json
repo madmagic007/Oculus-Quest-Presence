@@ -62,5 +62,9 @@
 	"com.google.android.apps.youtube.vr.oculus": {
 		"details": "Watching Youtube",
 		"state": ""
+	},
+	"com.polygraphene.alvr": {
+		"details": "Currently playing:",
+		"state": "ALVR"
 	}
 }
