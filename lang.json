@@ -67,6 +67,10 @@
 		"details": "Playing PCVR",
 		"state": "ALVR"
 	},
+	"com.amd.wirelesshmd": {
+		"details": "Currently playing:",
+		"state": "SteamVR (AMD ReLive)"
+  },
 	"com.harmonixmusic.kata": {
 		"details": "Currently playing:",
 		"state": "Audica"
