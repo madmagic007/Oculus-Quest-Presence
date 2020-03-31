@@ -64,7 +64,7 @@
 		"state": ""
 	},
 	"com.polygraphene.alvr": {
-		"details": "Currently playing:",
+		"details": "Playing PCVR",
 		"state": "ALVR"
 	},
 	"com.harmonixmusic.kata": {
@@ -137,7 +137,7 @@
 	},
 	"VirtualDesktop.Android": {
 		"details": "Playing PCVR",
-		"state": ""
+		"state": "Virtual Desktop"
 	},
 	"com.netflix.ninja.vr": {
 		"details": "Watching Netflix",
@@ -154,5 +154,9 @@
 	"com.drbeef.lambda1vr": {
 		"details": "Currently Playing:",
 		"state": "Lamda1VR"
+	},
+	"com.amd.wirelesshmd": {
+		"details": "Playing PCVR",
+		"state": "AMD ReLive"
 	}
 }
