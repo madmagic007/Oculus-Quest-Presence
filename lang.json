@@ -5,7 +5,7 @@
 	},
 	"com.vankrupt.pavlov": {
 		"details": "Currently playing:",
-		"state": "Pavlov Vr"
+		"state": "Pavlov VR"
 	},
 	"aaa.QuestAppLauncher.app": {
 		"details": "Currently playing:",
@@ -17,7 +17,7 @@
 	},
 	"com.bigscreenvr.bigscreen": {
 		"details": "Currently playing:",
-		"state": "BigScreen vr"
+		"state": "BigScreen VR"
 	},
 	"com.owlchemylabs.jobsimulator": {
 		"details": "Currently playing:",
@@ -25,14 +25,14 @@
 	},
 	"com.vrchat.oculus.quest": {
 		"details": "Currently playing:",
-		"state": "Vr Chat"
+		"state": "VR Chat"
 	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
 		"details": "Currently playing:",
-		"state": "Superhot"
+		"state": "Superhot VR"
 	},
 	"com.oculus.vrshell": {
-		"details": "Chilling in safespace",
+		"details": "In The Oasis",
 		"state": ""
 	},
 	"games.b4t.epicrollercoasters.oculus": {
@@ -70,5 +70,89 @@
 	"com.harmonixmusic.kata": {
 		"details": "Currently playing:",
 		"state": "Audica"
+	},
+	"com.crytek.climb": {
+		"details": "Currently Playing:",
+		"state": "The Climb VR"
+	},
+	"com.halfbrick.fruitninjavr": {
+		"details": Currently Playing:",
+		"state": "Fruit Ninja VR"
+	},
+	"com.parkline.wander": {
+		"details": "Currently Playing:",
+		"state": "Wander"
+	},
+	"com.AgainstGravity.RecRoom": {
+		"details": "Currently Playing:",
+		"state": "Rec Room VR"
+	},
+	"com.google.tiltbrush": {
+		"details": "Currently Playing:",
+		"state": "Tilt Brush"
+	},
+	"com.CaveManStudio.ContractorsVR": {
+		"details": "Currently Playing:",
+		"state": "The Contractors VR"
+	},
+	"com.forcefieldxr.explorevr": {
+		"details": "Currently Playing:",
+		"state": "National Geographic Explore VR"
+	},
+	"com.cloudheadgames.pistolwhip": {
+		"details": "Currently Playing:",
+		"state": "Pistol Whip"
+	},
+	"com.crowscrowscrows.AccountingPlus": {
+		"details": "Currently Playing:",
+		"state": "Accounting +"
+	},
+	"com.ILMxLAB.VaderImmortal.ep1": {
+		"details": "Currently Playing:",
+		"state": "Vader Immortal: Episode I"
+	},
+	"com.ILMxLAB.VaderImmortal.ep2": {
+		"details": "Currently Playing",
+		"state": "Vader Immortal: Episode II"
+	},
+	"com.ILMxLAB.VaderImmortal.ep3": {
+		"details": "Currently Playing:",
+		"state": "Vader Immortal: Episode III"
+	},
+	"com.wolfandwood.exorcistlegionvr": {
+		"details": "Currently Playing:",
+		"state":  "The Exorcist Legion VR"
+	},
+	"com.vertigogames.azsq": {
+		"details": "Currently Playing:",
+		"state": "Arizona Sunshine"
+	},
+	"com.TriangleFactory.HyperDash": {
+		"details": "Currently Playing:",
+		"state": "Hyper Dash"
+	},
+	"com.weloveoculus.BMBF": {
+		"details": "Modding Beat Saber",
+		"state": ""
+	},
+	"VirtualDesktop.Android": {
+		"details": "Playing PCVR",
+		"state": ""
+	},
+	"com.netflix.ninja.vr": {
+		"details": "Watching Netflix",
+		"state": ""
+	},
+	"com.drbeef.quakequest": {
+		"details": "Currently Playing:",
+		"state": "Quake Quest"
+	},
+	"com.drbeef.quake2quest": {
+		"details": "Currently Playing:",
+		"state": "Quake 2 Quest"
+	},
+	"com.drbeef.lambda1vr": {
+		"details": "Currently Playing:",
+		"state": "Lamda1VR"
 	}
 }
