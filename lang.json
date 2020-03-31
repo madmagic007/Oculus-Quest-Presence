@@ -66,5 +66,9 @@
 	"com.polygraphene.alvr": {
 		"details": "Currently playing:",
 		"state": "ALVR"
+	},
+	"com.amd.wirelesshmd": {
+		"details": "Currently playing:",
+		"state": "SteamVR (AMD ReLive)"
 	}
 }
