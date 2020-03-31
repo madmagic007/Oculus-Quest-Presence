@@ -27,7 +27,7 @@ public class ResponseHandler {
 
         if (message.equals("game")) {
             Timing.resetEnder();
-            nameHandle(ApiSender.ask("https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/lang.json",
+            nameHandle(ApiSender.ask("https://raw.githubusercontent.com/ryanjem/Oculus-Quest-Presence/master/lang.json",
                     new JSONObject()), response.getString("game"));
         }
 
