@@ -70,5 +70,13 @@
 	"com.harmonixmusic.kata": {
 		"details": "Currently playing:",
 		"state": "Audica"
+	},
+	"com.crytek.climb": {
+		"details": "Currently playing",
+		"state": "The Climb"
+	},
+	"com.halfbrick.fruitninjavr": {
+		"details": "Currently playing",
+		"state": "Fruit Ninja VR"
 	}
 }
