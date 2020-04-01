@@ -32,7 +32,7 @@
 		"state": "Superhot VR"
 	},
 	"com.oculus.vrshell": {
-		"details": "In The Oasis",
+		"details": "In Oculus Home",
 		"state": ""
 	},
 	"games.b4t.epicrollercoasters.oculus": {
@@ -67,6 +67,10 @@
 		"details": "Playing PCVR",
 		"state": "ALVR"
 	},
+	"com.amd.wirelesshmd": {
+		"details": "Currently playing:",
+		"state": "SteamVR (AMD ReLive)"
+  },
 	"com.harmonixmusic.kata": {
 		"details": "Currently playing:",
 		"state": "Audica"
