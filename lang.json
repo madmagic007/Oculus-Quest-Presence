@@ -274,5 +274,9 @@
 	"com.AntiZeroGames.CaptainHardcore": {
 		"details": "Currently Playing:",
 		"state": "Captain Hardcore"
+	},
+	"com.sketchbox.Grapple": {
+		"details": "Currently playing:",
+		"state": "Swarm - Closed Beta"
 	}
 }
