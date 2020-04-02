@@ -155,10 +155,6 @@
 		"details": "Currently Playing:",
 		"state": "Lamda1VR"
 	},
-	"com.amd.wirelesshmd": {
-		"details": "Playing PCVR",
-		"state": "AMD ReLive"
-	},
 	"com.sumalab.CrisisVRigade": {
 		"details": "Currently Playing:",
 		"state": "Crisis VRigade"
