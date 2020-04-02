@@ -4,6 +4,18 @@
 
 ---
 
+<p align="center">
+  <a href="https://discordapp.com/users/401795293797941290/">
+    <img src="https://img.shields.io/badge/Discord-%232C2F33.svg?logo=discord" alt="Discord">
+  </a>
+    <a href="https://twitter.com/madmagic5">
+      <img src="https://img.shields.io/badge/Twitter-%23657786.svg?logo=twitter" alt="Twitter">
+    </a>
+    <a href="https://www.reddit.com/user/madmagic008/">
+      <img src="https://img.shields.io/badge/Reddit-%23cee3f8.svg?logo=reddit" alt="Reddit">
+    </a>
+</p>
+
 ## How to install
 
 Video tutorial:
@@ -41,14 +53,6 @@ Video tutorial:
 - Both programs "should" automatically start with device boot, but thay may not always the be case. If the presence didn't start but the program on the pc is running, hit the "Request presence to start" button, and if you didn't get a message saying your quest is online, then you have to manually start the app from the quest app launcher.
 - When your quest turns on and if it connects to wifi within 3 minutes of it powering on, it will automatically start displaying the presence on discord. If it's after 3 minutes, you have to manually start the app.
 - The way i get the names of the games you are playing is by reading the package name of the current topmost process. For Pavlov this would be "com.vankrupt.pavlov" i use an api that reads the lang.json file found in this repository to get a better looking name, like "Pavlov Vr" in this case. If a package name isn't listed in the lang file, it will show just the last part of that package name, for pavlov that would be just "pavlov". I will try to add as many names as posible, but ofcourse i dont know every game so if you find one, make sure to report it to me.
-
----
-
-## Contact me for bug reporting or reporting an unlisted name
-
-- Discord: ⎛⎝⧹Maͫgͣiͩc⧸⎠⎞#6891
-- Twitter: @madmagic5
-- Reddit: u/madmagic008
 
 ---
 
