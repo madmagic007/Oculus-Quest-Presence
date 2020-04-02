@@ -1,1 +1,4 @@
-{"address": "192.168.1.139"}
+{
+    "address": "192.168.1.100",
+    "startBoot": true
+}

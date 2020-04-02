@@ -7,7 +7,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../debug/pc debug/.idea/pc debug.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../debug/pc debug/pc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/gui/AlreadyRunningGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/gui/OldGui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../updater/out/artifacts/updater_jar/updater.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/pc_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/pc_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Oculus Quest Discord RPC.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/ApiReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/api/ApiReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/ApiSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/api/ApiSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Discord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/source/Discord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/InitFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/config/ConfigGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/source/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/api/ResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/SystemTrayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/source/SystemTrayHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/Timing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/source/Timing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/gui/UpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/ApiReceiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/ApiSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Discord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/InitFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/ResponseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/SystemTrayHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/Timing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/UpdateChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../updater/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../updater/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../updater/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../updater/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../updater/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../updater/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../updater/build/classes/java/main/com/madmagic/updater/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../updater/build/classes/java/main/com/madmagic/updater/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../updater/src/main/java/com/madmagic/updater/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../updater/src/main/java/com/madmagic/updater/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../updater/updater.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +98,11 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pc debug" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../zLibs/mslinks.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -79,7 +123,7 @@
       <module name="pc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.madmagic.oqrpc.*" />
+          <option name="PATTERN" value="com.madmagic.oqrpc.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,11 +132,24 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.madmagic.oqrpc.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.madmagic.oqrpc.source.Main" />
       <module name="pc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.madmagic.oqrpc.*" />
+          <option name="PATTERN" value="com.madmagic.oqrpc.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OldVersionChecker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.madmagic.oqrpc.update.OldVersionChecker" />
+      <module name="pc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.madmagic.oqrpc.gui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,7 +162,7 @@
       <module name="pc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.madmagic.oqrpc.*" />
+          <option name="PATTERN" value="com.madmagic.oqrpc.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,6 +173,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.OldVersionChecker" />
         <item itemvalue="Application.Validate" />
         <item itemvalue="Application.Application" />
       </list>
@@ -268,75 +326,77 @@
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="254" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1600.860@0.40.1600.860" timestamp="1584909902046" />
-    <state x="-919" y="259" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584709314723">
-      <screen x="-1440" y="40" width="1440" height="860" />
+    <state x="579" y="259" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585837907778">
+      <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-919" y="259" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584709314723" />
+    <state x="579" y="259" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585837907778" />
     <state x="695" y="362" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585422367820">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="695" y="362" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.40.1600.860@0.40.1600.860" timestamp="1585422367820" />
-    <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584697771325">
+    <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585836016267">
       <screen x="-1440" y="40" width="1440" height="860" />
     </state>
-    <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584697771325" />
+    <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1585836016267" />
     <state x="530" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584442098264" />
-    <state x="377" y="65" key="CommitChangelistDialog2" timestamp="1585431170434">
+    <state x="377" y="65" key="CommitChangelistDialog2" timestamp="1585842104490">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-1101" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584734109545" />
-    <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584881709777" />
+    <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585842104490" />
     <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860@0.40.1600.860" timestamp="1585431170434" />
-    <state x="556" y="225" key="FileChooserDialogImpl" timestamp="1585485154913">
+    <state x="556" y="225" key="FileChooserDialogImpl" timestamp="1585837511383">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-940" y="225" key="FileChooserDialogImpl/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584644844912" />
+    <state x="556" y="225" key="FileChooserDialogImpl/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585837511383" />
     <state x="556" y="225" key="FileChooserDialogImpl/0.40.1600.860@0.40.1600.860" timestamp="1585485154913" />
-    <state width="1340" height="211" key="GridCell.Tab.0.bottom" timestamp="1585423022983">
+    <state width="1557" height="144" key="GridCell.Tab.0.bottom" timestamp="1585842104711">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
+    <state width="1557" height="144" key="GridCell.Tab.0.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585842104711" />
     <state width="1340" height="211" key="GridCell.Tab.0.bottom/0.40.1600.860@0.40.1600.860" timestamp="1585423022983" />
-    <state width="1340" height="211" key="GridCell.Tab.0.center" timestamp="1585423022982">
+    <state width="1557" height="144" key="GridCell.Tab.0.center" timestamp="1585842104711">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
+    <state width="1557" height="144" key="GridCell.Tab.0.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585842104711" />
     <state width="1340" height="211" key="GridCell.Tab.0.center/0.40.1600.860@0.40.1600.860" timestamp="1585423022982" />
-    <state width="1340" height="211" key="GridCell.Tab.0.left" timestamp="1585423022982">
+    <state width="1557" height="144" key="GridCell.Tab.0.left" timestamp="1585842104711">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
+    <state width="1557" height="144" key="GridCell.Tab.0.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585842104710" />
     <state width="1340" height="211" key="GridCell.Tab.0.left/0.40.1600.860@0.40.1600.860" timestamp="1585423022982" />
-    <state width="1340" height="211" key="GridCell.Tab.0.right" timestamp="1585423022983">
+    <state width="1557" height="144" key="GridCell.Tab.0.right" timestamp="1585842104711">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584881374279" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584817963058" />
+    <state width="1557" height="144" key="GridCell.Tab.0.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585842104711" />
     <state width="1340" height="211" key="GridCell.Tab.0.right/0.40.1600.860@0.40.1600.860" timestamp="1585423022983" />
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1584446294920">
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1585675110537">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
-    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1584446294920">
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585675110537" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1585675110537">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
-    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1584446294920">
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585675110537" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1585675110536">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
-    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1584446294920">
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585675110536" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1585675110537">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584446294920" />
-    <state x="301" y="50" key="SettingsEditor" timestamp="1585422584381">
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585675110537" />
+    <state x="301" y="50" key="SettingsEditor" timestamp="1585837944991">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-1169" y="50" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584722743660" />
-    <state x="301" y="113" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584441039863" />
+    <state x="301" y="50" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585837944991" />
     <state x="301" y="50" key="SettingsEditor/0.40.1600.860@0.40.1600.860" timestamp="1585422584381" />
     <state x="92" y="132" width="1416" height="676" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1584446266875">
       <screen x="0" y="40" width="1600" height="860" />

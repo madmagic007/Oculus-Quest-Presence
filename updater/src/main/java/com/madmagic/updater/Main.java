@@ -35,7 +35,7 @@ public class Main {
 		
 		try {
 			updateError("Finished updating, restarting program");
-			Runtime.getRuntime().exec("java -jar " + mainJar.getPath());
+			Runtime.getRuntime().exec("java -jar \"" + mainJar.getPath() + "\"");
 			window.end();
 		} catch (Exception e) {
 			e.printStackTrace();
