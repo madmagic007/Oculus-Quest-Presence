@@ -3,21 +3,26 @@
 		"details": "Setting up presence",
 		"state": ""
 	},
+	"com.oculus.vrshell": {
+		"details": "In Oculus Home",
+		"state": ""
+	},
 	"com.vankrupt.pavlov": {
 		"details": "Currently playing:",
-		"state": "Pavlov Vr"
+		"state": "Pavlov VR"
 	},
-	"aaa.QuestAppLauncher.app": {
+	"aaa.QuestAppLauncher.App": {
 		"details": "Currently playing:",
 		"state": "Quest App Launcher"
 	},
 	"com.beatgames.beatsaber": {
 		"details": "Currently playing:",
-		"state": "Beat Saber"
+		"state": "Beat Saber",
+		"key": "beatsaber"
 	},
 	"com.bigscreenvr.bigscreen": {
 		"details": "Currently playing:",
-		"state": "BigScreen vr"
+		"state": "BigScreen VR"
 	},
 	"com.owlchemylabs.jobsimulator": {
 		"details": "Currently playing:",
@@ -25,15 +30,11 @@
 	},
 	"com.vrchat.oculus.quest": {
 		"details": "Currently playing:",
-		"state": "Vr Chat"
+		"state": "VR Chat"
 	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
 		"details": "Currently playing:",
-		"state": "Superhot"
-	},
-	"com.oculus.vrshell": {
-		"details": "Chilling in safespace",
-		"state": ""
+		"state": "Superhot VR"
 	},
 	"games.b4t.epicrollercoasters.oculus": {
 		"details": "Currently playing:",
@@ -51,32 +52,224 @@
 		"details": "Currently playing:",
 		"state": "Tea For God"
 	},
-	"com.RJdoesVR.SunShardHandDemo": {
-		"details": "Currently playing:",
-		"state": "SunShard Hand Tracking Demo"
-	},
-	"com.pushmatrix.handspace": {
-		"details": "Currently playing:",
-		"state": "HandSpace"
-	},
 	"com.google.android.apps.youtube.vr.oculus": {
 		"details": "Watching Youtube",
 		"state": ""
 	},
 	"com.polygraphene.alvr": {
-		"details": "Currently playing:",
+		"details": "Playing PCVR",
 		"state": "ALVR"
 	},
+	"com.amd.wirelesshmd": {
+		"details": "Currently playing:",
+		"state": "SteamVR (AMD ReLive)"
+  },
 	"com.harmonixmusic.kata": {
 		"details": "Currently playing:",
 		"state": "Audica"
 	},
 	"com.crytek.climb": {
-		"details": "Currently playing",
-		"state": "The Climb"
+		"details": "Currently Playing:",
+		"state": "The Climb VR"
 	},
 	"com.halfbrick.fruitninjavr": {
-		"details": "Currently playing",
+		"details": "Currently Playing:",
 		"state": "Fruit Ninja VR"
+	},
+	"com.parkline.wander": {
+		"details": "Currently Playing:",
+		"state": "Wander"
+	},
+	"com.AgainstGravity.RecRoom": {
+		"details": "Currently Playing:",
+		"state": "Rec Room VR"
+	},
+	"com.google.tiltbrush": {
+		"details": "Currently Playing:",
+		"state": "Tilt Brush"
+	},
+	"com.CaveManStudio.ContractorsVR": {
+		"details": "Currently Playing:",
+		"state": "The Contractors VR"
+	},
+	"com.forcefieldxr.explorevr": {
+		"details": "Currently Playing:",
+		"state": "National Geographic Explore VR"
+	},
+	"com.cloudheadgames.pistolwhip": {
+		"details": "Currently Playing:",
+		"state": "Pistol Whip"
+	},
+	"com.crowscrowscrows.AccountingPlus": {
+		"details": "Currently Playing:",
+		"state": "Accounting +"
+	},
+	"com.ILMxLAB.VaderImmortal.ep1": {
+		"details": "Currently Playing:",
+		"state": "Vader Immortal: Episode I"
+	},
+	"com.ILMxLAB.VaderImmortal.ep2": {
+		"details": "Currently Playing",
+		"state": "Vader Immortal: Episode II"
+	},
+	"com.ILMxLAB.VaderImmortal.ep3": {
+		"details": "Currently Playing:",
+		"state": "Vader Immortal: Episode III"
+	},
+	"com.wolfandwood.exorcistlegionvr": {
+		"details": "Currently Playing:",
+		"state":  "The Exorcist Legion VR"
+	},
+	"com.vertigogames.azsq": {
+		"details": "Currently Playing:",
+		"state": "Arizona Sunshine"
+	},
+	"com.TriangleFactory.HyperDash": {
+		"details": "Currently Playing:",
+		"state": "Hyper Dash"
+	},
+	"com.weloveoculus.BMBF": {
+		"details": "Modding Beat Saber",
+		"state": ""
+	},
+	"VirtualDesktop.Android": {
+		"details": "Playing PCVR",
+		"state": "Virtual Desktop"
+	},
+	"com.netflix.ninja.vr": {
+		"details": "Watching Netflix",
+		"state": ""
+	},
+	"com.drbeef.quakequest": {
+		"details": "Currently Playing:",
+		"state": "Quake Quest"
+	},
+	"com.drbeef.quake2quest": {
+		"details": "Currently Playing:",
+		"state": "Quake 2 Quest"
+	},
+	"com.drbeef.lambda1vr": {
+		"details": "Currently Playing:",
+		"state": "Lamda1VR"
+	},
+	"com.sumalab.CrisisVRigade": {
+		"details": "Currently Playing:",
+		"state": "Crisis VRigade"
+	},
+	"com.MyronSoftware.Deisim": {
+		"details": "Currently Playing:",
+		"state": "Deisim"
+	},
+	"org.dammertz.vr.VoxelWorksQuest": {
+		"details": "Currently Playing:",
+		"state": "Voxel Works Quest"
+	},
+	"com.PBVR.Playground": {
+		"details": "Currently Playing:",
+		"state": "VR Physics Playground"
+	},
+	"com.cvr.highseas2": {
+		"details": "Currently Playing:",
+		"state": "High Seas"
+	},
+	"net.shadowbrain.climbeydemo": {
+		"details": "Currently Playing:",
+		"state": "Climbey Demo"
+	},
+	"com.cvr.terminusdemoone": {
+		"details": "Currently Playing:",
+		"state": "Project Terminus Prologue"
+	},
+	"com.RJdoesVR.SunShardHandDemo": {
+		"details": "Currently Playing:",
+		"state": "Sun Shard - Might of the Gods"
+	},
+	"com.RJdoesVR.SunShard": {
+		"details": "Currently Playing:",
+		"state": "Sun Shard"
+	},
+	"com.hipfire.blastworld": {
+		"details": "Currently Playing:",
+		"state": "Blastworld: Zombies Royale"
+	},
+	"com.riftcat.vridge2": {
+		"details": "Playing PCVR",
+		"state": "VRidge"
+	},
+	"com.danjelricci.vspeedway": {
+		"details": "Currently Playing:",
+		"state": "V-Speedway"
+	},
+	"app.theexpanse.app": {
+		"details": "Currently Playing:",
+		"state": "SideQuest Legends"
+	},
+	"com.tvb.cubism": {
+		"details": "Currently Playing:",
+		"state": "Cubism Demo"
+	},
+	"com.PavelMarceluch.VRtuos": {
+		"details": "Currently Playing:",
+		"state": "VRtuos"
+	},
+	"com.coinflip.ninja.demo": {
+		"details": "Currently Playing:",
+		"state": "Ninja Legends Demo"
+	},
+	"com.sidequest.launcher": {
+		"details": "Currently Playing:",
+		"state": "SideQuest App Launcher"
+	},
+	"com.GowerGames.HandTrackingDemos": {
+		"details": "Currently Playing:",
+		"state": "Hand Tracking Demos"
+	},
+	"com.Virtuleap.Enhance": {
+		"details": "Currently Playing:",
+		"state": "Enhance"
+	},
+	"com.FakeEyes.NewColony": {
+		"details": "Currently Playground:",
+		"state": "Colonicle"
+	},
+	"com.TetraStudios.TritonVR": {
+		"details": "Currently Playing:",
+		"state": "Triton VR"
+	},
+	"com.swearl.playa": {
+		"details": "Watching Videos",
+		"state": "Play'a VR Video Player"
+	},
+	"com.pushmatrix.handspace": {
+		"details": "Currently Playing:",
+		"state": "HandSpace"
+	},
+	"com.electrichatgames.tothetop": {
+		"details": "Currently Playing:",
+		"state": "To The Top"
+	},
+	"com.AttaclOnQuest.AttackOnQuestAlpha": {
+		"details": "Currently Playing:",
+		"state": "Attack on Quest"
+	},
+	"com.oculus.mrscribbles": {
+		"details": "Currently Playing:",
+		"state": "Mr. Scribbles"
+	},
+	"com.nintendont.virtualboygo": {
+		"details": "Currently Playing:",
+		"state": "VirtualBoy Go"
+	},
+	"com.ImmersionImagery.Temple_K": {
+		"details": "Currently Playing:",
+		"state": "Temple K"
+	},
+	"com.AntiZeroGames.CaptainHardcore": {
+		"details": "Currently Playing:",
+		"state": "Captain Hardcore"
+	},
+	"com.sketchbox.Grapple": {
+		"details": "Currently playing:",
+		"state": "Swarm - Closed Beta"
 	}
 }
