@@ -71,6 +71,7 @@ public class UpdateChecker {
 			}
 			try {
 				String command = "java -jar \"" + updater + "\" \"" + dlUrl + "\"";
+				System.out.println("running command " + command);
 				Runtime.getRuntime().exec(command);
 				frame.dispose();
 				System.exit(0);

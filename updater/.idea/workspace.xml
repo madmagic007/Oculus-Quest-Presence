@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Updater:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b070cbb8-e47b-4a51-8d2d-973bd7decc20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Updater_jar/Updater.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/updater/Logging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/.idea/artifacts/pc_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/.idea/artifacts/pc_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/out/artifacts/pc_jar/Oculus Quest Discord RPC.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/src/main/java/com/madmagic/oqrpc/gui/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/src/main/java/com/madmagic/oqrpc/gui/UpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/src/main/java/com/madmagic/oqrpc/source/SystemTrayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/src/main/java/com/madmagic/oqrpc/source/SystemTrayHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/src/main/resources/resource/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/src/main/resources/quest.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/src/main/resources/resource/quest.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/src/main/resources/quest.png" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/src/main/resources/resource/quest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/src/main/resources/quest_old.png" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/src/main/resources/resource/quest_old.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/target/classes/com/madmagic/oqrpc/gui/UpdateChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/target/classes/com/madmagic/oqrpc/gui/UpdateChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/target/classes/com/madmagic/oqrpc/source/SystemTrayHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../pc/target/classes/com/madmagic/oqrpc/source/SystemTrayHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/target/classes/quest.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/target/classes/quest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pc/target/classes/quest_old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/updater_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/updater_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/User.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/updater_jar/updater.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/madmagic/updater/Gui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/madmagic/updater/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/updater/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/updater/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ZznLKdvYI7vD56TiC0OhqnPk4K" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\updater\src\main\java" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b070cbb8-e47b-4a51-8d2d-973bd7decc20" name="Default Changelist" comment="" />
+      <created>1585850732563</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585850732563</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="530" y="254" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585851260130">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="530" y="254" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585851260130" />
+    <state x="580" y="225" key="FileChooserDialogImpl" timestamp="1585850981891">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="580" y="225" key="FileChooserDialogImpl/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585850981891" />
+    <state x="280" y="45" key="SettingsEditor" timestamp="1585851398803">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="280" y="45" key="SettingsEditor/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585851398803" />
+    <state x="183" y="166" key="new project wizard" timestamp="1585851091151">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="183" y="166" key="new project wizard/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585851091151" />
+  </component>
+</project>

@@ -9,14 +9,15 @@ import org.apache.commons.io.FileUtils;
 public class Main {
 
 	public static void main(String[] args) {
-
-		System.out.println("args: " + args[0]);
 		if (args.length != 1) return;
 		String url = args[0];
+		Logging.init();
+		System.out.println("url");
+		Logging.writeLog("Updating from url " + url);
 
 		Gui window = new Gui();
 		window.frmUpdater.setVisible(true);
-		
+		Logging.writeLog("opened gui");
 		updateError("Starting download");
 
 		File mainJar;
@@ -26,19 +27,23 @@ public class Main {
 			
 			mainJar = new File(thisPath.replace(currentThis.getName(), "Oculus Quest Discord RPC.jar"));
 			FileUtils.copyURLToFile(new URL(url), mainJar);
-			
+			Logging.writeLog("downloaded and replaced with recent jar");
 		} catch (Exception e) {
 			e.printStackTrace();
+			Logging.writeLog(e.getMessage());
 			updateError("Error updating to latest version");
 			return;
 		}
 		
 		try {
 			updateError("Finished updating, restarting program");
+			Logging.writeLog("Finished updating, restarting program");
 			Runtime.getRuntime().exec("java -jar \"" + mainJar.getPath() + "\"");
+			Logging.writeLog("ran the main program");
 			window.end();
 		} catch (Exception e) {
 			e.printStackTrace();
+			Logging.writeLog(e.getLocalizedMessage());
 			updateError("Error running the program, try starting it manually");
 		}
 	}

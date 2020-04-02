@@ -23,9 +23,9 @@ DisableDirPage=yes
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\User\Documents\coding\java\finished\OculusQuestPresence
+OutputDir=C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\release
 OutputBaseFilename=Oqrpc
-SetupIconFile=C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\pc\src\main\resources\quest.ico
+SetupIconFile=C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\pc\src\main\resources\resource\quest.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -37,8 +37,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\pc\Oculus Quest Discord RPC.jar"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\updater\updater.jar"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\pc\out\artifacts\pc_jar\Oculus Quest Discord RPC.jar"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\User\Documents\coding\java\finished\OculusQuestPresence\updater\out\artifacts\Updater_jar\Updater.jar"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
