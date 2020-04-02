@@ -3,6 +3,10 @@
 		"details": "Setting up presence",
 		"state": ""
 	},
+	"com.oculus.vrshell": {
+		"details": "In Oculus Home",
+		"state": ""
+	},
 	"com.vankrupt.pavlov": {
 		"details": "Currently playing:",
 		"state": "Pavlov VR"
@@ -30,10 +34,6 @@
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
 		"details": "Currently playing:",
 		"state": "Superhot VR"
-	},
-	"com.oculus.vrshell": {
-		"details": "In Oculus Home",
-		"state": ""
 	},
 	"games.b4t.epicrollercoasters.oculus": {
 		"details": "Currently playing:",
@@ -63,6 +63,10 @@
 		"details": "Playing PCVR",
 		"state": "ALVR"
 	},
+	"com.amd.wirelesshmd": {
+		"details": "Currently playing:",
+		"state": "SteamVR (AMD ReLive)"
+  },
 	"com.harmonixmusic.kata": {
 		"details": "Currently playing:",
 		"state": "Audica"
