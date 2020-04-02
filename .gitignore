@@ -15,8 +15,7 @@ gradle-app.setting
 
 # Binaries
 *.exe
-*.jar
-!gradle-wrapper.jar
+*.iss
 
 # Archives
 *.zip

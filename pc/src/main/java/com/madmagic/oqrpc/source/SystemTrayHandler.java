@@ -35,7 +35,7 @@ public class SystemTrayHandler {
             updateItem.addActionListener(e -> UpdateChecker.check());
             menu.add(updateItem);
 
-            Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("quest_old.png")));
+            Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("resource/quest.png")));
             int trayIconWidth = new TrayIcon(image).getSize().width;
             SystemTray tray = SystemTray.getSystemTray();
             Image ic = image.getScaledInstance(trayIconWidth, -1, Image.SCALE_SMOOTH);
