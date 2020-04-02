@@ -2,6 +2,7 @@ package com.madmagic.oqrpc.source;
 
 import com.madmagic.oqrpc.api.ApiSender;
 import com.madmagic.oqrpc.config.ConfigGUI;
+import com.madmagic.oqrpc.gui.UpdateChecker;
 import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
@@ -23,16 +24,17 @@ public class SystemTrayHandler {
             menu.add(item);
 
             MenuItem send = new MenuItem("Request presence to start");
-            send.addActionListener(e -> {
-                     ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getIp()));
-            });
+            send.addActionListener(e -> ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getIp())));
             menu.add(send);
 
             MenuItem ip = new MenuItem("Open settings");
             ip.addActionListener(e -> ConfigGUI.open());
             menu.add(ip);
 
-            Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("quest.png")));
+            MenuItem updateItem = new MenuItem("Check for updates");
+            updateItem.addActionListener(e -> UpdateChecker.check());
+
+            Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("quest_old.png")));
             int trayIconWidth = new TrayIcon(image).getSize().width;
             SystemTray tray = SystemTray.getSystemTray();
             Image ic = image.getScaledInstance(trayIconWidth, -1, Image.SCALE_SMOOTH);
