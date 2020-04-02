@@ -17,7 +17,8 @@
 	},
 	"com.beatgames.beatsaber": {
 		"details": "Currently playing:",
-		"state": "Beat Saber"
+		"state": "Beat Saber",
+		"key": "beatsaber"
 	},
 	"com.bigscreenvr.bigscreen": {
 		"details": "Currently playing:",
