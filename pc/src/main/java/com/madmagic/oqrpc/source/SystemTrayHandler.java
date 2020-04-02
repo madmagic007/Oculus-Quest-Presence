@@ -19,7 +19,7 @@ public class SystemTrayHandler {
         try {
             PopupMenu menu = new PopupMenu();
 
-            MenuItem item = new MenuItem("exit");
+            MenuItem item = new MenuItem("Exit");
             item.addActionListener(e -> System.exit(0));
             menu.add(item);
 
@@ -33,6 +33,7 @@ public class SystemTrayHandler {
 
             MenuItem updateItem = new MenuItem("Check for updates");
             updateItem.addActionListener(e -> UpdateChecker.check());
+            menu.add(updateItem);
 
             Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("quest_old.png")));
             int trayIconWidth = new TrayIcon(image).getSize().width;

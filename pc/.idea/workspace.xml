@@ -7,13 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1168872d-7bc2-4b83-84a0-0fdc7c7f13a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../updater/out/com/madmagic/updater/Gui.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../updater/out/com/madmagic/updater/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/pc_jar/Oculus Quest Discord RPC.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../updater/build/classes/java/main/com/madmagic/updater/Gui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../updater/build/classes/java/main/com/madmagic/updater/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../updater/out/artifacts/updater_jar/updater.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/source/SystemTrayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madmagic/oqrpc/source/SystemTrayHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/source/SystemTrayHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madmagic/oqrpc/source/SystemTrayHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585843843713</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="auto updater version">
+      <created>1585844343831</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1585844343831</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -316,11 +320,11 @@
     </state>
     <state x="-963" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1585836016267" />
     <state x="530" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1584442098264" />
-    <state x="377" y="65" key="CommitChangelistDialog2" timestamp="1585843840585">
+    <state x="377" y="65" key="CommitChangelistDialog2" timestamp="1585844536230">
       <screen x="0" y="40" width="1600" height="860" />
     </state>
     <state x="-1101" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@-1440.40.1440.860" timestamp="1584734109545" />
-    <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585843840585" />
+    <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860/-1440.40.1440.860@0.40.1600.860" timestamp="1585844536230" />
     <state x="377" y="65" key="CommitChangelistDialog2/0.40.1600.860@0.40.1600.860" timestamp="1585431170434" />
     <state x="556" y="225" key="FileChooserDialogImpl" timestamp="1585837511383">
       <screen x="0" y="40" width="1600" height="860" />
