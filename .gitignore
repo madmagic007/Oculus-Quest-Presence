@@ -1,0 +1,31 @@
+# IntelliJ
+*.iml
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Gradle
+.gradle
+build/
+gradle-app.setting
+.gradletasknamecache
+
+# Binaries
+*.exe
+*.jar
+!gradle-wrapper.jar
+
+# Archives
+*.zip
+
+# Android
+captures/
+.externalNativeBuild
+.cxx
+local.properties
+
+# Mac
+.DS_Store
