@@ -17,6 +17,7 @@ gradle-app.setting
 *.exe
 *.iss
 *.class
+target/
 
 # Archives
 *.zip

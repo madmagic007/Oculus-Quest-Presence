@@ -6,7 +6,7 @@
 
     <groupId>com.madmagic</groupId>
     <artifactId>pc</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.1.1</version>
 
     <repositories>
         <repository>
@@ -20,24 +20,27 @@
         <dependency>
             <groupId>org.nanohttpd</groupId>
             <artifactId>nanohttpd</artifactId>
-            <version>2.2.0</version>
+            <version>2.3.1</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20190722</version>
         </dependency>
-
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>3.14.7</version>
+            <version>4.4.1</version>
         </dependency>
-
         <dependency>
             <groupId>club.minnced</groupId>
             <artifactId>java-discord-rpc</artifactId>
             <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.vatbub</groupId>
+            <artifactId>mslinks</artifactId>
+            <version>1.0.5</version>
         </dependency>
 
     </dependencies>
@@ -51,6 +54,31 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>com.madmagic.oqrpc.source.Main</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <finalName>OQRPC</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
