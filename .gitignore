@@ -16,6 +16,8 @@ gradle-app.setting
 # Binaries
 *.exe
 *.iss
+*.class
+target/
 
 # Archives
 *.zip
