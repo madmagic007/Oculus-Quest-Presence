@@ -6,7 +6,7 @@
 
     <groupId>com.madmagic</groupId>
     <artifactId>pc</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.2.0</version>
 
     <repositories>
         <repository>
@@ -18,6 +18,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
             <groupId>org.nanohttpd</groupId>
             <artifactId>nanohttpd</artifactId>
             <version>2.2.0</version>
@@ -27,31 +32,25 @@
             <artifactId>json</artifactId>
             <version>20190722</version>
         </dependency>
-
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>3.14.7</version>
         </dependency>
-
         <dependency>
             <groupId>club.minnced</groupId>
             <artifactId>java-discord-rpc</artifactId>
             <version>2.0.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.vatbub</groupId>
+            <artifactId>mslinks</artifactId>
+            <version>1.0.5</version>
+        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 </project>

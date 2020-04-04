@@ -2,11 +2,10 @@ package com.madmagic.oqrpc.source;
 
 import com.madmagic.oqrpc.api.ApiReceiver;
 import com.madmagic.oqrpc.api.ApiSender;
-import com.madmagic.oqrpc.config.Config;
-import com.madmagic.oqrpc.config.ConfigGUI;
+import com.madmagic.oqrpc.gui.ConfigGUI;
 import com.madmagic.oqrpc.gui.AlreadyRunningGUI;
-import com.madmagic.oqrpc.gui.UpdateChecker;
 import mslinks.ShellLink;
+import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -17,9 +16,8 @@ public class Main {
     public static void main(String[] args) {
 
         Config.init();
-    	try {
-    		if (args[0].equals("boot") &&!Config.readBoot()) System.exit(0);
-    	} catch (Exception ignored) {}
+        bootInit();
+        checkUtil();
 
         try {
             new ApiReceiver();
@@ -27,8 +25,7 @@ public class Main {
             AlreadyRunningGUI.open();
         }
 
-        UpdateChecker.check();
-        bootInit();
+        UpdateChecker.check(false);
         SystemTrayHandler.systemTray();
 
         if (Config.getAddress().isEmpty()) {
@@ -45,7 +42,7 @@ public class Main {
                 new File(startupFolder.getAbsolutePath() + "\\oqrpc.bat").delete();
             } catch (Exception ignored) {}
 
-            ShellLink sL = ShellLink.createLink(Config.jarPath());
+            ShellLink sL = ShellLink.createLink(Config.getUpdater());
             sL.setCMDArgs("boot");
             sL.saveTo(startupFolder.getPath() + "\\oqrpc.lnk");
         } catch (Exception e) {
@@ -53,9 +50,18 @@ public class Main {
         }
     }
 
+    private static void checkUtil() {
+        File utilJar = new File(Config.getUpdater());
+        if (utilJar.exists()) utilJar.delete();
+        URL utilUrl = Main.class.getResource("/oqrpc/Util.jar");
+        try {
+            FileUtils.copyURLToFile(utilUrl, utilJar);
+        } catch (Exception e) {e.printStackTrace();}
+    }
+
     public static String getIp() {
         String ip = "";
-        try(final DatagramSocket socket = new DatagramSocket()){
+        try(final DatagramSocket socket = new DatagramSocket()) {
             socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
             ip = socket.getLocalAddress().getHostAddress();
         } catch (Exception ignored) {}

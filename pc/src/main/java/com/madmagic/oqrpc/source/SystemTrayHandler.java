@@ -1,8 +1,7 @@
 package com.madmagic.oqrpc.source;
 
 import com.madmagic.oqrpc.api.ApiSender;
-import com.madmagic.oqrpc.config.ConfigGUI;
-import com.madmagic.oqrpc.gui.UpdateChecker;
+import com.madmagic.oqrpc.gui.ConfigGUI;
 import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
@@ -32,10 +31,10 @@ public class SystemTrayHandler {
             menu.add(ip);
 
             MenuItem updateItem = new MenuItem("Check for updates");
-            updateItem.addActionListener(e -> UpdateChecker.check());
+            updateItem.addActionListener(e -> UpdateChecker.check(true));
             menu.add(updateItem);
 
-            Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("resource/quest.png")));
+            Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("oqrpc/quest.png")));
             int trayIconWidth = new TrayIcon(image).getSize().width;
             SystemTray tray = SystemTray.getSystemTray();
             Image ic = image.getScaledInstance(trayIconWidth, -1, Image.SCALE_SMOOTH);

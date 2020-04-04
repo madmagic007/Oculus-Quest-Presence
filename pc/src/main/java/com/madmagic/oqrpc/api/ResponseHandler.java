@@ -1,6 +1,7 @@
 package com.madmagic.oqrpc.api;
 
-import com.madmagic.oqrpc.config.ConfigGUI;
+import com.madmagic.oqrpc.source.Config;
+import com.madmagic.oqrpc.gui.ConfigGUI;
 import com.madmagic.oqrpc.source.Discord;
 import com.madmagic.oqrpc.source.Main;
 import com.madmagic.oqrpc.source.SystemTrayHandler;
@@ -43,6 +44,10 @@ public class ResponseHandler {
 
         if (message.equals("connect")) {
             ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "valid"));
+        }
+
+        if (response.has("apkVersion")) {
+            Config.setApk(response.getString("apkVersion"));
         }
     }
     
