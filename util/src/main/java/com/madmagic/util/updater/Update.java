@@ -19,8 +19,8 @@ public class Update {
         try {
             String thisPath = Config.jarPath();
             File currentThis = new File(thisPath);
-
             mainJar = new File(thisPath.replace(currentThis.getName(), "Oculus Quest Discord RPC.jar"));
+            mainJar.delete();
             FileUtils.copyURLToFile(new URL(url), mainJar);
             Config.writeLog("downloaded and replaced with recent jar");
         } catch (Exception e) {

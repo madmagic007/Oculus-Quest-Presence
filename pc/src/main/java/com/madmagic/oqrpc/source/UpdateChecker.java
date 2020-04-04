@@ -66,13 +66,12 @@ public class UpdateChecker {
     }
 
     public static void updateLbl() {
-        //new Thread(() -> {
-            System.out.println("\njar: " + jar + "\napk: " + apk);
+        new Thread(() -> {
             if (oG) {
                 UpdaterGUI.lblNotif.setText(jar);
                 UpdaterGUI.lblApk.setText(apk);
             }
-        //}).start();
+        }).start();
     }
 
     public static void openUtil() {
