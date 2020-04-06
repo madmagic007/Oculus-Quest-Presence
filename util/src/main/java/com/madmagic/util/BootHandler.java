@@ -18,7 +18,10 @@ public class BootHandler {
             }
             Config.writeLog("attempting to delete self...");
             try {
-                Runtime.getRuntime().exec("cmd /c ping localhost -n 6 > nul && del \"" + Config.jarPath() + "\"");
+                File util = new File(Config.jarPath());
+                String cmd = "cmd /c ping localhost -n 6 > nul && del " + util.getName();
+                Config.writeLog("cunning command: " + cmd);
+                Runtime.getRuntime().exec(cmd);
                 System.exit(0);
             } catch (Exception e) {
                 Config.writeLog("error deleting self: " + e.getMessage());

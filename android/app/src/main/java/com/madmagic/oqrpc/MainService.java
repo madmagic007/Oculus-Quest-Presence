@@ -45,12 +45,13 @@ public class MainService extends Service {
 
     private static boolean accept = true;
 
+    private static String version = "1.0";
     public void connected() {
         if (!accept) return;
         accept = false;
         try {
             ActivityGetter.define(getBaseContext());
-            new ApiCaller(new JSONObject().put("message", "started"));
+            new ApiCaller(new JSONObject().put("message", "started").put("version", version));
         } catch (Exception ignored) {}
     }
 }
