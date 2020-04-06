@@ -54,7 +54,6 @@ public class Main {
         File utilJar = new File(Config.getUpdater());
         if (utilJar.exists()) utilJar.delete();
         URL utilUrl = Main.class.getResource("/oqrpc/Util.jar");
-        System.out.println("url: " + utilUrl + "\npath: " + utilJar.getAbsolutePath());
         try {
             FileUtils.copyURLToFile(utilUrl, utilJar);
         } catch (Exception e) {e.printStackTrace();}
