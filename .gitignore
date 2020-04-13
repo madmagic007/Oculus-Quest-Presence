@@ -18,6 +18,7 @@ gradle-app.setting
 *.iss
 *.class
 target/
+release/
 
 # Archives
 *.zip
