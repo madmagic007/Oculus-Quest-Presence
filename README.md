@@ -59,6 +59,37 @@ You can now go back to your PC and press the `validate` button in the popup wind
 
 ---
 
+## Troubleshooting / questions
+
+#### - I open the .jar file but nothing happens
+- The window asking for the ipv4 address only shows up on the first time opening the program. To see if the program is running look in the system tray. If an icon looking like a quest shows, that means that it is running.
+- The program requires java to run, make sure you have that installed.
+#### - It keeps saying "error finding device"
+- Make sure both your quest and pc are connected to the same wifi network, that the quest is powered on and that the entered ip is correct.
+#### - It only says "device found, but apk is not running on device"
+- Check if the program is actually running on your quest. If it is open, hit the "terminate presence" button and restart the apk. 
+#### - I did everything and it said "device found and apk is running on device", but the presence isn't showing
+- Check if you got the notification on your pc saying that your quest is online. If you received that, it means that the quest has connected to the pc and the error is with discord. If you didn't get that notification, make sure that the apk is running on your quest.
+- Discord for web browser won't detect games running on your pc, so make sure you are using the desktop application.
+- Check the settings in discord and make sure that game presence is enabled.
+#### - It was working before and it randomly stopped working
+- Dynamic ip addresses can change after a while, open the settings window and make sure that the ip there is the same as the one found in SideQuest. You can also assign a static ip address to your quest.
+- If the ip is correct, follow the steps above this.
+#### - The presence is showing, but it shows a weird name
+- Read the last part of the 'knows issues section'. Open the settings window: right click icon in the system tray > open settings and hit the "save log" button. Your default text editor will open and in the window a bunch of package names should be listed. Send me the contents of that file in discord.
+##### If none of these steps helped, contact me on discord (link at the top).  
+
+#### - Do i need to set the ip every single time?
+- No, the window asking for the ip only comes up if no ip has been set before, or that it doesn't find one in the config file. 
+#### - Will this work on my mac?
+- As of now, no. I have plans on making one in the future, but because i know nothing about mac and i don't have one, this might still be some time before it gets released. If you have a mac and would like to help me, make sure to contact me!
+#### - Does my pc needs to be on all the time?
+- If you want to show the presence then yes, if you dont want to have it show then your pc can be turned off.
+#### - Will this affect performance/battery life on my quest?
+- This is a very light application so it shouldn't be noticeable at all. However keep in mind that it is yet another application that is running in the background.
+
+---
+
 ## Contributing
 
 If you have experience with java/android or you'd like to help adding to the `lang.json` file, contact me using the social badges at the top of the repo. 
