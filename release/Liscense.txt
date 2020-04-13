@@ -1,0 +1,2 @@
+If you have an old version installed, make sure you exit the old version first.
+Right click the icon in the system tray and hit exit.

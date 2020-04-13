@@ -8,7 +8,6 @@ public class ApiHandler {
 
     public static JSONObject received(JSONObject o) {
         try {
-            Log.d("OQRPC", o.toString(4));
             String message = o.getString("message");
 
             if (message.equals("game")) {
@@ -26,8 +25,10 @@ public class ApiHandler {
                 return new JSONObject().put("message", "valid");
             }
 
-        } catch (Exception e) {
-            Log.d("OQRPC", "error receiever " + e.getMessage());
+        } catch (Exception ignored) {
+            try {
+                return new JSONObject().put("Hello there", "Exploring eh?");
+            } catch (Exception ignored1){}
         }
         return new JSONObject();
     }

@@ -51,7 +51,7 @@ public class MainService extends Service {
         accept = false;
         try {
             ActivityGetter.define(getBaseContext());
-            new ApiCaller(new JSONObject().put("message", "started").put("version", version));
+            new ApiCaller(new JSONObject().put("message", "started").put("apkVersion", version));
         } catch (Exception ignored) {}
     }
 }
