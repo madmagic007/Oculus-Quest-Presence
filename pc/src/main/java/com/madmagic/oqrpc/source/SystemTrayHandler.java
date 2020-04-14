@@ -18,21 +18,17 @@ public class SystemTrayHandler {
         try {
             PopupMenu menu = new PopupMenu();
 
-            MenuItem item = new MenuItem("Exit");
-            item.addActionListener(e -> System.exit(0));
-            menu.add(item);
-
-            MenuItem send = new MenuItem("Request presence to start");
+            MenuItem send = new MenuItem("Request Presence Restart");
             send.addActionListener(e -> ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getIp())));
             menu.add(send);
 
-            MenuItem ip = new MenuItem("Open settings");
+            MenuItem ip = new MenuItem("Open Settings");
             ip.addActionListener(e -> ConfigGUI.open());
             menu.add(ip);
 
-            MenuItem updateItem = new MenuItem("Check for updates");
-            updateItem.addActionListener(e -> UpdateChecker.check(true));
-            menu.add(updateItem);
+            MenuItem item = new MenuItem("Exit");
+            item.addActionListener(e -> System.exit(0));
+            menu.add(item);
 
             Image image = ImageIO.read(Objects.requireNonNull(ClassLoader.getSystemResourceAsStream("oqrpc/quest.png")));
             int trayIconWidth = new TrayIcon(image).getSize().width;

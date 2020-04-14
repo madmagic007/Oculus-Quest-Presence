@@ -8,48 +8,48 @@
 		"state": ""
 	},
 	"com.vankrupt.pavlov": {
-		"details": "Currently playing:",
-		"state": "Pavlov VR"
+		"details": "Currently Playing:",
+		"state": "Pavlov VR: Shack"
 	},
 	"aaa.QuestAppLauncher.App": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "Quest App Launcher"
 	},
 	"com.beatgames.beatsaber": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "Beat Saber",
 		"key": "beatsaber"
 	},
 	"com.bigscreenvr.bigscreen": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "BigScreen VR"
 	},
 	"com.owlchemylabs.jobsimulator": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "Job Simulator"
 	},
 	"com.vrchat.oculus.quest": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "VR Chat"
 	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
-		"details": "Currently playing:",
-		"state": "Superhot VR"
+		"details": "Currently Playing:",
+		"state": "SUPERHOT VR"
 	},
 	"games.b4t.epicrollercoasters.oculus": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "Epic Rollercoasters"
 	},
 	"com.android.settings": {
-		"details": "Browsing settings",
+		"details": "Browsing Settings",
 		"state": ""
 	},
 	"com.oculus.os.clearactivity": {
-		"details": "Shutting down",
+		"details": "Shutting Down",
 		"state": "Turning device off"
 	},
 	"com.voidroom.TeaForGod": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "Tea For God"
 	},
 	"com.google.android.apps.youtube.vr.oculus": {
@@ -61,11 +61,11 @@
 		"state": "ALVR"
 	},
 	"com.amd.wirelesshmd": {
-		"details": "Currently playing:",
-		"state": "SteamVR (AMD ReLive)"
-  },
+		"details": "Playing PCVR",
+		"state": "AMD ReLive"
+	},
 	"com.harmonixmusic.kata": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "Audica"
 	},
 	"com.crytek.climb": {
@@ -174,7 +174,7 @@
 	},
 	"net.shadowbrain.climbeydemo": {
 		"details": "Currently Playing:",
-		"state": "Climbey Demo"
+		"state": "Climbey: Demo"
 	},
 	"com.cvr.terminusdemoone": {
 		"details": "Currently Playing:",
@@ -214,7 +214,7 @@
 	},
 	"com.coinflip.ninja.demo": {
 		"details": "Currently Playing:",
-		"state": "Ninja Legends Demo"
+		"state": "Ninja Legends: Demo"
 	},
 	"com.sidequest.launcher": {
 		"details": "Currently Playing:",
@@ -222,7 +222,7 @@
 	},
 	"com.GowerGames.HandTrackingDemos": {
 		"details": "Currently Playing:",
-		"state": "Hand Tracking Demos"
+		"state": "Hand Tracking: Demo"
 	},
 	"com.Virtuleap.Enhance": {
 		"details": "Currently Playing:",
@@ -269,7 +269,83 @@
 		"state": "Captain Hardcore"
 	},
 	"com.sketchbox.Grapple": {
-		"details": "Currently playing:",
+		"details": "Currently Playing:",
 		"state": "Swarm - Closed Beta"
+	},
+	"com.oculus.xrstreamingclient": {
+		"details": "Playing PCVR",
+		"state": "Oculus Link"
+	},
+	"com.facebook.arvr.quillplayer": {
+		"details": "Currently Playing:",
+		"state": "Quill Theatre"
+	},
+	"com.oculus.MontereySetup": {
+		"details": "Currently Playing:",
+		"state": "First Steps"
+	},
+	"com.Oculus.FirstContact": {
+		"details": "Currently Playing:",
+		"state": "First Contact"
+	},
+	"com.schellgames.ieytdquest": {
+		"details": "Currently Playing:",
+		"state": "I Expect You To Die"
+	},
+	"com.oculus.MontereyNUX": {
+		"details": "Currently Playing:",
+		"state": "Bogo"
+	},
+	"com.resolutiongames.baitsantacruz": {
+		"details": "Currently Playing:",
+		"state": "Bait!"
+	},
+	"gg.trs.grappa_demo": {
+		"details": "Currently Playing:",
+		"state": "Journey of the Gods: Demo"
+	},
+	"com.Armature.SportsScrambleDemo": {
+		"details": "Currently Playing:",
+		"state": "Sports Scramble: Demo"
+	},
+	"com.survios.CreedDemo": {
+		"details": "Currently Playing:",
+		"state": "Creed: Rise to Glory: Demo"
+	},
+	"unity.SUPERHOT_Team.SUPERHOT_VR_Demo": {
+		"details": "Currently Playing:",
+		"state": "SUPERHOT VR: Demo"
+	},
+	"com.iillusions.spacepiratetrainerdemo": {
+		"details": "Currently Playing:",
+		"state": "Space Pirate Trainer: Demo"
+	},
+	"com.beatgames.beatsaber.demo": {
+		"details": "Currently Playing:",
+		"state": "Beat Saber: Demo"
+	},
+	"com.HarmonixMusic.DCQuestDemoPreload": {
+		"details": "Currently Playing:",
+		"state": "Dance Central: Demo"
+	},
+	"com.normalvr.halfandhalf": {
+		"details": "Currently Playing:",
+		"state": "Half + Half"
+	},
+	"com.Magnopus.MissionISS": {
+		"details": "Currently Playing:",
+		"state": "Mission: ISS"
+	},
+	"com.nextvr.lunar": {
+		"details": "Watching Videos",
+		"state": "NextVR"
+	},
+	"com.altvr.AltspaceVR_Quest": {
+		"details": "Currently Playing:",
+		"state": "AltspaceVR"
+	},
+	"com.samsung.vrvideo": {
+		"details": "Watching Videos",
+		"state": "Samsung VR Videos"
 	}
 }
