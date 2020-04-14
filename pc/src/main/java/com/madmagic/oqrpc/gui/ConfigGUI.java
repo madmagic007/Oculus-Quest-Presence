@@ -58,7 +58,7 @@ public class ConfigGUI {
 		field.setColumns(10);
 		setCurrent();
 		
-		JButton validate = new JButton("Connect");
+		JButton validate = new JButton("Validate");
 		validate.setBounds(337, 28, 89, 23);
 		frame.getContentPane().add(validate);
 		validate.addActionListener(e -> validate(field.getText()));
@@ -75,7 +75,7 @@ public class ConfigGUI {
 		JButton saveLog = new JButton("Save log");
 		saveLog.setBounds(137, 85, 89, 23);
 		frame.getContentPane().add(saveLog);
-		saveLog.addActionListener(arg0 -> {
+		saveLog.addActionListener(e -> {
 			try {
 				File log = new File(Config.jarPath().replace(new File(Config.jarPath()).getName(), "log.txt"));
 				FileWriter fw = new FileWriter(log);
