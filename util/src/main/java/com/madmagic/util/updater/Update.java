@@ -9,16 +9,17 @@ import java.net.URL;
 
 public class Update {
 
+    public static Gui window;
     public static void update(String url) {
-        Gui window = new Gui();
+        window = new Gui();
         window.frmUpdater.setVisible(true);
         Config.writeLog("opened gui");
         updateError("Starting download");
 
         File mainJar;
+        String thisPath = Config.jarPath();
+        File currentThis = new File(thisPath);
         try {
-            String thisPath = Config.jarPath();
-            File currentThis = new File(thisPath);
             mainJar = new File(thisPath.replace(currentThis.getName(), "Oculus Quest Discord RPC.jar"));
             mainJar.delete();
             FileUtils.copyURLToFile(new URL(url), mainJar);
@@ -30,17 +31,16 @@ public class Update {
             return;
         }
         try {
-            Config.writeLog("finished updating, starting main jar");
-            Main.runMain(mainJar.getAbsolutePath());
+            Config.writeLog("finished updating, starting main jar at path: " + thisPath.replace(currentThis.getName(), "Oculus Quest Discord RPC.jar"));
+            Main.runMain(thisPath.replace(currentThis.getName(), "Oculus Quest Discord RPC.jar"));
             Config.writeLog("ran the main program");
-            window.end();
         } catch (Exception e) {
             Config.writeLog(e.getLocalizedMessage());
             updateError("Error running the program, try starting it manually");
         }
     }
 
-    private static void updateError(String text) {
+    public static void updateError(String text) {
         new Thread(() -> Gui.lblError.setText(text)).start();
     }
 }

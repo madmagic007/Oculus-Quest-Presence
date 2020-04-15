@@ -10,23 +10,31 @@ import org.json.JSONObject;
 public class Config {
 	
 	private static File configFile;
+	private static File mapping;
 	
 	public static void init() {
 		try {
 			configFile =  new File(jarPath().replace(new File(jarPath()).getName(), "config.json"));
 			if (!configFile.exists())configFile.createNewFile();
+
+			mapping = new File(jarPath().replace(new File(jarPath()).getName(), "mapping.json"));
+			if (!mapping.exists()) mapping.createNewFile();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public static String jarPath() {
+		String r;
 		try {
 			String path = Config.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-			String r =  URLDecoder.decode(path, "UTF-8");
-
-			if (r.startsWith("/")) return r.replaceFirst("/", "");
-			return r;
+			r =  URLDecoder.decode(path, "UTF-8");
+			if (r.startsWith("/")) r = r.replaceFirst("/", "");
+			if (Main.os.contains("win")) {
+				return r;
+			} else {
+				return "/" + r;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "";
@@ -46,6 +54,18 @@ public class Config {
 		} catch (Exception e) {
 			return new JSONObject();
 		}
+	}
+
+	public static JSONObject readMapping() {
+		try {
+			String text = new String(Files.readAllBytes(Paths.get(mapping.getAbsolutePath())));
+			if (text.equals("")) {
+				FileWriter fw = new FileWriter(mapping);
+				fw.write("{}");
+				fw.close();
+			} else return new JSONObject(text);
+		} catch (Exception ignored) {}
+		return new JSONObject();
 	}
 
 	public static String getAddress() {

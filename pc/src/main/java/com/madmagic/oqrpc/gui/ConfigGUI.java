@@ -25,6 +25,7 @@ public class ConfigGUI {
 	private JFrame frame;
 	private static JTextField field;
 	public static JLabel error;
+	private static JCheckBox startBoot;
 	
 	public static void open() {
 		EventQueue.invokeLater(() -> {
@@ -66,11 +67,13 @@ public class ConfigGUI {
 		error = new JLabel();
 		error.setBounds(10, 60, 414, 14);
 		frame.getContentPane().add(error);
-		
-		JCheckBox startBoot = new JCheckBox("Start with Windows");
-		startBoot.setBounds(10, 85, 127, 23);
-		frame.getContentPane().add(startBoot);
-		startBoot.setSelected(Config.readBoot());
+
+		if (Main.os.contains("win")) {
+			startBoot = new JCheckBox("Start with Windows");
+			startBoot.setBounds(10, 85, 127, 23);
+			frame.getContentPane().add(startBoot);
+			startBoot.setSelected(Config.readBoot());
+		}
 
 		JButton saveLog = new JButton("Save log");
 		saveLog.setBounds(137, 85, 89, 23);
@@ -84,11 +87,6 @@ public class ConfigGUI {
 				Desktop.getDesktop().edit(log);
 			} catch (Exception ignored) {}
 		});
-
-		JButton updateButton = new JButton("Update App");
-		updateButton.setBounds(237, 85, 89, 23);
-		frame.getContentPane().add(updateButton);
-		updateButton.addActionListener(e -> UpdateChecker.check(true));
 
 		JButton btnSaveSettings = new JButton("Save");
 		btnSaveSettings.setBounds(337, 85, 89, 23);

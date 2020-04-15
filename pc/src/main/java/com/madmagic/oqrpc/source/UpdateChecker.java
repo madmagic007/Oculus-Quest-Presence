@@ -11,7 +11,7 @@ import java.io.File;
 
 public class UpdateChecker {
 
-    private static final String version = "2.2.0";
+    private static final String version = "2.3.0";
     private static final String updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/update.json";
     private static String jarUrl;
     private static boolean oG;
@@ -82,7 +82,12 @@ public class UpdateChecker {
         }
 
         try {
-            String command = "java -jar \"" + utilJar.getAbsolutePath() + "\" \"" + jarUrl + "\"";
+            String command;
+            if (Main.os.contains("win")) {
+                command = "java -jar \"" + utilJar.getAbsolutePath() + "\" \"" + jarUrl + "\"";
+            } else {
+                command = "java -jar " + Config.getUpdater().replace(" ", "\\ ") + " " + jarUrl;
+            }
             System.out.println("running command " + command);
             Runtime.getRuntime().exec(command);
             System.exit(0);

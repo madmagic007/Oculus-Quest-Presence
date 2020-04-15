@@ -67,6 +67,14 @@ public class ResponseHandler {
             if (game.has("state")) state = game.getString("state");
             if (game.has("key")) largeImageKey = game.getString("key");
         }
+
+        //personal mapping
+        JSONObject personal = Config.readMapping();
+        if (personal.has(name)) {
+            if (personal.has("details")) details = personal.getString("details");
+            if (personal.has("state")) state = personal.getString("state");
+            if (personal.has("key")) largeImageKey = personal.getString("key");
+        }
         Discord.changeGame(details, state, largeImageKey);
     }
 }

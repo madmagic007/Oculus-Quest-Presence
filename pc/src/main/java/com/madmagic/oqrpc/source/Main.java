@@ -13,8 +13,10 @@ import java.net.*;
 
 public class Main {
 
+    public static String os;
     public static void main(String[] args) {
 
+        os  = System.getProperty("os.name").toLowerCase();
         Config.init();
         bootInit();
         checkUtil();
@@ -36,6 +38,7 @@ public class Main {
     }
 
     private static void bootInit() {
+        if (!os.contains("win")) return;
         try {
             File startupFolder = new File(System.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\");
             try {
@@ -56,7 +59,9 @@ public class Main {
         URL utilUrl = Main.class.getResource("/oqrpc/Util.jar");
         try {
             FileUtils.copyURLToFile(utilUrl, utilJar);
-        } catch (Exception e) {e.printStackTrace();}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static String getIp() {

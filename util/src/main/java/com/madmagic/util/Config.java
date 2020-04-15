@@ -55,12 +55,16 @@ public class Config {
     }
 
     public static String jarPath() {
+        String r;
         try {
             String path = Config.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-            String r =  URLDecoder.decode(path, "UTF-8");
-
-            if (r.startsWith("/")) return r.replaceFirst("/", "");
-            return r;
+            r =  URLDecoder.decode(path, "UTF-8");
+            if (r.startsWith("/")) r = r.replaceFirst("/", "");
+            if (Main.os.contains("win")) {
+                return r;
+            } else {
+                return "/" + r;
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return "";
