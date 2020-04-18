@@ -14,7 +14,6 @@ public class ApiSender {
 	 private static MediaType jT = MediaType.parse("application/json; charset=utf-8");
 
 	 public static JSONObject ask(String url) {
-	 	System.out.println("sending: " + url);
 	 	JSONObject ro = new JSONObject();
 	 	JSONObject post = new JSONObject()
 				.put("address", Main.getIp());

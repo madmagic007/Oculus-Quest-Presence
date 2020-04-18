@@ -1,14 +1,9 @@
 package com.madmagic.oqrpc.api;
 
-import com.madmagic.oqrpc.source.Config;
-import com.madmagic.oqrpc.gui.ConfigGUI;
 import com.madmagic.oqrpc.source.Discord;
-import com.madmagic.oqrpc.source.Main;
 import com.madmagic.oqrpc.source.SystemTrayHandler;
 import com.madmagic.oqrpc.source.Timing;
 import org.json.JSONObject;
-
-import java.awt.*;
 
 public class ResponseHandler {
 

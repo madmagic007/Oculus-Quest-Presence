@@ -33,7 +33,7 @@ public class Main {
         if (Config.getAddress().isEmpty()) {
             ConfigGUI.open();
         } else {
-            //ApiSender.ask(Main.getUrl("start"));
+            ApiSender.ask(Main.getUrl("startup"));
         }
     }
 

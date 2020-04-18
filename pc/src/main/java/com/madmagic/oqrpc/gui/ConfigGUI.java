@@ -10,8 +10,6 @@ import com.madmagic.oqrpc.source.Config;
 import com.madmagic.oqrpc.source.Discord;
 import com.madmagic.oqrpc.source.Main;
 import com.madmagic.oqrpc.api.ApiSender;
-import com.madmagic.oqrpc.api.ResponseHandler;
-import com.madmagic.oqrpc.source.UpdateChecker;
 import org.json.JSONObject;
 
 import javax.swing.JLabel;

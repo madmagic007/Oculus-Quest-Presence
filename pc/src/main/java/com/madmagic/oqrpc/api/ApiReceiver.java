@@ -1,9 +1,6 @@
 package com.madmagic.oqrpc.api;
 
 import com.madmagic.oqrpc.source.Config;
-import com.madmagic.oqrpc.source.Discord;
-import com.madmagic.oqrpc.source.SystemTrayHandler;
-import com.madmagic.oqrpc.source.Timing;
 import fi.iki.elonen.NanoHTTPD;
 import org.json.JSONObject;
 
@@ -22,12 +19,12 @@ public class ApiReceiver extends NanoHTTPD {
 
     @Override
     public Response serve(IHTTPSession session) {
-        String s = "";
+        String s = "{}";
         try {
             Map<String, List<String>> types = session.getParameters();
             if (!types.isEmpty()) {
                 s = ResponseHandler.handle(types.get("type").get(0));
-
+                System.out.println(types.get("type").get(0));
                 final HashMap<String, String> map = new HashMap<>();
                 session.parseBody(map);
                 JSONObject pO = new JSONObject(map.get("postData"));
@@ -35,8 +32,7 @@ public class ApiReceiver extends NanoHTTPD {
                 if (pO.has("address")) Config.setAddress(pO.getString("address"));
                 if (pO.has("apkVersion")) Config.setApk(pO.getString("apkVersion"));
             }
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
         return newFixedLengthResponse(s);
     }
 }
