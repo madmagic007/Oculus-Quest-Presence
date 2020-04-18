@@ -12,62 +12,55 @@ import java.util.TimerTask;
 
 public class ConnectionChecker {
 
-    public static MainService service;
-    private static int limit;
     private static Timer cTimer;
+    private static int cMax = 180;
 
     public static void run(MainService s) {
-        service = s;
-        int delay = 1000, period = 1000;
-        limit = 180;
+        try {
+            cTimer.cancel();
+        } catch (Exception ignored) {}
         cTimer = new Timer();
 
-        WifiManager manager = (WifiManager) service.getSystemService(Context.WIFI_SERVICE);
+        WifiManager manager = (WifiManager) s.getSystemService(Context.WIFI_SERVICE);
+
 
         cTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
-                limit();
+                if (cMax == 1) {
+                    cTimer.cancel();
+                }
+                --cMax;
+
                 if (manager.isWifiEnabled() && manager.getConnectionInfo().getNetworkId() != -1) {
                     cTimer.cancel();
                     runConnecter();
                 }
             }
-        }, delay, period);
-    }
-
-    private static void limit() {
-        if (limit == 1) {
-            cTimer.cancel();
-        }
-        --limit;
+        }, 0, 1000);
     }
 
     private static Timer fTimer;
-    private static int max;
+    private static int max = 120;
 
     private static void runConnecter() {
-        int delay = 3000, period = 1000;
-        max = 120;
+        try {
+            fTimer.cancel();
+        } catch (Exception ignored) {}
         fTimer = new Timer();
-        fTimer.scheduleAtFixedRate(new TimerTask () {
+        fTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 try {
-                    max();
-                    new ApiCaller(new JSONObject().put("message", "connect"));
+                    if (max == 1) {
+                        fTimer.cancel();
+                    } --max;
+
+                    JSONObject response = ApiCaller.call("connect");
+                    if (response.has("connected")) {
+                        fTimer.cancel();
+                        MainService.callStart();
+                    }
                 } catch (Exception ignored) {}
             }
-        }, delay, period);
-    }
-
-    public static void finish() {
-        fTimer.cancel();
-        service.connected();
-    }
-
-    private static void max() {
-        if (max == 1) {
-            fTimer.cancel();
-        }
-        --max;
+        }, 0, 3000);
     }
 }

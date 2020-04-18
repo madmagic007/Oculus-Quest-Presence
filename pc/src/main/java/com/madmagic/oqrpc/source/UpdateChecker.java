@@ -11,7 +11,7 @@ import java.io.File;
 
 public class UpdateChecker {
 
-    private static final String version = "2.3.0";
+    private static final String version = "2.4.0";
     private static final String updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/update.json";
     private static String jarUrl;
     private static boolean oG;

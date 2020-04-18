@@ -1,19 +1,22 @@
 package com.madmagic.oqrpc;
 
 import android.app.Service;
+import android.content.AbstractThreadedSyncAdapter;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.json.JSONObject;
 
-import java.util.concurrent.TimeUnit;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 
 public class MainService extends Service {
 
-    public static boolean isRunning = false;
+    public static boolean isRunning;
+    private ApiReceiver receiver;
+    public static Service s;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -24,9 +27,11 @@ public class MainService extends Service {
     public void onCreate() {
         isRunning = true;
         Toast.makeText(this, "Service started", Toast.LENGTH_LONG).show();
+        MainActivity.txtRunning.setText(R.string.running);
+        s = this;
 
         try {
-            new ApiReceiver();
+            receiver = new ApiReceiver();
         } catch (Exception ignored) {}
 
         new ConfigCreator(getFilesDir());
@@ -37,21 +42,21 @@ public class MainService extends Service {
     public void onDestroy() {
         isRunning = false;
         Toast.makeText(this, "Service stopped", Toast.LENGTH_LONG).show();
-
-        try {
-            new ApiCaller(new JSONObject().put("message", "ended"));
-        } catch (Exception ignored) {}
+        MainActivity.txtRunning.setText(R.string.notRunning);
+        receiver.stop();
+        new Thread(() -> ApiCaller.call("ended")).start();
     }
 
-    private static boolean accept = true;
+    public static void callStart() {
+        new Thread(() -> ApiCaller.call("started")).start();
+    }
 
-    private static String version = "1.0";
-    public void connected() {
-        if (!accept) return;
-        accept = false;
-        try {
-            ActivityGetter.define(getBaseContext());
-            new ApiCaller(new JSONObject().put("message", "started").put("apkVersion", version));
+    public static String getIp() {
+        String ip = "";
+        try(final DatagramSocket socket = new DatagramSocket()) {
+            socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
+            ip = socket.getLocalAddress().getHostAddress();
         } catch (Exception ignored) {}
+        return ip;
     }
 }

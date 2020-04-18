@@ -22,15 +22,15 @@ public class SystemTrayHandler {
             item.addActionListener(e -> System.exit(0));
             menu.add(item);
 
-            MenuItem send = new MenuItem("Request Presence Restart");
-            send.addActionListener(e -> ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getIp())));
+            MenuItem send = new MenuItem("Request presence to start");
+            send.addActionListener(e -> ApiSender.ask(Main.getUrl("startup")));
             menu.add(send);
 
-            MenuItem ip = new MenuItem("Open Settings");
+            MenuItem ip = new MenuItem("Open settings");
             ip.addActionListener(e -> ConfigGUI.open());
             menu.add(ip);
 
-            MenuItem update = new MenuItem("Check For Updates");
+            MenuItem update = new MenuItem("Check for updates");
             update.addActionListener(e -> UpdateChecker.check(true));
             menu.add(update);
 
@@ -47,7 +47,7 @@ public class SystemTrayHandler {
     }
 
     public static void notif(String caption, String text) {
-        if (Main.os.contains("win")) return;
+        if (!Main.os.contains("win")) return;
         icon.displayMessage(caption, text, TrayIcon.MessageType.INFO);
     }
 }
