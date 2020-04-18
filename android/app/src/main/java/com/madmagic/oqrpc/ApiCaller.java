@@ -13,14 +13,14 @@ public class ApiCaller {
 
     private static OkHttpClient c = new OkHttpClient();
     private static MediaType jT = MediaType.parse("application/json; charset=utf-8");
-    private static JSONObject rO;
 
     public static JSONObject call(String type) {
-        rO = new JSONObject();
+        JSONObject rO = new JSONObject();
+
         try {
             JSONObject post = new JSONObject()
                     .put("address", MainService.getIp())
-                    .put("apkVersion", "2.0");
+                    .put("apkVersion", "2.1");
 
             Request r = new Request.Builder()
                     .url("http://" + ConfigCreator.getIp() + ":8080?type=" + type)

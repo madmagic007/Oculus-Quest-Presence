@@ -63,4 +63,13 @@ public class ConnectionChecker {
             }
         }, 0, 3000);
     }
+
+    public static void end() {
+        try {
+            cTimer.cancel();
+        } catch (Exception ignored) {}
+        try {
+            fTimer.cancel();
+        } catch (Exception ignored) {}
+    }
 }

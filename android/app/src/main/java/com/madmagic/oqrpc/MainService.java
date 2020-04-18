@@ -48,7 +48,8 @@ public class MainService extends Service {
     }
 
     public static void callStart() {
-        new Thread(() -> ApiCaller.call("started")).start();
+        ConnectionChecker.end();
+        ApiCaller.call("started");
     }
 
     public static String getIp() {
