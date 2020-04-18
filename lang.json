@@ -7,6 +7,10 @@
 		"details": "In Oculus Home",
 		"state": ""
 	},
+	"com.oculus.systemdriver": {
+        "details": "Peeking Through 👀",
+        "state": ""
+    },
 	"com.vankrupt.pavlov": {
 		"details": "Currently Playing:",
 		"state": "Pavlov VR: Shack"
