@@ -2,8 +2,6 @@ package com.madmagic.oqrpc;
 
 import android.content.Context;
 import android.net.wifi.WifiManager;
-import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -12,64 +10,62 @@ import java.util.TimerTask;
 
 public class ConnectionChecker {
 
+    public static MainService service;
+    private static int limit;
     private static Timer cTimer;
-    private static int cMax = 180;
 
     public static void run(MainService s) {
-        try {
-            cTimer.cancel();
-        } catch (Exception ignored) {}
+        service = s;
+        int delay = 1000, period = 1000;
+        limit = 180;
         cTimer = new Timer();
 
-        WifiManager manager = (WifiManager) s.getSystemService(Context.WIFI_SERVICE);
-
+        WifiManager manager = (WifiManager) service.getSystemService(Context.WIFI_SERVICE);
 
         cTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
-                if (cMax == 1) {
-                    cTimer.cancel();
-                }
-                --cMax;
-
+                limit();
                 if (manager.isWifiEnabled() && manager.getConnectionInfo().getNetworkId() != -1) {
                     cTimer.cancel();
                     runConnecter();
                 }
             }
-        }, 0, 1000);
+        }, delay, period);
+    }
+
+    private static void limit() {
+        if (limit == 1) {
+            cTimer.cancel();
+        }
+        --limit;
     }
 
     private static Timer fTimer;
-    private static int max = 120;
+    private static int max;
 
     private static void runConnecter() {
-        try {
-            fTimer.cancel();
-        } catch (Exception ignored) {}
+        int delay = 3000, period = 1000;
+        max = 120;
         fTimer = new Timer();
-        fTimer.scheduleAtFixedRate(new TimerTask() {
+        fTimer.scheduleAtFixedRate(new TimerTask () {
             public void run() {
                 try {
-                    if (max == 1) {
-                        fTimer.cancel();
-                    } --max;
-
-                    JSONObject response = ApiCaller.call("connect");
-                    if (response.has("connected")) {
-                        fTimer.cancel();
-                        MainService.callStart();
-                    }
+                    max();
+                    new ApiCaller(new JSONObject().put("message", "connect"));
                 } catch (Exception ignored) {}
             }
-        }, 0, 3000);
+        }, delay, period);
     }
 
-    public static void end() {
-        try {
-            cTimer.cancel();
-        } catch (Exception ignored) {}
-        try {
+    public static void finish() {
+        fTimer.cancel();
+        service.connected();
+    }
+
+    private static void max() {
+        if (max == 1) {
             fTimer.cancel();
-        } catch (Exception ignored) {}
+        }
+        --max;
     }
 }

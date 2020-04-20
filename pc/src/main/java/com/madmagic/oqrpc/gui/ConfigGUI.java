@@ -7,9 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 import com.madmagic.oqrpc.source.Config;
-import com.madmagic.oqrpc.source.Discord;
 import com.madmagic.oqrpc.source.Main;
 import com.madmagic.oqrpc.api.ApiSender;
+import com.madmagic.oqrpc.api.ResponseHandler;
+import com.madmagic.oqrpc.source.UpdateChecker;
 import org.json.JSONObject;
 
 import javax.swing.JLabel;
@@ -43,7 +44,7 @@ public class ConfigGUI {
 	}
 	
 	private void initialize() {
-		frame = new JFrame("Oculus Quest Discord RPC");
+		frame = new JFrame("Oculus Quest Discord RPC - v2.2");
 		frame.setBounds(100, 100, 450, 155);
 		frame.getContentPane().setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -81,7 +82,7 @@ public class ConfigGUI {
 			try {
 				File log = new File(Config.jarPath().replace(new File(Config.jarPath()).getName(), "log.txt"));
 				FileWriter fw = new FileWriter(log);
-				fw.write(Discord.sb.toString());
+				fw.write(ResponseHandler.sb.toString());
 				fw.close();
 				Desktop.getDesktop().edit(log);
 			} catch (Exception ignored) {}
@@ -105,7 +106,6 @@ public class ConfigGUI {
 	
 	public static void validate(String ipv4) {
 		try {
-			Config.setAddress(ipv4);
 			InetAddress address = InetAddress.getByName(ipv4);
 			if (!address.isReachable(2000)) {
 				error.setText("Cannot connect to Quest @ " + ipv4);
@@ -113,10 +113,8 @@ public class ConfigGUI {
 			}
 			error.setText("Found Quest, however application is not running on device!");
 
-			JSONObject validate = ApiSender.ask(Main.getUrl("validate"));
-			if (validate.has("valid")) {
-				error.setText("device found and running apk. Ready to go!");
-			}
+			ApiSender.ask("http://" + ipv4 + ":8080", new JSONObject().put("address", Main.getIp()).put("message", "address"));
+			Config.setAddress(ipv4);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

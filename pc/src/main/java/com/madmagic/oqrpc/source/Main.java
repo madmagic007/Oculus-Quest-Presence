@@ -33,7 +33,7 @@ public class Main {
         if (Config.getAddress().isEmpty()) {
             ConfigGUI.open();
         } else {
-            ApiSender.ask(Main.getUrl("startup"));
+            ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getIp()));
         }
     }
 
@@ -73,7 +73,7 @@ public class Main {
         return ip;
     }
 
-    public static String getUrl(String ep) {
-        return "http://" + Config.getAddress() + ":8080?type=" + ep;
+    public static String getUrl() {
+        return "http://" + Config.getAddress() + ":8080";
     }
 }
