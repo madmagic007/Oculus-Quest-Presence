@@ -10,7 +10,7 @@
 	"com.oculus.systemdriver": {
         "details": "Peeking Through 👀",
         "state": ""
-    },
+    	},
 	"com.vankrupt.pavlov": {
 		"details": "Currently Playing:",
 		"state": "Pavlov VR: Shack"
@@ -351,5 +351,9 @@
 	"com.samsung.vrvideo": {
 		"details": "Watching Videos",
 		"state": "Samsung VR Videos"
+	},
+	"quest.eleven.forfunlabs": {
+		"details": "Currently Playing:",
+		"state": "Eleven Table Tennis VR"
 	}
 }
