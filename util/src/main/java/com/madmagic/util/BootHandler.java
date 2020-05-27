@@ -6,15 +6,18 @@ public class BootHandler {
 
     public static void handle() {
         String thisPath = Config.jarPath();
-        File mainJar = new File(thisPath.replace(new File(thisPath).getName(), "Oculus Quest Discord RPC"));
+        File mainJar = new File(thisPath.replace(new File(thisPath).getName(), "Oculus Quest Discord RPC.jar"));
+        Config.writeLog("supposed jar path: " + mainJar.getAbsolutePath());
 
         if (!mainJar.exists()) {
             Config.writeLog("main jar not found, deleting remains");
             try {
                 new File(System.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\oqrpc.lnk").delete();
+                new File(thisPath.replace(new File(thisPath).getName(), "config.json")).delete();
+                new File(thisPath.replace(new File(thisPath).getName(), "mapping.json")).delete();
                 Config.writeLog("deleted startup shortcut");
             } catch (Exception ignored) {
-                Config.writeLog("couldn't find startup shortcut");
+                Config.writeLog("error deleting files");
             }
 
             Config.writeLog("attempting to delete self...");

@@ -33,7 +33,7 @@ public class Main {
         if (Config.getAddress().isEmpty()) {
             ConfigGUI.open();
         } else {
-            ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "startup").put("address", Main.getIp()));
+            ApiSender.ask(Main.getUrl(), "startup");
         }
     }
 
@@ -66,11 +66,12 @@ public class Main {
 
     public static String getIp() {
         String ip = "";
-        try(final DatagramSocket socket = new DatagramSocket()) {
-            socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
-            ip = socket.getLocalAddress().getHostAddress();
+        try {
+            Socket socket = new Socket();
+            socket.connect(new InetSocketAddress("google.com", 80));
+            ip = String.valueOf(socket.getLocalAddress());
         } catch (Exception ignored) {}
-        return ip;
+        return ip.replaceFirst("/", "");
     }
 
     public static String getUrl() {

@@ -24,7 +24,7 @@ public class UpdaterGUI {
         } catch (Exception ignored) {
         }
         frame = new JFrame();
-        frame.setTitle("Update Checker");
+        frame.setTitle("Updater");
         frame.setBounds(100, 100, 263, 143);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().setLayout(null);

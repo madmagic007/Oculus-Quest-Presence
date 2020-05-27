@@ -8,21 +8,25 @@ import java.util.TimerTask;
 
 public class Timing {
 
-    private static Timer requestTimer;
+    public static Timer requestTimer;
 
     public static void startRequester() {
-        try  {
+        try {
             requestTimer.cancel();
-            System.out.println("stopped requestTimer");
-        } catch (Exception ignored) {}
-        int delay = 1000;
-        int period = 10000;
+        } catch (Exception ignored) {
+        }
+
         requestTimer = new Timer();
         requestTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
-                ApiSender.ask(Main.getUrl(), new JSONObject().put("message", "game").put("address", Main.getIp()));
+                JSONObject game = ApiSender.ask(Main.getUrl(), "game");
+                if (game.has("game")) {
+                    startEnder();
+                    startRequester();
+                    Discord.changeGame(game.getString("game"));
+                }
             }
-        }, delay, period);
+        }, 10000, 10000);
     }
 
     private static Timer endTimer;
@@ -30,24 +34,25 @@ public class Timing {
     public static void startEnder() {
         try {
             endTimer.cancel();
-        } catch (Exception ignored) {}
-        int delay = 60000;
-        int period = 1000;
+        } catch (Exception ignored) {
+        }
         endTimer = new Timer();
         endTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 terminate();
                 Discord.terminate();
             }
-        }, delay, period);
+        }, 60000, 1000);
     }
 
     public static void terminate() {
-        try  {
+        try {
             requestTimer.cancel();
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
         try {
             endTimer.cancel();
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 }

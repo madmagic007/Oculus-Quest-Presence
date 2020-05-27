@@ -1,5 +1,6 @@
 package com.madmagic.oqrpc.source;
 
+import com.madmagic.oqrpc.api.ApiSender;
 import com.madmagic.oqrpc.gui.UpdaterGUI;
 import com.sun.deploy.util.UpdateCheck;
 import okhttp3.OkHttpClient;
@@ -11,28 +12,29 @@ import java.io.File;
 
 public class UpdateChecker {
 
-    private static final String version = "2.3.0";
+    private static final String version = "2.4.1";
     private static final String updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/update.json";
     private static String jarUrl;
     private static boolean oG;
 
-    public static String jar = "Checking for new Jar";
-    public static String apk = "Checking for new Apk";
+    public static String jar = "No new jar found";
+    public static String apk = "No new apk found";
 
     public static void check(boolean openGui) {
         oG = openGui;
-        if (openGui) UpdaterGUI.open();
-        Request r = new Request.Builder()
-                .url(updateUrl).build();
+        if (openGui) {
+            jar = "Checking for new jar...";
+            apk = "Checking for new apk...";
+            UpdaterGUI.open();
+        }
 
         JSONObject rB;
         try {
-            Response rs = new OkHttpClient().newCall(r).execute();
-            rB = new JSONObject(rs.body().string());
+            rB = ApiSender.ask(updateUrl, "");
         } catch (Exception e) {
             e.printStackTrace();
             jar = "Error checking for updates";
-            updateLbl();
+            apk = "Error checking for updates";
             return;
         }
 
@@ -48,13 +50,12 @@ public class UpdateChecker {
             jar = "New jar found";
             UpdaterGUI.btnInstall.setVisible(true);
         }
-        updateLbl();
 
         //apkVersion
         String currentApkVersion = Config.getApkVersion();
         if (currentApkVersion.isEmpty()) return;
         if (!rB.getString("apkVersion").equals(currentApkVersion)) {
-            if (!openGui) {
+            if (!openGui && !oG) {
                 UpdaterGUI.open();
                 oG = true;
             }
@@ -88,6 +89,7 @@ public class UpdateChecker {
             } else {
                 command = "java -jar " + Config.getUpdater().replace(" ", "\\ ") + " " + jarUrl;
             }
+
             System.out.println("running command " + command);
             Runtime.getRuntime().exec(command);
             System.exit(0);

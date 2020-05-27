@@ -2,18 +2,17 @@ package com.madmagic.oqrpc;
 
 import android.app.Service;
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.IBinder;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.Toast;
-
-import org.json.JSONObject;
-
-import java.util.concurrent.TimeUnit;
 
 
 public class MainService extends Service {
 
     public static boolean isRunning = false;
+    private ApiReceiver receiver;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -24,34 +23,45 @@ public class MainService extends Service {
     public void onCreate() {
         isRunning = true;
         Toast.makeText(this, "Service started", Toast.LENGTH_LONG).show();
+        setText(R.string.running);
 
         try {
-            new ApiReceiver();
+            receiver = new ApiReceiver(this);
+            Config.init(getFilesDir());
+            if (!Config.getIp().isEmpty()) {
+                ConnectionChecker.run(this);
+            }
         } catch (Exception ignored) {}
 
-        new ConfigCreator(getFilesDir());
-        if (!ConfigCreator.getIp().isEmpty()) ConnectionChecker.run(this);
     }
 
     @Override
     public void onDestroy() {
         isRunning = false;
         Toast.makeText(this, "Service stopped", Toast.LENGTH_LONG).show();
+        setText(R.string.notRunning);
 
-        try {
-            new ApiCaller(new JSONObject().put("message", "ended"));
-        } catch (Exception ignored) {}
+        new Thread(() -> ApiSender.send("offline", this)).start();
+        if (receiver.isAlive()) receiver.stop();
     }
 
-    private static boolean accept = true;
+    public void callStart() {
+        ApiSender.send("online", this);
+    }
 
-    private static String version = "1.0";
-    public void connected() {
-        if (!accept) return;
-        accept = false;
+    private void setText(int text) {
+        if (MainActivity.b) {
+            MainActivity.txtRunning.setText(text);
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    public static String getIp(MainService s) {
+        String ip = "";
         try {
-            ActivityGetter.define(getBaseContext());
-            new ApiCaller(new JSONObject().put("message", "started").put("apkVersion", version));
+            WifiManager wm = (WifiManager) s.getSystemService(WIFI_SERVICE);
+            ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
         } catch (Exception ignored) {}
+        return ip;
     }
 }

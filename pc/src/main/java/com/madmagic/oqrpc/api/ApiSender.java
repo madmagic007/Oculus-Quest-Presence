@@ -1,31 +1,35 @@
 package com.madmagic.oqrpc.api;
 
 import com.madmagic.oqrpc.source.Discord;
+import com.madmagic.oqrpc.source.Main;
 import okhttp3.*;
 import org.json.JSONObject;
 
 public class ApiSender {
-	
-	 private static OkHttpClient c = new OkHttpClient();
-	 private static MediaType jT = MediaType.parse("application/json; charset=utf-8");
 
-	 public static JSONObject ask(String url, JSONObject o) {
-	 	JSONObject ro = new JSONObject();
-		 Request.Builder r = new Request.Builder()
-				 .url(url);
+	private static OkHttpClient c = new OkHttpClient();
+	private static MediaType jT = MediaType.parse("application/json; charset=utf-8");
 
-		 if (!o.isEmpty()) {
-		 	r.post(RequestBody.create(jT, o.toString(4)))
-					.build();
-		 }
+	public static JSONObject ask(String url, String message) {
+		JSONObject post = new JSONObject()
+				.put("pcAddress", Main.getIp())
+				.put("message", message);
 
-		 try {
-			 Response rs = c.newCall(r.build()).execute();
-			 ro = new JSONObject(rs.body().string());
-			 ResponseHandler.handle(ro);
-		 } catch (Exception e) {
-			 Discord.terminate();
-		 }
-		 return ro;
-	 }
+		Request.Builder r = new Request.Builder()
+				.url(url);
+
+		if (!url.contains("github")) {
+			r.post(RequestBody.create(jT, post.toString(4)));
+		}
+
+		JSONObject ro = new JSONObject();
+		try {
+			Response rs = c.newCall(r.build()).execute();
+			ro = new JSONObject(rs.body().string());
+		} catch (Exception ignored) {
+			System.out.println("failed to send request to the quest");
+			Discord.terminate();
+		}
+		return ro;
+	}
 }
