@@ -72,6 +72,7 @@ You can now go back to your PC and press the `validate` button in the popup wind
 - Check if you got the notification on your pc saying that your quest is online. If you received that, it means that the quest has connected to the pc and the error is with discord. If you didn't get that notification, make sure that the apk is running on your quest.
 - Discord for web browser won't detect games running on your pc, so make sure you are using the desktop application.
 - Check the settings in discord and make sure that game presence is enabled.
+- Try running the jar via commandline by using the command `java -jar "path_to_jar`. Doing this fixed it for some people in the past, i have no idea why though.
 #### - It was working before and it randomly stopped working
 - Dynamic ip addresses can change after a while, open the settings window and make sure that the ip there is the same as the one found in SideQuest. You can also assign a static ip address to your quest.
 - If the ip is correct, follow the steps above this.
