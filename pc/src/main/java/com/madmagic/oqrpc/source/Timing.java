@@ -16,17 +16,18 @@ public class Timing {
         } catch (Exception ignored) {
         }
 
+        int delay = Config.getDelay() * 1000;
         requestTimer = new Timer();
         requestTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 JSONObject game = ApiSender.ask(Main.getUrl(), "game");
-                if (game.has("game")) {
-                    startEnder();
+                if (game.has("message") && game.getString("message").equals("gameResponse")) {
                     startRequester();
-                    Discord.changeGame(game.getString("game"));
+                    startEnder();
+                    HandleGameReceived.handle(game);
                 }
             }
-        }, 10000, 10000);
+        }, delay, delay);
     }
 
     private static Timer endTimer;
@@ -37,12 +38,12 @@ public class Timing {
         } catch (Exception ignored) {
         }
         endTimer = new Timer();
-        endTimer.scheduleAtFixedRate(new TimerTask() {
+        endTimer.schedule(new TimerTask() {
             public void run() {
                 terminate();
                 Discord.terminate();
             }
-        }, 60000, 1000);
+        }, 60000);
     }
 
     public static void terminate() {

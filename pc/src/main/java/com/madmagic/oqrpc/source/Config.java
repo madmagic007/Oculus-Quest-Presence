@@ -1,27 +1,102 @@
 package com.madmagic.oqrpc.source;
 
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.net.URLDecoder;
 import java.nio.file.Files;
-import java.nio.file.Paths;
-import org.json.JSONObject;
 
 public class Config {
 	
-	private static File configFile;
-	private static File mapping;
-	
+	public static File configFile;
+	private static JSONObject config;
+
+	public static File mappingFile;
+	private static JSONObject mapping;
+
 	public static void init() {
 		try {
 			configFile =  new File(jarPath().replace(new File(jarPath()).getName(), "config.json"));
 			if (!configFile.exists())configFile.createNewFile();
+			config = readFile(configFile);
 
-			mapping = new File(jarPath().replace(new File(jarPath()).getName(), "mapping.json"));
-			if (!mapping.exists()) mapping.createNewFile();
+			mappingFile = new File(jarPath().replace(new File(jarPath()).getName(), "mapping.json"));
+			if (!mappingFile.exists()) mappingFile.createNewFile();
+			mapping = readFile(mappingFile);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static JSONObject readFile(File file) {
+		try {
+			return new JSONObject(new String(Files.readAllBytes(file.toPath())));
+		} catch (Exception ignored) {}
+		return new JSONObject();
+	}
+
+	public static void updateConfig(JSONObject o) {
+		config = o;
+		try {
+			FileWriter fw = new FileWriter(configFile);
+			fw.write(o.toString(4));
+			fw.close();
+		} catch (Exception ignored) {}
+	}
+
+	public static String getAddress() {
+		try {
+			return config.getString("address");
+		} catch (Exception ignored) {}
+		return "";
+	}
+
+	public static void setAddress(String ip) {
+		updateConfig(config.put("address", ip));
+	}
+
+	public static String getApkVersion() {
+		try {
+			return config.getString("apkVersion");
+		} catch (Exception ignored) {}
+		return "";
+	}
+
+	public static void setApkVersion(String version) {
+		updateConfig(config.put("apkVersion", version));
+	}
+
+	public static boolean getStartAtBoot() {
+		try {
+			return config.getBoolean("startBoot");
+		} catch (Exception ignored) {}
+		return false;
+	}
+
+	public static boolean getSleepWake() {
+		try {
+			return config.getBoolean("sleepWake");
+		} catch (Exception ignored) {}
+		return true;
+	}
+
+	public static int getDelay() {
+		try {
+			return config.getInt("delay");
+		} catch (Exception ignored) {}
+		return 3;
+	}
+
+	public static boolean getNotifications() {
+		try {
+			return config.getBoolean("notifications");
+		} catch (Exception ignored) {}
+		return true;
+	}
+
+	public static JSONObject getMapping() {
+		return mapping;
 	}
 
 	public static String jarPath() {
@@ -43,75 +118,5 @@ public class Config {
 
 	public static String getUpdater() {
 		return jarPath().replace(new File(jarPath()).getName(), "Util.jar");
-	}
-	
-	private static JSONObject read() {
-		try {
-			String text = new String(Files.readAllBytes(Paths.get(configFile.getAbsolutePath())));
-			if (text.equals("")) {
-				return write(new JSONObject());
-			} else return new JSONObject(text);
-		} catch (Exception e) {
-			return new JSONObject();
-		}
-	}
-
-	public static JSONObject readMapping() {
-		try {
-			String text = new String(Files.readAllBytes(Paths.get(mapping.getAbsolutePath())));
-			if (text.equals("")) {
-				FileWriter fw = new FileWriter(mapping);
-				fw.write("{}");
-				fw.close();
-			} else return new JSONObject(text);
-		} catch (Exception ignored) {}
-		return new JSONObject();
-	}
-
-	public static String getAddress() {
-		JSONObject main = read();
-		if (main.has("address")) return main.getString("address");
-		else return "";
-	}
-	
-	public static void setAddress(String s) {
-		JSONObject main = read();
-		main.put("address", s);
-		write(main);
-	}
-
-	public static String getApkVersion() {
-		JSONObject main = read();
-		if (main.has("apkVersion")) return main.getString("apkVersion");
-		else return "";
-	}
-
-	public static void setApk(String version) {
-		write(read().put("apkVersion", version));
-	}
-	
-	private static JSONObject write(JSONObject obj) {
-		try {
-			if (!configFile.exists()) configFile.createNewFile();
-			FileWriter fw = new FileWriter(configFile);
-			fw.write(obj.toString(4));
-			fw.close();
-			return new JSONObject();
-		} catch (Exception ignored) {
-			return new JSONObject();
-		}
-	}
-	
-	public static void setBootSetting(boolean toggled) {
-		JSONObject main = read();
-		main.put("startBoot", toggled);
-		write(main);
-	}
-	
-	public static boolean readBoot() {
-		JSONObject main = read();
-		if (main.has("startBoot")) return main.getBoolean("startBoot");
-		setBootSetting(true);
-		return true;
 	}
 }

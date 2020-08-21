@@ -2,17 +2,14 @@ package com.madmagic.oqrpc.source;
 
 import com.madmagic.oqrpc.api.ApiSender;
 import com.madmagic.oqrpc.gui.UpdaterGUI;
-import com.sun.deploy.util.UpdateCheck;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+
 import org.json.JSONObject;
 
 import java.io.File;
 
 public class UpdateChecker {
 
-    private static final String version = "2.4.1";
+    public static final String version = "2.5.0";
     private static final String updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/update.json";
     private static String jarUrl;
     private static boolean oG;
@@ -39,7 +36,7 @@ public class UpdateChecker {
         }
 
         //jarVersion
-        if (rB.getString("latest").equals(version)) {
+        if (!rB.has("latest") || rB.getString("latest").equals(version)) {
             jar = "Already latest jar version";
         } else {
             jarUrl = rB.getString("url");

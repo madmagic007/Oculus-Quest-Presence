@@ -1,12 +1,11 @@
 package com.madmagic.oqrpc.source;
 
-import com.madmagic.oqrpc.api.ApiReceiver;
+import com.madmagic.oqrpc.api.ApiSocket;
 import com.madmagic.oqrpc.api.ApiSender;
-import com.madmagic.oqrpc.gui.ConfigGUI;
+import com.madmagic.oqrpc.gui.SettingsGUI;
 import com.madmagic.oqrpc.gui.AlreadyRunningGUI;
 import mslinks.ShellLink;
 import org.apache.commons.io.FileUtils;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.net.*;
@@ -14,15 +13,15 @@ import java.net.*;
 public class Main {
 
     public static String os;
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         os  = System.getProperty("os.name").toLowerCase();
         Config.init();
         bootInit();
         checkUtil();
 
         try {
-            new ApiReceiver();
+            new ApiSocket();
         } catch (Exception e) {
             AlreadyRunningGUI.open();
         }
@@ -31,7 +30,7 @@ public class Main {
         SystemTrayHandler.systemTray();
 
         if (Config.getAddress().isEmpty()) {
-            ConfigGUI.open();
+            SettingsGUI.open();
         } else {
             ApiSender.ask(Main.getUrl(), "startup");
         }
@@ -75,6 +74,6 @@ public class Main {
     }
 
     public static String getUrl() {
-        return "http://" + Config.getAddress() + ":8080";
+        return "http://" + Config.getAddress() + ":16255";
     }
 }

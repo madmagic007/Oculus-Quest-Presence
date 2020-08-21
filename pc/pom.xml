@@ -6,7 +6,26 @@
 
     <groupId>com.madmagic</groupId>
     <artifactId>pc</artifactId>
-    <version>2.2.0</version>
+    <version>2.5.0</version>
+
+    <packaging>jar</packaging>
+    <build>
+        <finalName>Oculus Quest Discord RPC</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.madmagic.oqrpc.source.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>

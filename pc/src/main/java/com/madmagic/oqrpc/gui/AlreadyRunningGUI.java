@@ -18,7 +18,7 @@ public class AlreadyRunningGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
-        JLabel lblNewLabel = new JLabel("<html>Port 8080 is already in use.<br/>\r\nMake sure the program isn't already running.</html>");
+        JLabel lblNewLabel = new JLabel("<html>Port 16255 is already in use.<br/>\r\nMake sure the program isn't already running.</html>");
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel.setBounds(10, 11, 256, 91);
         frame.getContentPane().add(lblNewLabel);
