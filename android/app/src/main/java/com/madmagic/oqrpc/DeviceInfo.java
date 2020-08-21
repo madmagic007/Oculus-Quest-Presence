@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.util.Log;
 
+import com.madmagic.oqrpc.main.MainService;
 import com.rvalerio.fgchecker.AppChecker;
 
 import org.json.JSONObject;
@@ -25,8 +26,8 @@ public class DeviceInfo {
             r.put("name", name);
 
             r.put("currentTop", getTopmost(s))
-                    .put("ownAdress", MainService.getIp(s))
-                    .put("pcIp", Config.getIp().isEmpty() ? "not set" : Config.getIp());
+                    .put("ownAddress", MainService.getIp(s))
+                    .put("pcAddress", Config.getAddress().isEmpty() ? "not set" : Config.getAddress());
 
             return r.toString(4);
         } catch (Exception ignored) {

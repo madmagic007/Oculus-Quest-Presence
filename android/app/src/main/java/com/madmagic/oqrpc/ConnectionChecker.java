@@ -2,8 +2,8 @@ package com.madmagic.oqrpc;
 
 import android.content.Context;
 import android.net.wifi.WifiManager;
-import android.util.Log;
 
+import com.madmagic.oqrpc.main.MainService;
 import org.json.JSONObject;
 
 import java.util.Timer;
@@ -53,14 +53,11 @@ public class ConnectionChecker {
                     } --max;
 
                     JSONObject response = ApiSender.send("connect", s);
-                    Log.d("OQRPC", "response: " + response.toString(4));
                     if (response.has("connected")) {
                         end();
                         s.callStart();
                     }
-                } catch (Exception e) {
-                    Log.d("OQPRC", "Error connecting: " + e.getMessage());
-                }
+                } catch (Exception ignored) {}
             }
         }, 0, 3000);
     }
