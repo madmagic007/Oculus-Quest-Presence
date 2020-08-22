@@ -5,15 +5,17 @@
 	},
 	"com.oculus.vrshell": {
 		"details": "In Oculus Home",
-		"state": ""
+		"state": "",
+		"key": "oculus"
 	},
 	"com.oculus.systemdriver": {
         "details": "Peeking Through 👀",
         "state": ""
-    	},
+    },
 	"com.vankrupt.pavlov": {
 		"details": "Currently Playing:",
-		"state": "Pavlov VR: Shack"
+		"state": "Pavlov VR: Shack",
+		"key": "pavlov"
 	},
 	"aaa.QuestAppLauncher.App": {
 		"details": "Currently Playing:",
@@ -30,15 +32,18 @@
 	},
 	"com.owlchemylabs.jobsimulator": {
 		"details": "Currently Playing:",
-		"state": "Job Simulator"
+		"state": "Job Simulator",
+		"key": "jobsim"
 	},
 	"com.vrchat.oculus.quest": {
 		"details": "Currently Playing:",
-		"state": "VR Chat"
+		"state": "VR Chat",
+		"key": "vrchat"
 	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
 		"details": "Currently Playing:",
-		"state": "SUPERHOT VR"
+		"state": "SUPERHOT VR",
+		"key": "superhot"
 	},
 	"games.b4t.epicrollercoasters.oculus": {
 		"details": "Currently Playing:",
@@ -58,7 +63,8 @@
 	},
 	"com.google.android.apps.youtube.vr.oculus": {
 		"details": "Watching Youtube",
-		"state": ""
+		"state": "",
+		"key": "yt"
 	},
 	"com.polygraphene.alvr": {
 		"details": "Playing PCVR",
@@ -70,7 +76,8 @@
 	},
 	"com.harmonixmusic.kata": {
 		"details": "Currently Playing:",
-		"state": "Audica"
+		"state": "Audica",
+		"key": "audica"
 	},
 	"com.crytek.climb": {
 		"details": "Currently Playing:",
@@ -86,11 +93,13 @@
 	},
 	"com.AgainstGravity.RecRoom": {
 		"details": "Currently Playing:",
-		"state": "Rec Room VR"
+		"state": "Rec Room VR",
+		"key": "recroom"
 	},
 	"com.google.tiltbrush": {
 		"details": "Currently Playing:",
-		"state": "Tilt Brush"
+		"state": "Tilt Brush",
+		"key": "tilt"
 	},
 	"com.CaveManStudio.ContractorsVR": {
 		"details": "Currently Playing:",
@@ -110,15 +119,18 @@
 	},
 	"com.ILMxLAB.VaderImmortal.ep1": {
 		"details": "Currently Playing:",
-		"state": "Vader Immortal: Episode I"
+		"state": "Vader Immortal: Episode I",
+		"key": "v1"
 	},
 	"com.ILMxLAB.VaderImmortal.ep2": {
 		"details": "Currently Playing",
-		"state": "Vader Immortal: Episode II"
+		"state": "Vader Immortal: Episode II",
+		"key": "v2"
 	},
 	"com.ILMxLAB.VaderImmortal.ep3": {
 		"details": "Currently Playing:",
-		"state": "Vader Immortal: Episode III"
+		"state": "Vader Immortal: Episode III",
+		"key": "v3"
 	},
 	"com.wolfandwood.exorcistlegionvr": {
 		"details": "Currently Playing:",
@@ -142,7 +154,8 @@
 	},
 	"com.netflix.ninja.vr": {
 		"details": "Watching Netflix",
-		"state": ""
+		"state": "",
+		"key": "nflix"
 	},
 	"com.drbeef.quakequest": {
 		"details": "Currently Playing:",
@@ -162,7 +175,8 @@
 	},
 	"com.MyronSoftware.Deisim": {
 		"details": "Currently Playing:",
-		"state": "Deisim"
+		"state": "Deisim",
+		"key": "deism"
 	},
 	"org.dammertz.vr.VoxelWorksQuest": {
 		"details": "Currently Playing:",
@@ -294,7 +308,8 @@
 	},
 	"com.schellgames.ieytdquest": {
 		"details": "Currently Playing:",
-		"state": "I Expect You To Die"
+		"state": "I Expect You To Die",
+		"key": "ieytd"
 	},
 	"com.oculus.MontereyNUX": {
 		"details": "Currently Playing:",
@@ -306,7 +321,8 @@
 	},
 	"gg.trs.grappa_demo": {
 		"details": "Currently Playing:",
-		"state": "Journey of the Gods: Demo"
+		"state": "Journey of the Gods: Demo",
+		"key": "jotg"
 	},
 	"com.Armature.SportsScrambleDemo": {
 		"details": "Currently Playing:",
@@ -318,7 +334,8 @@
 	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_Demo": {
 		"details": "Currently Playing:",
-		"state": "SUPERHOT VR: Demo"
+		"state": "SUPERHOT VR: Demo",
+		"key": "superhot"
 	},
 	"com.iillusions.spacepiratetrainerdemo": {
 		"details": "Currently Playing:",
