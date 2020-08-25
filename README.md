@@ -29,6 +29,7 @@ Video tutorial:
 - Download <a href="https://github.com/tverona1/QuestAppLauncher/releases" target="_blank">Quest app launcher</a>.
 
 ### On Your PC
+- Make sure you have the latest version of the <a href="https://www.java.com/en/download/win10.jsp" target="_blank">Java JRE</a> installed on your computer.
 - Use SideQuest to sideload the `Quest App Launcher apk` and the `Quest Discord RPC apk` (from the zip)
 - Run `oqrpc.exe` to install the client on your PC (from the zip)
 - After the installer is finished, run the `Oculus Quest Discord RPC.jar`
@@ -44,13 +45,14 @@ You can now go back to your PC and press the `validate` button in the popup wind
 
 ---
 
-## Settings
+## Modules
 
-- When you restart your computer, the program on the pc should start automatically, this can be disabled if you right click the icon, hit "open settings" and toggle the "start with windows boot" checkbox.
-- If you open the settings and hit the save log button, it will save a file with all the app names that your device has come across that aren't listed in my lang.json file. You can always send me that file so i can add it to the list!
+Modules allow for more detailed information about a game or program on the quest to be shown in the presence.
+Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki" target=_blank">more here</a> about how to implement a module to a game/program on the quest.
+
 ---
 
-## Known Issues
+## Things to note
 
 - Loss of internet connection for more than one minute will stop showing the presence. Right click on the oculus quest rpc icon in the system tray on your computer and hit "Request presence to start".
 - Both programs *should* automatically start with device boot, but that may not always the be case. If the presence didn't start but the program on the pc is running, hit the "Request presence to start" button. If you didn't get a message saying your quest is online, then you have to manually start the app from the quest app launcher.
@@ -62,20 +64,27 @@ You can now go back to your PC and press the `validate` button in the popup wind
 ## Troubleshooting / questions
 
 #### - I open the .jar file but nothing happens
+- Make sure you have the latest version of the <a href="https://www.java.com/en/download/win10.jsp" target="_blank">Java JRE</a> installed on your computer.
 - The window asking for the ipv4 address only shows up on the first time opening the program. To see if the program is running look in the system tray. If an icon looking like a quest shows, that means that it is running.
-- The program requires java to run, make sure you have that installed.
+- If you have the latest Java JRE installed but you arent able to open .jar files, run <a href="https://johann.loefflmann.net/en/software/jarfix/index.html" target="_blank">jarfix</a> and it should resovle the issue.
+
 #### - It keeps saying "error finding device"
 - Make sure both your quest and pc are connected to the same wifi network, that the quest is powered on and that the entered ip is correct.
+
 #### - It only says "device found, but apk is not running on device"
-- Check if the program is actually running on your quest. If it is open, hit the "terminate presence" button and restart the apk. 
+- Check if the program is actually running on your quest. If it is open, hit the terminate button in the quest and then hit the start button and try to verify again.
+- Check if the firewall isn't blocking Java and add an exception if necessary.
+
 #### - I did everything and it said "device found and apk is running on device", but the presence isn't showing
 - Check if you got the notification on your pc saying that your quest is online. If you received that, it means that the quest has connected to the pc and the error is with discord. If you didn't get that notification, make sure that the apk is running on your quest.
 - Discord for web browser won't detect games running on your pc, so make sure you are using the desktop application.
 - Check the settings in discord and make sure that game presence is enabled.
-- Try running the jar via commandline by using the command `java -jar "path_to_jar`. Doing this fixed it for some people in the past, i have no idea why though.
+- Try running the jar via commandline by using the command `java -jar "path_to_jar`.
+
 #### - It was working before and it randomly stopped working
 - Dynamic ip addresses can change after a while, open the settings window and make sure that the ip there is the same as the one found in SideQuest. You can also assign a static ip address to your quest.
 - If the ip is correct, follow the steps above this.
+
 #### - The presence is showing, but it shows a weird name
 - Read the last part of the 'knows issues section'. Open the settings window: right click icon in the system tray > open settings and hit the "save log" button. Your default text editor will open and in the window a bunch of package names should be listed. Send me the contents of that file in discord.
 ##### If none of these steps helped, contact me on discord (link at the top).  
