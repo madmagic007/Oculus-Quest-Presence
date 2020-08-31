@@ -41,7 +41,7 @@ public class ApiSocket extends NanoHTTPD {
             switch (pO.getString("message")) {
 
                 case "game":
-                    String packageName = DeviceInfo.getTopmost(s);
+                    String packageName = DeviceInfo.getTopmost(s.getBaseContext());
                     JSONObject response = new JSONObject();
 
                     boolean detailed = false;

@@ -7,15 +7,9 @@ import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.os.IBinder;
 import android.text.format.Formatter;
-import android.util.Log;
 import android.widget.Toast;
 import com.madmagic.oqrpc.*;
 import com.madmagic.oqrpc.receivers.ScreenReceiver;
-
-import java.util.TimerTask;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 
 public class MainService extends Service {
@@ -30,7 +24,6 @@ public class MainService extends Service {
     @Override
     public void onCreate() {
         Toast.makeText(this, "Service started", Toast.LENGTH_LONG).show();
-        setText(R.string.running);
 
         try {
             receiver = new ApiSocket(this);
@@ -47,28 +40,20 @@ public class MainService extends Service {
     @Override
     public void onDestroy() {
         Toast.makeText(this, "Service stopped", Toast.LENGTH_LONG).show();
-        setText(R.string.notRunning);
-        Log.d("OQRPC", "sTOPPED");
 
-        new Thread(() -> ApiSender.send("offline", this)).start();
+        new Thread(() -> ApiSender.send("offline", getIp(getBaseContext()))).start();
         if (receiver.isAlive()) receiver.stop();
     }
 
     public void callStart() {
-        ApiSender.send("online", this);
-    }
-
-    private void setText(int text) {
-        if (MainActivity.b) {
-            MainActivity.txtRunning.setText(text);
-        }
+        ApiSender.send("online", getIp(getBaseContext()));
     }
 
     @SuppressWarnings("deprecation")
-    public static String getIp(MainService s) {
+    public static String getIp(Context context) {
         String ip = "";
         try {
-            WifiManager wm = (WifiManager) s.getSystemService(WIFI_SERVICE);
+            WifiManager wm = (WifiManager) context.getSystemService(WIFI_SERVICE);
             ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
         } catch (Exception ignored) {}
         return ip;

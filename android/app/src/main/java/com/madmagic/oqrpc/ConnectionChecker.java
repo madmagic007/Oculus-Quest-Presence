@@ -52,7 +52,7 @@ public class ConnectionChecker {
                         fTimer.cancel();
                     } --max;
 
-                    JSONObject response = ApiSender.send("connect", s);
+                    JSONObject response = ApiSender.send("connect", MainService.getIp(s.getBaseContext()));
                     if (response.has("connected")) {
                         end();
                         s.callStart();

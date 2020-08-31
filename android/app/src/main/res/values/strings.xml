@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Oqrpc</string>
-    <string name="running">Currently Active</string>
-    <string name="notRunning">Currently Not Active</string>
+    <string name="stop">Force stop</string>
+    <string name="start">Force start</string>
 </resources>

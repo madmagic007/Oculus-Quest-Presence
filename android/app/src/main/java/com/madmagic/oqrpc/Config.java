@@ -11,10 +11,10 @@ import java.util.Map;
 public class Config {
 
     static File cFile;
-    private static JSONObject config;
+    public static JSONObject config;
 
     static File mFile;
-    static File moduleFolder;
+    public static File moduleFolder;
 
     public static void init(File dir) {
         cFile = new File(dir.getPath() + "/config.json");

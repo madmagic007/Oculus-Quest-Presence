@@ -1,6 +1,7 @@
 package com.madmagic.oqrpc;
 
 import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
@@ -35,7 +36,7 @@ public class DeviceInfo {
         }
     }
 
-    public static String getTopmost(MainService s) {
-        return new AppChecker().getForegroundApp(s.getBaseContext());
+    public static String getTopmost(Context c) {
+        return new AppChecker().getForegroundApp(c);
     }
 }

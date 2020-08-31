@@ -11,35 +11,27 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import com.madmagic.oqrpc.Config;
-import com.madmagic.oqrpc.ConnectionChecker;
-import com.madmagic.oqrpc.Module;
-import com.madmagic.oqrpc.R;
+import com.madmagic.oqrpc.*;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     public static  boolean b;
-    public static TextView txtRunning;
-    public static View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        view = findViewById(android.R.id.content).getRootView();
         b = true;
 
-        if(!hasUsageStatsPermission(this)) {
+        if (!hasUsageStatsPermission(this)) {
             startActivity(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS));
         }
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-
-        txtRunning = findViewById(R.id.txtRunning);
-        txtRunning.setText(R.string.notRunning);
 
         Intent service = new Intent(MainActivity.this, MainService.class);
         if (!MainService.isRunning(getApplicationContext(), MainService.class))
@@ -100,7 +92,29 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {}
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        Button btnDebugLog = findViewById(R.id.btnLog);
+        btnDebugLog.setOnClickListener(v -> {
+            new Thread(() -> {
+                try {
+                    File logFile = new File(Config.moduleFolder, "debugLog.txt");
+                    if (logFile.exists()) logFile.delete();
+                    logFile.createNewFile();
+
+                    StringBuilder log = new StringBuilder(Config.config.toString(4) + "\n")
+                            .append("Trying to request connection: ")
+                            .append(ApiSender.send("connect", MainService.getIp(getBaseContext())).toString())
+                            .append("\ncurrent top: ").append(DeviceInfo.getTopmost(getBaseContext()));
+
+                    FileWriter fw = new FileWriter(logFile);
+                    fw.write(log.toString());
+                    fw.close();
+                } catch (Exception ignored) {
+                }
+            }).start();
         });
     }
 

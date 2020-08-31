@@ -16,15 +16,15 @@ public class ApiSender {
     private static OkHttpClient c = new OkHttpClient();
     private static MediaType jT = MediaType.parse("application/json; charset=utf-8");
 
-    public static JSONObject send(String message, MainService s) {
+    public static JSONObject send(String message, String ownAddress) {
         JSONObject ro = new JSONObject();
         try {
             JSONObject post = new JSONObject()
-                    .put("apkVersion", "2.2")
+                    .put("apkVersion", "2.3")
                     .put("message", message);
-            try {
-                post.put("addressA", MainService.getIp(s));
-            } catch (Exception ignored) {}
+
+            if (!ownAddress.isEmpty())
+                post.put("addressA", ownAddress);
 
             String ip = Config.getAddress();
             if (ip.isEmpty()) return ro;

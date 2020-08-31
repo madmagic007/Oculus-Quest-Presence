@@ -29,7 +29,6 @@
 
         <activity
             android:name=".main.MainActivity"
-            android:screenOrientation="landscape"
             android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode"
             android:launchMode="singleTask"
             android:resizeableActivity="false" >
