@@ -8,7 +8,7 @@ public class OldGUI {
     public static void open() {
         EventQueue.invokeLater(() -> {
             try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             } catch (Exception ignored) {}
             JFrame frame = new JFrame();
             frame.setTitle("Old Version Found");

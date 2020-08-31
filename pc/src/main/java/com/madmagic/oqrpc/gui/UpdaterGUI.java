@@ -20,7 +20,7 @@ public class UpdaterGUI {
 
     public static void open() {
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ignored) {
         }
         frame = new JFrame();

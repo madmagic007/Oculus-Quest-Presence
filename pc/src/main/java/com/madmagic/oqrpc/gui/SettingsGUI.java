@@ -9,6 +9,7 @@ import com.madmagic.oqrpc.source.Config;
 import com.madmagic.oqrpc.source.HandleGameReceived;
 import com.madmagic.oqrpc.source.Main;
 import com.madmagic.oqrpc.api.ApiSender;
+import com.madmagic.oqrpc.source.SystemTrayHandler;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -17,38 +18,37 @@ import java.io.FileWriter;
 public class SettingsGUI {
 
 	private static JFrame frame;
-	private static JTextField field;
-	public static JLabel error;
 
 	public static void open() {
 		EventQueue.invokeLater(() -> {
 			try {
-				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+				UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 			} catch (Exception ignored) {}
 
 			frame = new JFrame("Oculus Quest Discord RPC");
 			frame.setBounds(100, 100, 450, 271);
 			frame.getContentPane().setLayout(null);
 			frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			frame.setResizable(false);
 
 			JLabel lblNewLabel = new JLabel("IP Address (IPv4) of your Oculus Quest:");
 			lblNewLabel.setBounds(10, 11, 414, 14);
 			frame.getContentPane().add(lblNewLabel);
 
-			field = new JTextField();
-			field.setBounds(10, 29, 317, 20);
-			frame.getContentPane().add(field);
-			field.setColumns(10);
-			setCurrent();
+			JTextField fieldAddress = new JTextField(Config.getAddress().isEmpty() ? "Not set" : Config.getAddress());
+			fieldAddress.setBounds(10, 29, 317, 20);
+			frame.getContentPane().add(fieldAddress);
+			fieldAddress.setColumns(10);
+
+			JLabel error = new JLabel();
+			error.setBounds(10, 60, 414, 14);
+			frame.getContentPane().add(error);
 
 			JButton validate = new JButton("Validate");
 			validate.setBounds(337, 28, 89, 23);
 			frame.getContentPane().add(validate);
-			validate.addActionListener(e -> validate(field.getText()));
+			validate.addActionListener(e -> error.setText(validate(fieldAddress.getText())));
 
-			error = new JLabel();
-			error.setBounds(10, 60, 414, 14);
-			frame.getContentPane().add(error);
 
 			JLabel lblPresenceUpdateDelay = new JLabel("Presence update delay in seconds: (Default is 3 seconds)");
 			lblPresenceUpdateDelay.setBounds(10, 85, 317, 14);
@@ -83,12 +83,12 @@ public class SettingsGUI {
 			frame.getContentPane().add(sleepWake);
 			sleepWake.setSelected(Config.getSleepWake());
 
-			JButton saveLog = new JButton("Save log");
-			saveLog.setBounds(238, 202, 89, 23);
-			frame.getContentPane().add(saveLog);
-			saveLog.addActionListener(e -> {
+			JButton saveUnmapped = new JButton("Save unmapped package names");
+			saveUnmapped.setBounds(238, 174, 186, 23);
+			frame.getContentPane().add(saveUnmapped);
+			saveUnmapped.addActionListener(e -> {
 				try {
-					File log = new File(Config.jarPath().replace(new File(Config.jarPath()).getName(), "log.txt"));
+					File log = new File(Config.jarPath().replace(new File(Config.jarPath()).getName(), "unmapped.txt"));
 					FileWriter fw = new FileWriter(log);
 					fw.write(HandleGameReceived.sb.toString());
 					fw.close();
@@ -102,7 +102,7 @@ public class SettingsGUI {
 			btnSaveSettings.addActionListener(e -> {
 				JSONObject o = new JSONObject()
 						.put("startBoot", startBoot.isSelected())
-						.put("address", field.getText())
+						.put("address", fieldAddress.getText())
 						.put("sleepWake", sleepWake.isSelected())
 						.put("delay", (int) spinnerDelay.getValue())
 						.put("notifications", notifications.isSelected());
@@ -110,31 +110,53 @@ public class SettingsGUI {
 				frame.dispose();
 			});
 
+			JButton btnDebug = new JButton("Log/Debug");
+			btnDebug.setBounds(238, 202, 89, 23);
+			frame.getContentPane().add(btnDebug);
+			btnDebug.addActionListener(l -> {
+				new Thread(() -> {
+					try {
+						File logFile = new File(new File(Config.jarPath()).getParentFile(), "debugLog.txt");
+						if (logFile.exists()) logFile.delete();
+						logFile.createNewFile();
+
+						StringBuilder sb = new StringBuilder(Config.config.toString(4))
+								.append("\nTrying to request connection to quest: ")
+								.append(validate(fieldAddress.getText()))
+								.append("\nSending notification: ")
+								.append(SystemTrayHandler.notif("Test", "Notification test") ? "Successful" : "Unsuccessful")
+								.append("\nRequesting game status: \n")
+								.append(ApiSender.ask(Main.getUrl(), "game"));
+
+						FileWriter fw = new FileWriter(logFile);
+						fw.write(sb.toString());
+						fw.close();
+
+						Desktop.getDesktop().edit(logFile);
+					} catch (Exception ignored) {
+					}
+				}).start();
+			});
+
 			frame.setVisible(true);
 		});
 	}
 	
-	private static void setCurrent() {
-		String ip = Config.getAddress();
-		field.setText(ip.isEmpty() ? "Not set" : ip);
-	}
-	
-	public static void validate(String ipv4) {
+	public static String validate(String ipv4) {
 		try {
 			InetAddress address = InetAddress.getByName(ipv4);
-			if (!address.isReachable(2000)) {
-				error.setText("Cannot connect to Quest @ " + ipv4);
-				return;
-			}
-			error.setText("Found Quest, however the service is not running.");
+			if (!address.isReachable(2000))
+				return "Cannot connect to Quest @ " + ipv4;
 
 			if (ApiSender.ask("http://" + ipv4 + ":16255", "validate").has("valid")) {
-				error.setText("Found Quest and the service is running");
+				Config.setAddress(ipv4);
+				return "Found Quest and the service responded";
 			}
-			Config.setAddress(ipv4);
-			
+			else
+				return "Found Quest, however the service didn't respond";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "An error has occurred validating";
 	}
 }

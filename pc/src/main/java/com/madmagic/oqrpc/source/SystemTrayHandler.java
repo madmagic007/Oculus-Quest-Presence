@@ -45,8 +45,14 @@ public class SystemTrayHandler {
         }
     }
 
-    public static void notif(String caption, String text) {
-        if (!Config.getNotifications()) return;
-        icon.displayMessage(caption, text, TrayIcon.MessageType.INFO);
+    public static boolean notif(String caption, String text) {
+        try {
+            if (!Config.getNotifications()) return false;
+            icon.displayMessage(caption, text, TrayIcon.MessageType.INFO);
+            return true;
+        } catch (Exception ignored) {
+            System.out.println("error sending notification");
+            return false;
+        }
     }
 }

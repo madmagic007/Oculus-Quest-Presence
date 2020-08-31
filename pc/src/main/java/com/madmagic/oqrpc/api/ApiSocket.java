@@ -48,7 +48,7 @@ public class ApiSocket extends NanoHTTPD {
                     break;
                 case "connect":
                     r = new JSONObject()
-                            .put("connected", "You found another secret :)")
+                            .put("connected", "Successfully connected")
                             .toString(4);
                     break;
             }

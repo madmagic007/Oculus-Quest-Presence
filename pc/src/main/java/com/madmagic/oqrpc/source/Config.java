@@ -10,7 +10,7 @@ import java.nio.file.Files;
 public class Config {
 	
 	public static File configFile;
-	private static JSONObject config;
+	public static JSONObject config;
 
 	public static File mappingFile;
 	private static JSONObject mapping;
