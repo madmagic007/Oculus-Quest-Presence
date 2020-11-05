@@ -1,8 +1,7 @@
 
 # Oculus-Quest-Presence
 
-## IMPORTANT: This tool currently does not work for the quest 2 because the quest 2 runs Android 10. Support for the quest 2 should come soon!
-
+## IMPORTANT: This tool currently does not work for the quest 2 because the quest 2. Refer to <a href="https://github.com/madmagic007/Oculus-Quest-Presence/issues/24">this</a> for more information.
 #### Discord Rich Presence for the Oculus Quest
 
 <p align="center">
