@@ -9,9 +9,9 @@
 		"key": "oculus"
 	},
 	"com.oculus.systemdriver": {
-        "details": "Peeking Through 👀",
-        "state": ""
-    },
+        	"details": "Peeking Through 👀",
+        	"state": ""
+    	},
 	"com.vankrupt.pavlov": {
 		"details": "Currently Playing:",
 		"state": "Pavlov VR: Shack",
@@ -429,5 +429,9 @@
 	"com.SoulcomStudios.SecretToilet": {
 		"details": "Currently Playing:",
 		"state": "Ricks Toilet"
+	},
+	"com.coatsink.alone": {
+		"details": "Currently Playing:",
+		"state": "Jurassic World Aftermath"
 	}
 }
