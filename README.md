@@ -108,4 +108,4 @@ If you have experience with java/android or you'd like to help adding to the `la
 
 ---
 
-Special thanks to [u/FinalFortune_](https://www.reddit.com/user/FinalFortune_/) for helping me out with bug testing and creating a demo/tutorial video.
+Special thanks to [u/FinalFortune_](https://www.reddit.com/user/FinalFortune_/) for helping me out with bug testing and creating a demo/tutorial video, Dex for helping me with Quest 2 development and [LaurieTheFish](https://github.com/Lauriethefish) for helping with module development.
