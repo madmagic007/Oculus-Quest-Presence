@@ -49,7 +49,7 @@ You can now go back to your PC and press the `validate` button in the popup wind
 ## Modules
 
 Modules allow for more detailed information about a game or program on the quest to be shown in the presence.
-Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki" target="_blank">more here</a> about how to implement a module to a game/program on the quest.
+Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Modules" target="_blank">more here</a> about how to implement a module to a game/program on the quest.
 
 ---
 
