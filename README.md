@@ -77,6 +77,7 @@ Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Modules"
 - Check if the firewall isn't blocking Java and add an exception if necessary.
 
 #### - I did everything and it said "device found and apk is running on device", but the presence isn't showing
+- Add java.exe and javaw.exe as an exception to your firewall.
 - Check if you got the notification on your pc saying that your quest is online. If you received that, it means that the quest has connected to the pc and the error is with discord. If you didn't get that notification, make sure that the apk is running on your quest.
 - Discord for web browser won't detect games running on your pc, so make sure you are using the desktop application.
 - Check the settings in discord and make sure that game presence is enabled.
@@ -86,8 +87,6 @@ Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Modules"
 - Dynamic ip addresses can change after a while, open the settings window and make sure that the ip there is the same as the one found in SideQuest. You can also assign a static ip address to your quest.
 - If the ip is correct, follow the steps above this.
 
-#### - The presence is showing, but it shows a weird name
-- Read the last part of the 'knows issues section'. Open the settings window: right click icon in the system tray > open settings and hit the "save log" button. Your default text editor will open and in the window a bunch of package names should be listed. Send me the contents of that file in discord.
 ##### If none of these steps helped, contact me on discord (link at the top).  
 
 #### - Do i need to set the ip every single time?
