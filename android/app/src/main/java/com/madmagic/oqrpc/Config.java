@@ -1,7 +1,6 @@
 package com.madmagic.oqrpc;
 
-import android.os.Environment;
-
+import android.content.Context;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -10,16 +9,18 @@ import java.util.Map;
 
 public class Config {
 
-    static File cFile;
+    private static File cFile;
     public static JSONObject config;
 
-    static File mFile;
+    private static File mFile;
     public static File moduleFolder;
 
-    public static void init(File dir) {
-        cFile = new File(dir.getPath() + "/config.json");
-        mFile = new File(dir.getPath(), "moduleConfig.modules");
-        moduleFolder = new File(Environment.getExternalStorageDirectory(), "OQRPC Modules");
+    public static void init(Context context) {
+        cFile = new File(context.getFilesDir(), "config.json");
+        mFile = new File(context.getFilesDir(), "moduleConfig.modules");
+
+        moduleFolder = new File(context.getExternalFilesDir(null), "OQRPC Modules");
+
         try {
             if (!cFile.exists()) cFile.createNewFile();
             config = getConfig();
@@ -27,6 +28,7 @@ public class Config {
             if (!mFile.exists()) mFile.createNewFile();
             if (!moduleFolder.isDirectory()) moduleFolder.mkdir();
         } catch (Exception ignored) {}
+        Module.init();
     }
 
     public static JSONObject updateConfig(JSONObject o) {

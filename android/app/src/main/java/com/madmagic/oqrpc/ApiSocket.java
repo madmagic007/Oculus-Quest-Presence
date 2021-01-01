@@ -1,14 +1,12 @@
 package com.madmagic.oqrpc;
 
 import android.util.Log;
-
 import com.madmagic.oqrpc.main.MainService;
+import fi.iki.elonen.NanoHTTPD;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.HashMap;
-
-import fi.iki.elonen.NanoHTTPD;
 
 public class ApiSocket extends NanoHTTPD {
 
@@ -23,7 +21,7 @@ public class ApiSocket extends NanoHTTPD {
 
     @Override
     public Response serve(IHTTPSession session) {
-        String r = "";
+        String r = "{}";
 
         try {
             final HashMap<String, String> map = new HashMap<>();
@@ -41,7 +39,8 @@ public class ApiSocket extends NanoHTTPD {
             switch (pO.getString("message")) {
 
                 case "game":
-                    String packageName = DeviceInfo.getTopmost(s.getBaseContext());
+                    String[] topmostData = DeviceInfo.getTopmost(s.getBaseContext());
+                    String packageName = topmostData[0];
                     JSONObject response = new JSONObject();
 
                     boolean detailed = false;
@@ -54,13 +53,13 @@ public class ApiSocket extends NanoHTTPD {
                         if (!appId.isEmpty()) response.put("appId", appId);
                     }
                     r = response.put("message", "gameResponse")
-                            .put("name", packageName)
+                            .put("name", topmostData[1].equals("") ? packageName.split("\\.")[packageName.split("\\.").length-1] : topmostData[1])
                             .put("detailed", detailed)
                             .toString(4);
                     break;
 
                 case "startup":
-                    s.callStart();
+                    new Thread(s::callStart).start();
                     r = new JSONObject().put("started", true).toString(4);
                     break;
 
@@ -71,7 +70,8 @@ public class ApiSocket extends NanoHTTPD {
                     break;
             }
 
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return newFixedLengthResponse(r);
     }

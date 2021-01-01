@@ -3,8 +3,12 @@ package com.madmagic.oqrpc;
 import android.util.Log;
 import org.json.JSONObject;
 
-import java.io.*;
-import java.util.*;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Module implements Serializable {
 
@@ -27,8 +31,13 @@ public class Module implements Serializable {
 
             if (Config.moduleFolder.listFiles() == null) return;
             for (File file : Config.moduleFolder.listFiles()) {
-                if (file.isDirectory() || !isValid(file)) continue;
+
                 JSONObject obj = getJsonObject(file);
+                Log.d("OQRPC", "MODULE");
+                if (obj == null || !obj.has("packageName") || !obj.has("port")){
+                    Log.d("OQRPC", "BAD MODULE " + (obj == null));
+                    continue;
+                }
 
                 Module module = new Module(obj.getString("packageName"), obj.getInt("port"),
                         obj.has("appId") ? obj.getString("appId") : "");
@@ -36,9 +45,10 @@ public class Module implements Serializable {
                     module.enabled = stored.get(module.name).enabled;
                 } catch (Exception ignored) {}
                 modules.put(obj.getString("packageName"), module);
+                Log.d("OQRPC", "put module " + modules.size());
             }
             Config.updateModules(modules);
-        } catch (Exception ignored) {} //android JSON is stupid, unnecessary exception catching pff
+        } catch (Exception ignored) {}
     }
 
     public static boolean isEnabled(String packageName) {
@@ -54,20 +64,15 @@ public class Module implements Serializable {
         return modules.get(packageName).appId;
     }
 
-    private static boolean isValid(File file) {
-        try {
-            JSONObject main = getJsonObject(file);
-            main.getString("packageName");
-            main.getInt("port");
-            return true;
-        } catch (Exception ignored) {}
-        return false;
-    }
 
     private static JSONObject getJsonObject(File file) {
         try {
-            return new JSONObject(new String(Config.read(file)));
+            byte[] bytes = new byte[(int) file.length()];
+            DataInputStream is = new DataInputStream(new FileInputStream(file));
+            is.readFully(bytes);
+            is.close();
+            return new JSONObject(new String(bytes));
         } catch (Exception ignored) {}
-        return new JSONObject();
+        return null;
     }
 }

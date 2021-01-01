@@ -1,7 +1,6 @@
 package com.madmagic.oqrpc;
 
 import android.util.Log;
-import com.madmagic.oqrpc.main.MainService;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -13,14 +12,14 @@ import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
 public class ApiSender {
-    private static OkHttpClient c = new OkHttpClient();
-    private static MediaType jT = MediaType.parse("application/json; charset=utf-8");
+    private static final OkHttpClient c = new OkHttpClient();
+    private static final MediaType jT = MediaType.parse("application/json; charset=utf-8");
 
     public static JSONObject send(String message, String ownAddress) {
         JSONObject ro = new JSONObject();
         try {
             JSONObject post = new JSONObject()
-                    .put("apkVersion", "2.3")
+                    .put("apkVersion", "2.4")
                     .put("message", message);
 
             if (!ownAddress.isEmpty())

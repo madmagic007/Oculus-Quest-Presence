@@ -1,8 +1,9 @@
 package com.madmagic.oqrpc;
 
 import android.content.Context;
-import android.net.wifi.WifiManager;
-
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import com.madmagic.oqrpc.main.MainService;
 import org.json.JSONObject;
 
@@ -20,8 +21,6 @@ public class ConnectionChecker {
         } catch (Exception ignored) {}
         cTimer = new Timer();
 
-        WifiManager manager = (WifiManager) s.getSystemService(Context.WIFI_SERVICE);
-
         cTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 if (cMax == 1) {
@@ -29,12 +28,21 @@ public class ConnectionChecker {
                 }
                 --cMax;
 
-                if (manager.isWifiEnabled() && manager.getConnectionInfo().getNetworkId() != -1) {
+                if (isNetworkAvailable(s.getBaseContext())) {
                     cTimer.cancel();
                     runConnecter(s);
                 }
             }
         }, 0, 1000);
+    }
+
+    private static boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        Network nw = connectivityManager.getActiveNetwork();
+        if (nw == null) return false;
+        NetworkCapabilities actNw = connectivityManager.getNetworkCapabilities(nw);
+        return actNw != null && (actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH));
+
     }
 
     private static Timer fTimer;

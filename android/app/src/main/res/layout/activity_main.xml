@@ -18,6 +18,7 @@
         android:id="@+id/btnTerminate"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/stop"
         app:layout_constraintBottom_toBottomOf="@+id/divider_1"
         app:layout_constraintStart_toEndOf="@+id/divider_1"
@@ -27,6 +28,7 @@
         android:id="@+id/btnStart"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="@+id/divider_1"
         app:layout_constraintEnd_toStartOf="@+id/divider_1"
@@ -34,52 +36,67 @@
 
     <Button
         android:id="@+id/btnLog"
-        android:layout_width="150dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Debug/Log"
+        android:textAllCaps="false"
+        android:text="@string/debugLog"
+        app:layout_constraintBottom_toTopOf="@id/divider_1"
+        app:layout_constraintEnd_toEndOf="@id/btnStart"
+        app:layout_constraintStart_toStartOf="@id/btnStart"/>
+
+    <Button
+        android:id="@+id/btnPermissions"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false"
+        android:text="@string/permissions"
         app:layout_constraintBottom_toTopOf="@id/divider_1"
         app:layout_constraintEnd_toEndOf="@id/btnTerminate"
-        app:layout_constraintStart_toStartOf="@id/btnStart"/>
+        app:layout_constraintStart_toStartOf="@id/btnTerminate"/>
 
     <Spinner
         android:id="@+id/modulesSpinner"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginTop="50dp"
+        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="@id/btnStart"
         app:layout_constraintEnd_toEndOf="@id/btnTerminate"
         app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
     <TextView
-            android:id="@+id/txtModuleEnabled"
-            android:visibility="invisible"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/btnTerminate"
-            app:layout_constraintStart_toStartOf="@id/btnStart"
-            app:layout_constraintTop_toBottomOf="@id/modulesSpinner" />
+        android:id="@+id/txtModuleEnabled"
+        android:visibility="invisible"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/btnTerminate"
+        app:layout_constraintStart_toStartOf="@id/btnStart"
+        app:layout_constraintTop_toBottomOf="@id/modulesSpinner" />
 
     <Button
-            android:visibility="invisible"
-            android:id="@+id/btnEnable"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:text="Enable module"
-            app:layout_constraintTop_toBottomOf="@+id/txtModuleEnabled"
-            app:layout_constraintStart_toStartOf="@+id/btnStart"
-            app:layout_constraintStart_toEndOf="@+id/divider_1"/>
+        android:visibility="invisible"
+        android:id="@+id/btnEnable"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/enable"
+        app:layout_constraintTop_toBottomOf="@+id/txtModuleEnabled"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintStart_toEndOf="@+id/divider_1"/>
 
     <Button
-            android:visibility="invisible"
-            android:id="@+id/btnDisable"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:text="Disable module"
-            app:layout_constraintTop_toBottomOf="@+id/txtModuleEnabled"
-            app:layout_constraintEnd_toEndOf="@+id/btnTerminate"
-            app:layout_constraintStart_toEndOf="@+id/divider_1"/>
+        android:visibility="invisible"
+        android:id="@+id/btnDisable"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/disable"
+        app:layout_constraintTop_toBottomOf="@+id/txtModuleEnabled"
+        app:layout_constraintEnd_toEndOf="@+id/btnTerminate"
+        app:layout_constraintStart_toEndOf="@+id/divider_1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
