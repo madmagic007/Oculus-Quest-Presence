@@ -9,9 +9,9 @@
 		"key": "oculus"
 	},
 	"com.oculus.systemdriver": {
-        "details": "Peeking Through 👀",
-        "state": ""
-    },
+        	"details": "Peeking Through 👀",
+        	"state": ""
+    	},
 	"com.vankrupt.pavlov": {
 		"details": "Currently Playing:",
 		"state": "Pavlov VR: Shack",
@@ -372,5 +372,66 @@
 	"quest.eleven.forfunlabs": {
 		"details": "Currently Playing:",
 		"state": "Eleven Table Tennis VR"
+	},
+
+	"com.FlatHeadStudios.HelpYourself": {
+		"details": "Currently Playing:",
+		"state": "Help Yourself"
+	},
+	"de.erthu.advr": {
+		"details": "Currently Playing:",
+		"state": "Ancient Dungeon"
+	},
+	"com.db.groovebullet": {
+		"details": "Currently Playing:",
+		"state": "Rhythm 'n Bullets"
+	},
+	"com.overrungame.arcaxer": {
+		"details": "Currently Playing:",
+		"state": "Arcaxer"
+	},
+	"com.VirtualAge.GladiusQuest": {
+		"details": "Currently Playing:",
+		"state": "Gladius"
+	},
+	"com.chesstar.HiBow.Launcher": {
+		"details": "Currently Playing:",
+		"state": "Hibow"
+	},
+	"com.drbeef.questzdoom": {
+		"details": "Currently Playing:",
+		"state": "QuestZDoom"
+	},
+	"com.pokemon.vr": {
+		"details": "Currently Playing:",
+		"state": "Pokémon VR"
+	},
+	"com.vedev.cosmicflow": {
+		"details": "Currently Playing:",
+		"state": "Cosmic Flow: A Relaxing VR Experience"
+	},
+	"oathbreakers.cenkstudios.app": {
+		"details": "Currently Playing:",
+		"state": "Oathbreakers VR"
+	},
+	"com.DoubleAxes.MysteryForestPreRelease1": {
+		"details": "Currently Playing:",
+		"state": "Mystery Forest VR"
+	},
+	"com.drbeef.rtcwquest": {
+		"details": "Currently Playing:",
+		"state": "Return to Castle Wolfenstein"
+	},
+	"BenjaminParisi.Cybercade.apk": {
+		"details": "Currently Playing:",
+		"state": "Cybercade"
+	},
+	"com.SoulcomStudios.SecretToilet": {
+		"details": "Currently Playing:",
+		"state": "Ricks Toilet"
+	},
+	"com.coatsink.alone": {
+		"details": "Currently Playing:",
+		"state": "Jurassic World Aftermath"
 	}
 }

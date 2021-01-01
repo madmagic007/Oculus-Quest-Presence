@@ -1,6 +1,7 @@
 
 # Oculus-Quest-Presence
 
+## IMPORTANT: This tool currently does not work for the quest 2. Refer to <a href="https://github.com/madmagic007/Oculus-Quest-Presence/issues/24">this</a> for more information.
 #### Discord Rich Presence for the Oculus Quest
 
 <p align="center">
@@ -48,7 +49,7 @@ You can now go back to your PC and press the `validate` button in the popup wind
 ## Modules
 
 Modules allow for more detailed information about a game or program on the quest to be shown in the presence.
-Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki" target="_blank">more here</a> about how to implement a module to a game/program on the quest.
+Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Modules" target="_blank">more here</a> about how to implement a module to a game/program on the quest.
 
 ---
 
@@ -107,4 +108,4 @@ If you have experience with java/android or you'd like to help adding to the `la
 
 ---
 
-Special thanks to [u/FinalFortune_](https://www.reddit.com/user/FinalFortune_/) for helping me out with bug testing and creating a demo/tutorial video.
+Special thanks to [u/FinalFortune_](https://www.reddit.com/user/FinalFortune_/) for helping me out with bug testing and creating a demo/tutorial video, [DexTheArcticFox](https://github.com/dexthearcticfox) for helping me with Quest 2 development and [LaurieTheFish](https://github.com/Lauriethefish) for helping with module development.
