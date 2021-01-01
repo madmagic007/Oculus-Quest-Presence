@@ -1,7 +1,7 @@
 
 # Oculus-Quest-Presence
 
-## IMPORTANT: This tool currently does not work for the quest 2. Refer to <a href="https://github.com/madmagic007/Oculus-Quest-Presence/issues/24">this</a> for more information.
+## Quest 2 is now supported! Detailed instructions on how to make it work can be found inside the zip, or <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Quest-2-support">here</a>
 #### Discord Rich Presence for the Oculus Quest
 
 <p align="center">
