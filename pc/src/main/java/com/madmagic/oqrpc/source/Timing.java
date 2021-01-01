@@ -20,7 +20,16 @@ public class Timing {
         requestTimer = new Timer();
         requestTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
-                JSONObject game = ApiSender.ask(Main.getUrl(), "game");
+                JSONObject game;
+                try {
+                    game = ApiSender.ask(Main.getUrl(), "game");
+                } catch (Exception ignored) {
+                    System.out.println("Failed to request game status, stopping presence");
+                    SystemTrayHandler.notif("Quest offline", "RPC service on your Quest has stopped");
+                    Discord.terminate();
+                    terminate();
+                    return;
+                }
                 if (game.has("message") && game.getString("message").equals("gameResponse")) {
                     startRequester();
                     startEnder();

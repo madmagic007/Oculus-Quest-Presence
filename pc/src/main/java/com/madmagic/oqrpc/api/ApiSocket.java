@@ -41,15 +41,15 @@ public class ApiSocket extends NanoHTTPD {
                     Discord.init(Discord.appId);
                     Timing.startRequester();
                     break;
-                case "offline" :
+                case "offline":
                     SystemTrayHandler.notif("Quest offline", "RPC service on your Quest has stopped");
                     Discord.terminate();
                     Timing.terminate();
                     break;
                 case "connect":
-                    r = new JSONObject()
-                            .put("connected", "Successfully connected")
-                            .toString(4);
+                r = new JSONObject()
+                        .put("connected", "Successfully connected")
+                        .toString(4);
                     break;
             }
         } catch (Exception e) {

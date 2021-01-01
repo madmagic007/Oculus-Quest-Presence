@@ -12,18 +12,11 @@ public class Config {
 	public static File configFile;
 	public static JSONObject config;
 
-	public static File mappingFile;
-	private static JSONObject mapping;
-
 	public static void init() {
 		try {
 			configFile =  new File(jarPath().replace(new File(jarPath()).getName(), "config.json"));
 			if (!configFile.exists())configFile.createNewFile();
 			config = readFile(configFile);
-
-			mappingFile = new File(jarPath().replace(new File(jarPath()).getName(), "mapping.json"));
-			if (!mappingFile.exists()) mappingFile.createNewFile();
-			mapping = readFile(mappingFile);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -93,10 +86,6 @@ public class Config {
 			return config.getBoolean("notifications");
 		} catch (Exception ignored) {}
 		return true;
-	}
-
-	public static JSONObject getMapping() {
-		return mapping;
 	}
 
 	public static String jarPath() {

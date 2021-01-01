@@ -32,7 +32,17 @@ public class Main {
         if (Config.getAddress().isEmpty()) {
             SettingsGUI.open();
         } else {
-            ApiSender.ask(Main.getUrl(), "startup");
+            askStartup();
+        }
+    }
+
+    public static void askStartup() {
+        try {
+            String url = Main.getUrl();
+            System.out.println("asking startup at: " + url);
+            ApiSender.ask(url, "startup");
+        } catch (Exception e) {
+            System.out.println("Failed to request service on the quest to start");
         }
     }
 

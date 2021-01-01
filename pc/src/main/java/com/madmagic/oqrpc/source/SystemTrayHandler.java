@@ -18,7 +18,7 @@ public class SystemTrayHandler {
             PopupMenu menu = new PopupMenu();
 
             MenuItem send = new MenuItem("Request presence to start");
-            send.addActionListener(e -> ApiSender.ask(Main.getUrl(), "startup"));
+            send.addActionListener(e -> Main.askStartup());
             menu.add(send);
 
             MenuItem ip = new MenuItem("Open settings");

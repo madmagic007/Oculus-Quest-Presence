@@ -11,7 +11,7 @@ public class ApiSender {
 	private static final OkHttpClient c = new OkHttpClient();
 	private static final MediaType jT = MediaType.parse("application/json; charset=utf-8");
 
-	public static JSONObject ask(String url, String message) {
+	public static JSONObject ask(String url, String message) throws Exception {
 		JSONObject post = new JSONObject()
 				.put("pcAddress", Main.getIp())
 				.put("message", message)
@@ -24,17 +24,7 @@ public class ApiSender {
 			r.post(RequestBody.create(jT, post.toString(4)));
 		}
 
-		String rStr = "";
-		JSONObject ro = new JSONObject();
-		try {
-			Response rs = c.newCall(r.build()).execute();
-			rStr = rs.body().string();
-			ro = new JSONObject(rStr);
-		} catch (Exception ignored) {
-			System.out.println("resp: " + rStr + "\npost: " +  post.toString(4));
-			System.out.println("failed to send request to url: " + url);
-			Discord.terminate();
-		}
-		return ro;
+		Response rs = c.newCall(r.build()).execute();
+		return new JSONObject(rs.body().string());
 	}
 }

@@ -12,9 +12,9 @@ public class Discord {
     public static String lastUsed = appId;
 
     public static void init(String appId) {
-        rpc = DiscordRPC.INSTANCE;
-
         if (!lastUsed.equals(appId)) terminate();
+
+        rpc = DiscordRPC.INSTANCE;
         rpc.Discord_Initialize(appId, null, true, null);
         Discord.lastUsed = appId;
 
@@ -29,6 +29,7 @@ public class Discord {
 
     private static long current = 0;
     public static void updatePresence(JSONObject o) {
+        if (rpc == null) init(lastUsed);
         if (!lastUsed.equals(o.getString("appId"))) init(o.getString("appId"));
 
         presence = new DiscordRichPresence();
@@ -50,9 +51,10 @@ public class Discord {
 
     public static void terminate() {
         try {
-            System.out.println("terminating presence");
             rpc.Discord_ClearPresence();
             rpc.Discord_Shutdown();
+            rpc = null;
+            presence = null;
         } catch (Exception ignored) {}
     }
 }

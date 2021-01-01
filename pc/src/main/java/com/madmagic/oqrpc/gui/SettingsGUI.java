@@ -1,6 +1,7 @@
 package com.madmagic.oqrpc.gui;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.InetAddress;
 
 import javax.swing.*;
@@ -31,7 +32,7 @@ public class SettingsGUI {
 			frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			frame.setResizable(false);
 
-			JLabel lblNewLabel = new JLabel("IP Address (IPv4) of your Oculus Quest:");
+			JLabel lblNewLabel = new JLabel("IP address (IPv4) of your Oculus Quest:");
 			lblNewLabel.setBounds(10, 11, 414, 14);
 			frame.getContentPane().add(lblNewLabel);
 
@@ -82,19 +83,6 @@ public class SettingsGUI {
 			sleepWake.setBounds(10, 148, 416, 23);
 			frame.getContentPane().add(sleepWake);
 			sleepWake.setSelected(Config.getSleepWake());
-
-			JButton saveUnmapped = new JButton("Save unmapped package names");
-			saveUnmapped.setBounds(238, 174, 186, 23);
-			frame.getContentPane().add(saveUnmapped);
-			saveUnmapped.addActionListener(e -> {
-				try {
-					File log = new File(Config.jarPath().replace(new File(Config.jarPath()).getName(), "unmapped.txt"));
-					FileWriter fw = new FileWriter(log);
-					fw.write(HandleGameReceived.sb.toString());
-					fw.close();
-					Desktop.getDesktop().edit(log);
-				} catch (Exception ignored) {}
-			});
 
 			JButton btnSaveSettings = new JButton("Save");
 			btnSaveSettings.setBounds(335, 202, 89, 23);
@@ -152,8 +140,8 @@ public class SettingsGUI {
 				Config.setAddress(ipv4);
 				return "Found Quest and the service responded";
 			}
-			else
-				return "Found Quest, however the service didn't respond";
+		} catch (IOException ignored) {
+			return "Found Quest, however the service didn't respond";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
