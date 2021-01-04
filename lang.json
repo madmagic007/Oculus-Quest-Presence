@@ -49,10 +49,6 @@
 	"com.google.tiltbrush": {
 		"key": "tilt"
 	},
-	"com.cloudheadgames.pistolwhip": {
-		"details": "Currently Playing:",
-		"state": "Pistol Whip"
-	},
 	"com.ILMxLAB.VaderImmortal.ep1": {
 		"key": "v1"
 	},
