@@ -19,7 +19,7 @@ public class ApiSender {
         JSONObject ro = new JSONObject();
         try {
             JSONObject post = new JSONObject()
-                    .put("apkVersion", "2.4")
+                    .put("apkVersion", "2.5")
                     .put("message", message);
 
             if (!ownAddress.isEmpty())

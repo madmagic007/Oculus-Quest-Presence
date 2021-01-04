@@ -53,7 +53,8 @@ public class ApiSocket extends NanoHTTPD {
                         if (!appId.isEmpty()) response.put("appId", appId);
                     }
                     r = response.put("message", "gameResponse")
-                            .put("name", topmostData[1].equals("") ? packageName.split("\\.")[packageName.split("\\.").length-1] : topmostData[1])
+                            .put("name", topmostData[1])
+                            .put("packageName", packageName)
                             .put("detailed", detailed)
                             .toString(4);
                     break;
