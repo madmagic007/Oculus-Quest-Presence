@@ -18,6 +18,9 @@
 	"com.vrchat.oculus.quest": {
 		"key": "vrchat"
 	},
+	"com.vankrupt.pavlov": {
+		"key": "pavlov"
+	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
 		"key": "superhot"
 	},
