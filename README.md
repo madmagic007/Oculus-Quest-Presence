@@ -58,7 +58,6 @@ Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Modules"
 - Loss of internet connection for more than one minute will stop showing the presence. Right click on the oculus quest rpc icon in the system tray on your computer and hit "Request presence to start".
 - Both programs *should* automatically start with device boot, but that may not always the be case. If the presence didn't start but the program on the pc is running, hit the "Request presence to start" button. If you didn't get a message saying your quest is online, then you have to manually start the app from the quest app launcher.
 - If you quest connects to wifi within 3 minutes of powering on, it will automatically start displaying the presence on Discord. If it doesn't, you may have to manually start the app.
-- Game presence names are based on the package. For Pavlov, this would be "com.vankrupt.pavlov". These are then mapped to a proper name using the `lang.json` file found in this repository. If no name mapping is available, it will take the last piece of the package name instead. For example, `com.vankrupt.pavlov -> pavlov`
 
 ---
 
