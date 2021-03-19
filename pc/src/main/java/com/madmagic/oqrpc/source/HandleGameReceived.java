@@ -18,14 +18,14 @@ public class HandleGameReceived {
 
         if (own) {
             String packageName = o.getString("packageName");
-            String name = o.getString("name");
+            String name = o.has("name") ? o.getString("name") : "";
             if (getGitObj().has(packageName) && !o.getBoolean("detailed")) {
                 JSONObject game = getGitObj().getJSONObject(packageName);
                 if (game.has("details")) o.put("details", game.getString("details"));
                 if (game.has("state")) o.put("state", game.getString("state"));
                 if (!o.has("largeImageKey") && game.has("key")) o.put("largeImageKey", game.getString("key"));
             }
-            if (!o.has("details") && !o.has("state")) o.put("details", "Currently Playing:").put("state", name.isEmpty() ? name.split("\\.")[name.split("\\.").length - 1] : name);
+            if (!o.has("details") && !o.has("state")) o.put("details", "Currently Playing:").put("state", name.isEmpty() ? packageName.split("\\.")[packageName.split("\\.").length - 1] : name);
 
             if (!o.has("largeImageKey")) {
                 o.put("largeImageKey", "quest");

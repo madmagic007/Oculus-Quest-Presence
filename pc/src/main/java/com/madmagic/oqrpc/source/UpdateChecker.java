@@ -9,7 +9,7 @@ import java.io.File;
 
 public class UpdateChecker {
 
-    public static final String version = "2.8.0";
+    public static final String version = "2.8.1";
     private static final String updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/update.json";
     private static String jarUrl;
     private static boolean oG;
