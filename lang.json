@@ -6,6 +6,10 @@
 		"details": "In Oculus Home",
 		"key": "oculus"
 	},
+	"com.oculus.shellenv": {
+		"details": "In Oculus Home",
+		"key": "oculus"
+	},
 	"com.oculus.systemdriver": {
         	"details": "Peeking Through 👀"
     	},
