@@ -88,12 +88,12 @@ Read <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Modules"
 
 ##### If none of these steps helped, contact me on discord (link at the top).  
 
-#### - Do i need to set the ip every single time?
+#### - Do I need to set the ip every single time?
 - No, the window asking for the ip only comes up if no ip has been set before, or that it doesn't find one in the config file. 
 #### - Will this work for mac/linux?
-- For mac, download jar from <a href="https://github.com/madmagic007/Oculus-Quest-Presence/raw/master/pc/out/artifacts/pc_jar/Oculus%20Quest%20Discord%20RPC.jar">here</a> and place this is a folder where no admin privlegses are required to edit files. I dont have an installer yet because I dont know how to work with mac. 
+- For mac, download the jar from <a href="https://github.com/madmagic007/Oculus-Quest-Presence/raw/master/pc/out/artifacts/pc_jar/Oculus%20Quest%20Discord%20RPC.jar">here</a> and place it in a folder where no admin privileges are required to edit files. I dont have an installer yet because I dont know how to work with mac. 
 - Linux has no support yet, you can try downloading the jar but that most likely won't work properly on linux.
-#### - Does my pc needs to be on all the time?
+#### - Does my pc need to be on all the time?
 - If you want to show the presence then yes, if you dont want to have it show then your pc can be turned off.
 #### - Will this affect performance/battery life on my quest?
 - This is a very light application so it shouldn't be noticeable at all. However keep in mind that it is yet another application that is running in the background.
