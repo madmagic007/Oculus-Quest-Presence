@@ -1,7 +1,7 @@
 
 # Oculus-Quest-Presence
 
-## Quest 2 is now supported! Detailed instructions on how to make it work can be found inside the zip, or <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Quest-2-support">here</a>
+## Quest 2  now works like the normal quest. Read more <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Quest-2-support">here</a>
 #### Discord Rich Presence for the Oculus Quest
 
 <p align="center">
