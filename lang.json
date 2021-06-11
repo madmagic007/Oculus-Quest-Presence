@@ -1,0 +1,98 @@
+{
+	"com.madmagic.oqrpc": {
+		"details": "Setting up presence"
+	},
+	"com.oculus.vrshell": {
+		"details": "In Oculus Home",
+		"key": "oculus"
+	},
+	"com.oculus.shellenv": {
+		"details": "In Oculus Home",
+		"key": "oculus"
+	},
+	"com.oculus.systemdriver": {
+        	"details": "Peeking Through 👀"
+    	},
+	"com.beatgames.beatsaber": {
+		"key": "beatsaber"
+	},
+	"com.owlchemylabs.jobsimulator": {
+		"key": "jobsim"
+	},
+	"com.vrchat.oculus.quest": {
+		"key": "vrchat"
+	},
+	"com.vankrupt.pavlov": {
+		"key": "pavlov"
+	},
+	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
+		"key": "superhot"
+	},
+	"com.oculus.os.clearactivity": {
+		"details": "Shutting Down",
+		"state": "Turning device off"
+	},
+	"com.google.android.apps.youtube.vr.oculus": {
+		"details": "Watching Youtube",
+		"key": "yt"
+	},
+	"com.polygraphene.alvr": {
+		"details": "Playing PCVR",
+		"state": "ALVR"
+	},
+	"com.amd.wirelesshmd": {
+		"details": "Playing PCVR",
+		"state": "AMD ReLive"
+	},
+	"com.harmonixmusic.kata": {
+		"key": "audica"
+	},
+	"com.AgainstGravity.RecRoom": {
+		"key": "recroom"
+	},
+	"com.google.tiltbrush": {
+		"key": "tilt"
+	},
+	"com.ILMxLAB.VaderImmortal.ep1": {
+		"key": "v1"
+	},
+	"com.ILMxLAB.VaderImmortal.ep2": {
+		"key": "v2"
+	},
+	"com.ILMxLAB.VaderImmortal.ep3": {
+		"key": "v3"
+	},
+	"com.weloveoculus.BMBF": {
+		"details": "Modding Beat Saber"
+	},
+	"VirtualDesktop.Android": {
+		"details": "Playing PCVR",
+		"state": "Virtual Desktop"
+	},
+	"com.netflix.ninja.vr": {
+		"details": "Watching Netflix",
+		"key": "nflix"
+	},
+	"com.MyronSoftware.Deisim": {
+		"key": "deism"
+	},
+	"com.riftcat.vridge2": {
+		"details": "Playing PCVR",
+		"state": "VRidge"
+	},
+	"com.swearl.playa": {
+		"details": "Watching Videos",
+		"state": "Play'a VR Video Player"
+	},
+	"com.oculus.xrstreamingclient": {
+		"details": "Playing PCVR",
+		"state": "Oculus Link"
+	},
+	"unity.SUPERHOT_Team.SUPERHOT_VR_Demo": {
+		"key": "superhot"
+	},
+	"com.nextvr.lunar": {
+		"details": "Watching Videos",
+		"state": "NextVR"
+	}
+}
