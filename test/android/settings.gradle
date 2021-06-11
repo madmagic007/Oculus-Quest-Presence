@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "Oculus Quest Discord RPC (android)"
