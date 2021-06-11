@@ -7,11 +7,13 @@ import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.util.Log;
 import com.madmagic.oqrpc.main.MainService;
 import com.rvalerio.fgchecker.AppChecker;
 import net.dongliu.apk.parser.ApkFile;
 import net.dongliu.apk.parser.bean.ApkMeta;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -27,10 +29,10 @@ public class DeviceInfo {
             int level = batteryIntent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             r.put("batteryLevel", level + "%");
 
-            String name = BluetoothAdapter.getDefaultAdapter().getName();
-            r.put("name", name);
+            r.put("name", getName());
 
-            r.put("currentTop", getTopmost(s))
+            String[] topMost = getTopmost(s);
+            r.put("currentTop", new JSONArray().put(topMost[0]).put(topMost[1]))
                     .put("ownAddress", MainService.getIp(s))
                     .put("pcAddress", Config.getAddress().isEmpty() ? "not set" : Config.getAddress());
 
@@ -38,6 +40,10 @@ public class DeviceInfo {
         } catch (Exception ignored) {
             return "";
         }
+    }
+
+    public static String getName() {
+        return BluetoothAdapter.getDefaultAdapter().getName();
     }
 
     private static final AppChecker checker = new AppChecker();

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Oqrpc</string>
+    <string name="stop">Force stop</string>
+    <string name="start">Force start</string>
+    <string name="debugLog">Debug/Log</string>
+    <string name="permissions">Request permissions</string>
+    <string name="enable">Enable module</string>
+    <string name="disable">Disable module</string>
+    <string name="startRecord">Start stream</string>
+    <string name="stopRecord">Stop stream</string>
+    <string name="textTitle">OQRPC</string>
+    <string name="textDescription">OQRPC is running</string>
+</resources>

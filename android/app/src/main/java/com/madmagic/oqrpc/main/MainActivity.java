@@ -1,12 +1,10 @@
 package com.madmagic.oqrpc.main;
 
-import android.app.AlertDialog;
 import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -119,17 +117,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void permission(boolean force) {
         if (shouldAskUsageStatsPerm(this) || force) {
-
-            //Quest 2 requires permission grant via adb
-            if (Build.VERSION.SDK_INT >= 29) {
-                new AlertDialog.Builder(this)
-                        .setTitle("Quest 2 warning")
-                        .setMessage("Because you are using the quest 2, you need to grant the permission using adb. More info found at the repository on github")
-                        .setPositiveButton(android.R.string.ok, null)
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-                return;
-            }
             Intent grantPermission = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
             startActivity(grantPermission);
         }
@@ -141,12 +128,8 @@ public class MainActivity extends AppCompatActivity {
         int mode;
         AppOpsManager appOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
 
-        if (VERSION.SDK_INT < 29)
-            mode = appOps.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS,
-                    android.os.Process.myUid(), context.getPackageName());
-        else
-            mode = appOps.unsafeCheckOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS,
-                    android.os.Process.myUid(), context.getPackageName());
+        mode = appOps.unsafeCheckOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS,
+                android.os.Process.myUid(), context.getPackageName());
 
         if (mode == AppOpsManager.MODE_DEFAULT) {
             granted = (context.checkCallingOrSelfPermission(android.Manifest.permission.PACKAGE_USAGE_STATS) == PackageManager.PERMISSION_GRANTED);
