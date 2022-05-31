@@ -1,7 +1,8 @@
 
 # Oculus-Quest-Presence
 
-## Quest 2  now works like the normal quest. Read more <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Quest-2-support">here</a>
+## Currently there is an issue when attempting to grant the permission, please use <a href="https://github.com/madmagic007/Oculus-Quest-Presence/wiki/Permission-granting-issues">this</a> workaround in the meantime.
+
 #### Discord Rich Presence for the Oculus Quest
 
 <p align="center">
@@ -27,7 +28,6 @@ Video tutorial:
 ### Files
 - Download the <a href="https://github.com/madmagic007/Oculus-Quest-Presence/releases" target="_blank">latest release</a> and unzip it.
 - Download and install <a href="https://sidequestvr.com/#/download" target="_blank">SideQuest</a> on your PC.
-- Download <a href="https://github.com/tverona1/QuestAppLauncher/releases" target="_blank">Quest app launcher</a>.
 
 ### On Your PC
 - Make sure you have the latest version of the <a href="https://www.java.com/en/download/win10.jsp" target="_blank">Java JRE</a> installed on your computer.
@@ -38,9 +38,9 @@ Video tutorial:
 - Enter this IP address into the popup window.
 
 ### On Your Quest
-- Open the `Quest App Launcher` found under `Library > Unknown Sources`
-- Select the `2D` tab and look for the `oqrpc.apk`. It will now prompt you for permissions.
-- Select `oqrpc` and toggle it on. Press the `B` button on your controller to navigate back.
+- Go to `Library > Unknown Sources` and launch oqrpc from there.
+- When the app is launched, a permission popup will appear ~~Select `oqrpc` and toggle it on~~. (Currently broken, follow the next step and read the link at the very top of the readme for a workaround)
+- Press the `B` button on your controller to navigate back and continue the setup.
 
 You can now go back to your PC and press the `validate` button in the popup window. It should tell you that the apk is running. Restart your quest and a notification should appear on your computer telling you that it is online. Your Quest games will now appear in your Discord rich presence.
 
