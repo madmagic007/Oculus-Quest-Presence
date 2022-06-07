@@ -4,29 +4,29 @@
 	},
 	"com.oculus.vrshell": {
 		"details": "In Oculus Home",
-		"key": "oculus"
+		"largeImageKey": "oculus"
 	},
 	"com.oculus.shellenv": {
 		"details": "In Oculus Home",
-		"key": "oculus"
+		"largeImageKey": "oculus"
 	},
 	"com.oculus.systemdriver": {
         	"details": "Peeking Through 👀"
-    	},
+	},
 	"com.beatgames.beatsaber": {
-		"key": "beatsaber"
+		"largeImageKey": "beatsaber"
 	},
 	"com.owlchemylabs.jobsimulator": {
-		"key": "jobsim"
+		"largeImageKey": "jobsim"
 	},
 	"com.vrchat.oculus.quest": {
-		"key": "vrchat"
+		"largeImageKey": "vrchat"
 	},
 	"com.vankrupt.pavlov": {
-		"key": "pavlov"
+		"largeImageKey": "pavlov"
 	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
-		"key": "superhot"
+		"largeImageKey": "superhot"
 	},
 	"com.oculus.os.clearactivity": {
 		"details": "Shutting Down",
@@ -34,7 +34,7 @@
 	},
 	"com.google.android.apps.youtube.vr.oculus": {
 		"details": "Watching Youtube",
-		"key": "yt"
+		"largeImageKey": "yt"
 	},
 	"com.polygraphene.alvr": {
 		"details": "Playing PCVR",
@@ -45,22 +45,22 @@
 		"state": "AMD ReLive"
 	},
 	"com.harmonixmusic.kata": {
-		"key": "audica"
+		"largeImageKey": "audica"
 	},
 	"com.AgainstGravity.RecRoom": {
-		"key": "recroom"
+		"largeImageKey": "recroom"
 	},
 	"com.google.tiltbrush": {
-		"key": "tilt"
+		"largeImageKey": "tilt"
 	},
 	"com.ILMxLAB.VaderImmortal.ep1": {
-		"key": "v1"
+		"largeImageKey": "v1"
 	},
 	"com.ILMxLAB.VaderImmortal.ep2": {
-		"key": "v2"
+		"largeImageKey": "v2"
 	},
 	"com.ILMxLAB.VaderImmortal.ep3": {
-		"key": "v3"
+		"largeImageKey": "v3"
 	},
 	"com.weloveoculus.BMBF": {
 		"details": "Modding Beat Saber"
@@ -71,10 +71,10 @@
 	},
 	"com.netflix.ninja.vr": {
 		"details": "Watching Netflix",
-		"key": "nflix"
+		"largeImageKey": "nflix"
 	},
 	"com.MyronSoftware.Deisim": {
-		"key": "deism"
+		"largeImageKey": "deism"
 	},
 	"com.riftcat.vridge2": {
 		"details": "Playing PCVR",
@@ -89,7 +89,7 @@
 		"state": "Oculus Link"
 	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_Demo": {
-		"key": "superhot"
+		"largeImageKey": "superhot"
 	},
 	"com.nextvr.lunar": {
 		"details": "Watching Videos",
