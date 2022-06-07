@@ -10,9 +10,6 @@
 		"details": "In Oculus Home",
 		"largeImageKey": "oculus"
 	},
-	"com.oculus.systemdriver": {
-        	"details": "Peeking Through 👀"
-	},
 	"com.beatgames.beatsaber": {
 		"largeImageKey": "beatsaber"
 	},
@@ -32,8 +29,8 @@
 		"largeImageKey": "superhot"
 	},
 	"com.oculus.os.clearactivity": {
-		"details": "Shutting Down",
-		"state": "Turning device off"
+		"details": "Peeking Through 👀",
+		"state": "Or shutting device down"
 	},
 	"com.google.android.apps.youtube.vr.oculus": {
 		"details": "Watching Youtube",
