@@ -25,6 +25,9 @@
 	"com.vankrupt.pavlov": {
 		"largeImageKey": "pavlov"
 	},
+	"com.vankrupt.pavlovbeta": {
+		"largeImageKey": "pavlov"
+	},
 	"unity.SUPERHOT_Team.SUPERHOT_VR_QA": {
 		"largeImageKey": "superhot"
 	},
