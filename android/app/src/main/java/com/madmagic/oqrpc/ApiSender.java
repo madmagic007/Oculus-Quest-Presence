@@ -19,11 +19,11 @@ public class ApiSender {
         JSONObject ro = new JSONObject();
         try {
             JSONObject post = new JSONObject()
-                    .put("apkVersion", "2.6")
+                    .put("apkVersion", "3.0")
                     .put("message", message);
 
             if (!ownAddress.isEmpty())
-                post.put("addressA", ownAddress);
+                post.put("questAddress", ownAddress);
 
             String ip = Config.getAddress();
             if (ip.isEmpty()) return ro;

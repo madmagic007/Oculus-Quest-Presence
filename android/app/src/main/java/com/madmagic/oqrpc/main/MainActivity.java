@@ -4,6 +4,7 @@ import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -16,6 +17,7 @@ import com.madmagic.oqrpc.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,11 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent service = new Intent(this, MainService.class);
         if (!MainService.isRunning(getApplicationContext(), MainService.class)) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                startForegroundService(service);
-            } else {
-                startService(service);
-            }
+            startForegroundService(service);
         }
 
         findViewById(R.id.btnTerminate).setOnClickListener(v -> {
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 String log = Config.config.toString(4) + "\n" +
                         "Trying to request connection: " +
                         ApiSender.send("connect", MainService.getIp(getBaseContext())).toString() +
-                        "\ncurrent top: " + DeviceInfo.getTopmost(getBaseContext());
+                        "\ncurrent top: " + Arrays.toString(DeviceInfo.getTopmost(getBaseContext()));
 
                 FileWriter fw = new FileWriter(logFile);
                 fw.write(log);
@@ -118,11 +116,11 @@ public class MainActivity extends AppCompatActivity {
     private void permission(boolean force) {
         if (shouldAskUsageStatsPerm(this) || force) {
             Intent grantPermission = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
+            grantPermission.setData(Uri.fromParts("package", getPackageName(), null));
             startActivity(grantPermission);
         }
     }
 
-    @SuppressWarnings("deprecation")
     static boolean shouldAskUsageStatsPerm(Context context) {
         boolean granted;
         int mode;

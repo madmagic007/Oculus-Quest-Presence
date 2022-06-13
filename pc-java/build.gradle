@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+libsDirName = '..'
+
+repositories {
+    jcenter()
+    mavenCentral()
+        maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'org.nanohttpd:nanohttpd:2.3.1'
+    implementation 'org.json:json:20190722'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'club.minnced:java-discord-rpc:2.0.2'
+    implementation 'commons-io:commons-io:2.11.0'
+}
+
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'me.madmagic.oqrpc.source.Main'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    } {
+        exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    }
+    with jar
+}

@@ -39,6 +39,7 @@
                 android:name=".main.MainActivity"
                 android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode"
                 android:launchMode="singleTask"
+                android:exported="true"
                 android:resizeableActivity="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -52,6 +53,7 @@
                 android:name=".main.MainService"
                 android:clearTaskOnLaunch="true"
                 android:enabled="true"
+                android:exported="true"
                 android:excludeFromRecents="true"
                 android:launchMode="singleInstance"/>
 

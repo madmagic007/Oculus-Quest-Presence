@@ -8,6 +8,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.BatteryManager;
 import android.os.Build;
+import android.provider.Settings;
 import android.util.Log;
 import com.madmagic.oqrpc.main.MainService;
 import com.rvalerio.fgchecker.AppChecker;
@@ -29,11 +30,11 @@ public class DeviceInfo {
             int level = batteryIntent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             r.put("batteryLevel", level + "%");
 
-            r.put("name", getName());
+            r.put("name", getName(s));
 
             String[] topMost = getTopmost(s);
             r.put("currentTop", new JSONArray().put(topMost[0]).put(topMost[1]))
-                    .put("ownAddress", MainService.getIp(s))
+                    .put("questAddress", MainService.getIp(s))
                     .put("pcAddress", Config.getAddress().isEmpty() ? "not set" : Config.getAddress());
 
             return r.toString(4);
@@ -42,8 +43,8 @@ public class DeviceInfo {
         }
     }
 
-    public static String getName() {
-        return BluetoothAdapter.getDefaultAdapter().getName();
+    public static String getName(Context c) {
+        return Settings.Global.getString(c.getContentResolver(), "device_name");
     }
 
     private static final AppChecker checker = new AppChecker();
