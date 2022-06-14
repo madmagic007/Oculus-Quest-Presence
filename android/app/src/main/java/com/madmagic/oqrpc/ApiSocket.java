@@ -56,7 +56,7 @@ public class ApiSocket extends NanoHTTPD {
                             .put("name", topmostData[1])
                             .put("packageName", packageName)
                             .put("detailed", detailed)
-                            .toString(4);
+                            .toString();
                     break;
 
                 case "startup":
@@ -67,7 +67,7 @@ public class ApiSocket extends NanoHTTPD {
                 case "validate":
                     r = new JSONObject()
                             .put("valid", "You just found a secret :)")
-                            .toString(4);
+                            .toString();
                     break;
             }
 
