@@ -43,6 +43,8 @@ namespace OQRPC {
             });
 
             new ApiSocket();
+
+            if (Config.cfg.address == null) new SettingsGui();
         }
 
         public static void SendNotif(string text) {

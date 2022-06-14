@@ -1,0 +1,161 @@
+﻿using Flurl.Http;
+using Newtonsoft.Json.Linq;
+using Oculus_Quest_Presence.Properties;
+using OQRPC.api;
+using System;
+using System.Drawing;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace OQRPC.settings {
+
+    class SettingsGui : Form {
+
+        private TextBox tbAddress;
+        private Label txtFeedback;
+        private CheckBox cbBoot;
+        private CheckBox cbSleepWake;
+        private CheckBox cbNotifs;
+        private NumericUpDown nudDelay;
+
+        private bool validated;
+        private Config c;
+
+        public SettingsGui() {
+            c = Config.cfg;
+
+            ClientSize = new Size(300, 171);
+            Text = Resources.name + " settings";
+            Icon = Resources.AppIcon;
+            MinimizeBox = false;
+            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            Label txtAddress = new Label {
+                Text = "Quest address:",
+                Location = new Point(3, 3),
+                AutoSize = true
+            };
+            Controls.Add(txtAddress);
+
+            Button btnValidate = new Button {
+                Text = "Validate",
+                Height = 22
+            };
+            Controls.Add(btnValidate);
+            btnValidate.Location = new Point(ClientSize.Width - btnValidate.Width - 5, GetEndY(txtAddress) + 4);
+            btnValidate.Click += BtnValidate_Click;
+
+            this.tbAddress = new TextBox {
+                Text = c.address ?? "Not Set",
+                Location = new Point(5, btnValidate.Location.Y + 1),
+                Width = btnValidate.Location.X - 12,
+            };
+            Controls.Add(this.tbAddress);
+
+            txtFeedback = new Label {
+                Location = new Point(3, GetEndY(this.tbAddress) + 5),
+                Width = ClientSize.Width - 10
+            };
+            Controls.Add(txtFeedback);
+
+            Label txtDelay = new Label {
+                Text = "Presence update delay (Seconds)",
+                Location = new Point(3, GetEndY(txtFeedback) + 10),
+            };
+            Controls.Add(txtDelay);
+
+            nudDelay = new NumericUpDown {
+                Value = 3,
+                Minimum = 1,
+                Location = new Point(btnValidate.Location.X, txtDelay.Location.Y),
+                Width = btnValidate.Width -2,
+            };
+            Controls.Add(nudDelay);
+            txtDelay.Width = nudDelay.Location.X - 10;
+
+            cbBoot = new CheckBox {
+                Text = "Start with windows",
+                Checked = c.boot,
+                Location = new Point(5, GetEndY(txtDelay) + 5),
+                AutoSize = true,
+            };
+            Controls.Add(cbBoot);
+
+            cbSleepWake = new CheckBox {
+                Text = "Pause presence when quest screen turns off",
+                Checked = c.sleepWake,
+                Location = new Point(5, GetEndY(cbBoot) + 5),
+                AutoSize= true
+            };
+            Controls.Add(cbSleepWake);
+
+            cbNotifs = new CheckBox {
+                Text = "Notify when presence starts/stops",
+                Checked = c.notifs,
+                Location = new Point(5, GetEndY(cbSleepWake) + 5),
+                AutoSize = true
+            };
+            Controls.Add(cbNotifs);
+
+            Button btnSave = new Button {
+                Text = "Save",
+                Size = btnValidate.Size,
+                Location = new Point(ClientSize.Width - btnValidate.Width - 5, ClientSize.Height - btnValidate.Height - 3),
+            };
+            Controls.Add(btnSave);
+            btnSave.Click += (_, e) => {
+                if (validated) c.address = txtAddress.Text;
+                c.boot = cbBoot.Checked;
+                c.sleepWake = cbSleepWake.Checked;
+                c.notifs = cbNotifs.Checked;
+                c.delay = (int)nudDelay.Value;
+                Config.Save();
+            };
+            
+            Show();
+            FormClosed += SettingsGui_FormClosed;
+        }
+
+        private void BtnValidate_Click(object sender, EventArgs e) {
+            string address = tbAddress.Text.Trim();
+            validated = false;
+
+            new Task(() => {
+                if (!IPUtils.IsAddress(address) || string.IsNullOrEmpty(address)) {
+                    txtFeedback.Text = "Not a valid address";
+                    return;
+                }
+
+                string mac = IPUtils.GetMac(address);
+                if (mac.Equals("00-00-00-00-00-00")) {
+                    txtFeedback.Text = "No device found @" + address;
+                    return;
+                } else if (!mac.StartsWith("2C-26-17")) {
+                    txtFeedback.Text = "Device found @" + address + " is not a quest";
+                    return;
+                }
+
+                try {
+                    string resp = ("http://" + address + ":" + ApiSocket.port).GetStringAsync().Result;
+                    JObject o = JObject.Parse(resp);
+                    if (!o.ContainsKey("valid")) throw new Exception();
+                    txtFeedback.Text = "successfully validated quest";
+                    validated = true;
+                } catch (Exception) {
+                    txtFeedback.Text = "Quest found but service didn't respond";
+                }
+
+            }).Start();
+
+        }
+
+        private void SettingsGui_FormClosed(object sender, FormClosedEventArgs e) {
+            Environment.Exit(0);
+        }
+
+        private int GetEndY(Control c) {
+            return c.Location.Y + c.Height;
+        }
+    }
+}

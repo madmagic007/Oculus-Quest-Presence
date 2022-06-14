@@ -15,6 +15,7 @@ namespace OQRPC.settings {
         public bool boot = true;
         public bool sleepWake = true;
         public bool notifs = true;
+        public int delay = 3;
         public string address;
         public string apkVersion;
 
