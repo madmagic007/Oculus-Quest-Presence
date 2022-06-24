@@ -64,8 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OQRPC\api\ApiSender.cs" />
     <Compile Include="OQRPC\api\ApiSocket.cs" />
     <Compile Include="OQRPC\IPUtils.cs" />
+    <Compile Include="OQRPC\presence\StatusHandler.cs" />
+    <Compile Include="OQRPC\presence\Timers.cs" />
     <Compile Include="OQRPC\Program.cs" />
     <Compile Include="OQRPC\settings\SettingsGui.cs">
       <SubType>Form</SubType>

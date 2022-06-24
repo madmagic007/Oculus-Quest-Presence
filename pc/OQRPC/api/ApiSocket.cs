@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using NHttp;
+using OQRPC.presence;
 using OQRPC.settings;
 using System;
 using System.IO;
@@ -43,11 +44,11 @@ namespace OQRPC.api {
 
                 switch ((string)obj["message"]) {
                     case "online":
-                        Console.WriteLine("Quest online");
+                        Program.SendNotif("Presence on your quest has started");
                         break;
                     case "offline":
-                        Console.WriteLine("Quest offline");
-                        break;
+                        StatusHandler.Stop();
+                    break;
                     case "connect":
                         resp["connected"] = "sucesfully connected";
                         break;

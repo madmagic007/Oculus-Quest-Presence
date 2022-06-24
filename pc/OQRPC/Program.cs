@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
 using Oculus_Quest_Presence.Properties;
 using OQRPC.api;
 using OQRPC.settings;
@@ -45,6 +46,11 @@ namespace OQRPC {
             new ApiSocket();
 
             if (Config.cfg.address == null) new SettingsGui();
+            else {
+                ApiSender.Post(new JObject {
+                    ["message"] = "startup"
+                });
+            }
         }
 
         public static void SendNotif(string text) {
