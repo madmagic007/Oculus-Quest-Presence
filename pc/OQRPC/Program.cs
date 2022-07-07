@@ -4,12 +4,15 @@ using Oculus_Quest_Presence.Properties;
 using OQRPC.api;
 using OQRPC.settings;
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Windows.Forms;
 
 namespace OQRPC {
 
     class Program : ApplicationContext {
 
+        [STAThread]
         static void Main(string[] args) {
             Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true)
                 .SetValue(Resources.tag, Application.ExecutablePath + " boot");
@@ -35,7 +38,7 @@ namespace OQRPC {
 
             trayIcon.ContextMenuStrip.Items.AddRange(new ToolStripItem[] {
                 new ToolStripMenuItem("Request presence restart", null, (_, e) => { }),
-                new ToolStripMenuItem("Settings", null, (_, e) => { }),
+                new ToolStripMenuItem("Settings", null, (_, e) => SettingsGui.GetIfOpen<SettingsGui>(true).Show()),
                 new ToolStripSeparator(),
                 new ToolStripMenuItem("Exit", null, (_, e) => {
                     trayIcon.Dispose();
@@ -55,6 +58,19 @@ namespace OQRPC {
 
         public static void SendNotif(string text) {
             trayIcon.ShowBalloonTip(0, Resources.name, text, ToolTipIcon.Info);
+        }
+
+        private static string address; //only run below code once
+        public static string GetOwnAddress() {
+            if (address != null) return address;
+
+            foreach (var ip in Dns.GetHostEntry(Dns.GetHostName()).AddressList) {
+                if (ip.AddressFamily == AddressFamily.InterNetwork) {
+                    address = ip.ToString();
+                    return ip.ToString();
+                }
+            }
+            return "";
         }
     }
 }

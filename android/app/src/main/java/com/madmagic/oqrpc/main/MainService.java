@@ -9,6 +9,7 @@ import android.os.IBinder;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.Toast;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import com.madmagic.oqrpc.*;
 import com.madmagic.oqrpc.receivers.ScreenReceiver;
@@ -84,31 +85,18 @@ public class MainService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         createNotificationChannel();
 
-        Intent notificationIntent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent =
-                PendingIntent.getActivity(this, 0, notificationIntent, 0);
-
-        Notification notification = new NotificationCompat.Builder(this, getString(R.string.app_name))
-                .setSmallIcon(R.drawable.ic_stat_name)
-                .setContentTitle(getString(R.string.textTitle))
-                .setContentText(getString(R.string.textDescription))
-                .setPriority(NotificationCompat.PRIORITY_LOW)
-                .setContentIntent(pendingIntent)
-                .setNotificationSilent()
+        String name = getString(R.string.app_name);
+        Notification notif = new NotificationCompat.Builder(this, name)
                 .build();
-        startForeground(1, notification);
+        startForeground(1, notif);
         return START_NOT_STICKY;
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel serviceChannel = new NotificationChannel(
-                    getString(R.string.app_name),
-                    getString(R.string.app_name),
-                    NotificationManager.IMPORTANCE_DEFAULT
-            );
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(serviceChannel);
-        }
+        String name = getString(R.string.app_name);
+        NotificationChannel c = new NotificationChannel(name, name, NotificationManager.IMPORTANCE_LOW);
+        NotificationManager nMgr = getSystemService(NotificationManager.class);
+        nMgr.createNotificationChannel(c);
     }
 }

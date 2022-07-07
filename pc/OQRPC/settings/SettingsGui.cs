@@ -23,6 +23,7 @@ namespace OQRPC.settings {
 
         public SettingsGui() {
             c = Config.cfg;
+            ADBUtils au = new ADBUtils();
 
             ClientSize = new Size(300, 171);
             Text = Resources.name + " settings";
@@ -46,14 +47,22 @@ namespace OQRPC.settings {
             btnValidate.Location = new Point(ClientSize.Width - btnValidate.Width - 5, GetEndY(txtAddress) + 4);
             btnValidate.Click += BtnValidate_Click;
 
+            bool adbGot = false; ;
+            string address = c.address;
+            if (c.address == null) {
+                address = au.TryGetAddress();
+                if (address == null || address.Equals("")) address = null;
+                else adbGot = true;
+            }
             this.tbAddress = new TextBox {
-                Text = c.address ?? "Not Set",
+                Text = address ?? "Not Set",
                 Location = new Point(5, btnValidate.Location.Y + 1),
                 Width = btnValidate.Location.X - 12,
             };
             Controls.Add(this.tbAddress);
 
             txtFeedback = new Label {
+                Text = adbGot ? "Address automatically retrieved" : "",
                 Location = new Point(3, GetEndY(this.tbAddress) + 5),
                 Width = ClientSize.Width - 10
             };
@@ -115,6 +124,13 @@ namespace OQRPC.settings {
             
             Show();
             FormClosed += SettingsGui_FormClosed;
+
+            DialogResult d = MessageBox.Show("OQRPC app was not detected on your quest, install now?", "OQRPC not detected on quest", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (d == DialogResult.OK) {
+                au.Install();
+                Program.SendNotif("OQPRC successfully installed on quest");
+                au.Launch();
+            }
         }
 
         private void BtnValidate_Click(object sender, EventArgs e) {
@@ -156,6 +172,12 @@ namespace OQRPC.settings {
 
         private int GetEndY(Control c) {
             return c.Location.Y + c.Height;
+        }
+
+        public static T GetIfOpen<T>(bool show = false) where T : Form, new() {
+            foreach (Form f in Application.OpenForms) if (f is T t) return t;
+            if (show) new T().Show();
+            return (T)(object)null;
         }
     }
 }

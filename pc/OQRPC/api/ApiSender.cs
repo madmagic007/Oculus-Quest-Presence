@@ -14,7 +14,7 @@ namespace OQRPC.api {
         public static JObject Get(string url) => JObject.Parse(url.GetStringAsync().Result);
 
         public static JObject Post(JObject o) {
-            //o["pcAddress"] = IPUtils.GetOwnAddress();
+            o["pcAddress"] = IPUtils.GetOwnAddress();
             o["sleepWake"] = Config.cfg.sleepWake;
 
             return JObject.Parse(("http:" + Config.cfg.address + ":" + ApiSocket.port).PostJsonAsync(o).ReceiveString().Result);

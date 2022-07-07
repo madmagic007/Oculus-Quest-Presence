@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Runtime.InteropServices;
 
 namespace OQRPC {
@@ -33,5 +34,17 @@ namespace OQRPC {
 
         [DllImport("iphlpapi.dll", ExactSpelling = true)]
         private static extern int SendARP(int DestIP, int SrcIP, [Out] byte[] pMacAddr, ref int PhyAddrLen);
+
+        private static string address;
+        public static string GetOwnAddress() {
+            if (address != null) return address;
+            foreach (IPAddress addr in Dns.GetHostAddresses(Dns.GetHostName())) {
+                if (addr.AddressFamily == AddressFamily.InterNetwork) {
+                    address = addr.ToString();
+                    return address;
+                }
+            }
+            return "";
+        }
     }
 }
