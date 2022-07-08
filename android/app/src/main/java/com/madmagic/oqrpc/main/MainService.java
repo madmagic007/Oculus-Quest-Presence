@@ -87,6 +87,7 @@ public class MainService extends Service {
 
         String name = getString(R.string.app_name);
         Notification notif = new NotificationCompat.Builder(this, name)
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .build();
         startForeground(1, notif);
         return START_NOT_STICKY;

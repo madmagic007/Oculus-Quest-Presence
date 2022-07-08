@@ -2,10 +2,6 @@
 using SharpAdbClient;
 using SharpAdbClient.DeviceCommands;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OQRPC {
@@ -40,6 +36,8 @@ namespace OQRPC {
         }
 
         public bool IsInstalled() {
+            if (device == null) return true;
+            Console.WriteLine(device == null);
             PackageManager pm = new PackageManager(client, device);
             return pm.Packages.ContainsKey("com.madmagic.oqrpc");
         }
@@ -57,7 +55,7 @@ namespace OQRPC {
         }
 
         public void Launch() {
-            client.ExecuteRemoteCommand("monkey -p com.madmagic.oqrpc", device, null);
+            client.ExecuteRemoteCommand("monkey -p com.madmagic.oqrpc 1", device, null);
         }
     }
 }

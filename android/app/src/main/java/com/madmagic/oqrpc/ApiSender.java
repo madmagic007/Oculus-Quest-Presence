@@ -32,9 +32,10 @@ public class ApiSender {
                     .url("http://" + ip + ":16255")
                     .post(RequestBody.create(post.toString(4), jT))
                     .build();
-
             ro = new JSONObject(c.newCall(r).execute().body().string());
-        } catch (Exception ignored) {}
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         return ro;
     }
 

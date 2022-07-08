@@ -45,9 +45,10 @@ namespace OQRPC.api {
                 switch ((string)obj["message"]) {
                     case "online":
                         Program.SendNotif("Presence on your quest has started");
+                        Timers.StartRequesting();
                         break;
                     case "offline":
-                        StatusHandler.Stop();
+                        PresenceHandler.Stop();
                     break;
                     case "connect":
                         resp["connected"] = "sucesfully connected";

@@ -61,7 +61,6 @@ public class ApiSocket extends NanoHTTPD {
 
                 case "startup":
                     new Thread(s::callStart).start();
-                    r = new JSONObject().put("started", true).toString(4);
                     break;
 
                 case "validate":

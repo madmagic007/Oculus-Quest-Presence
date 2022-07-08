@@ -114,7 +114,7 @@ namespace OQRPC.settings {
             };
             Controls.Add(btnSave);
             btnSave.Click += (_, e) => {
-                if (validated) c.address = txtAddress.Text;
+                if (validated) c.address = tbAddress.Text.Trim();
                 c.boot = cbBoot.Checked;
                 c.sleepWake = cbSleepWake.Checked;
                 c.notifs = cbNotifs.Checked;
@@ -125,6 +125,7 @@ namespace OQRPC.settings {
             Show();
             FormClosed += SettingsGui_FormClosed;
 
+            if (au.IsInstalled()) return;
             DialogResult d = MessageBox.Show("OQRPC app was not detected on your quest, install now?", "OQRPC not detected on quest", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (d == DialogResult.OK) {
                 au.Install();
@@ -153,12 +154,14 @@ namespace OQRPC.settings {
                 }
 
                 try {
-                    string resp = ("http://" + address + ":" + ApiSocket.port).GetStringAsync().Result;
-                    JObject o = JObject.Parse(resp);
+                    JObject o = ApiSender.Post(new JObject {
+                        ["message"] = "validate"
+                    }, address);
                     if (!o.ContainsKey("valid")) throw new Exception();
                     txtFeedback.Text = "successfully validated quest";
                     validated = true;
-                } catch (Exception) {
+                } catch (Exception ex) {
+                    Console.WriteLine(ex.InnerException);
                     txtFeedback.Text = "Quest found but service didn't respond";
                 }
 

@@ -13,11 +13,12 @@ namespace OQRPC.api {
 
         public static JObject Get(string url) => JObject.Parse(url.GetStringAsync().Result);
 
-        public static JObject Post(JObject o) {
+        public static JObject Post(JObject o, string address = "") {
+            if (Config.cfg.address != null) address = Config.cfg.address;
             o["pcAddress"] = IPUtils.GetOwnAddress();
             o["sleepWake"] = Config.cfg.sleepWake;
-
-            return JObject.Parse(("http:" + Config.cfg.address + ":" + ApiSocket.port).PostJsonAsync(o).ReceiveString().Result);
+            if (address == "") return null;
+            return JObject.Parse(("http://" + address + ":" + ApiSocket.port).PostJsonAsync(o).ReceiveString().Result);
         }
     }
 }

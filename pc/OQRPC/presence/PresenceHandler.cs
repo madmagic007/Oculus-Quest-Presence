@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OQRPC.presence {
-    class StatusHandler {
+    class PresenceHandler {
 
         public static void Handle(JObject o) {
             //sigh i dont want to do this AGAIN
@@ -15,6 +15,7 @@ namespace OQRPC.presence {
         public static void Stop() {
             Timers.StopAll();
             Program.SendNotif("Presence on your quest has stopped");
+            DiscordHandler.StopPresence();
         }
     }
 }

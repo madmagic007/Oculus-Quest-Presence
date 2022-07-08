@@ -22,7 +22,7 @@ namespace OQRPC.presence {
             int delayMs = Config.cfg.delay * 1000;
             requester = new Timer((_) => {
                 if (fails >= 10) {
-                    StatusHandler.Stop();
+                    PresenceHandler.Stop();
                     return;
                 }
 
@@ -31,7 +31,7 @@ namespace OQRPC.presence {
                         ["message"] = "game"
                     });
                     if (!game.HasValues) throw new Exception();
-                    StatusHandler.Handle(game);
+                    PresenceHandler.Handle(game);
                     StartTimeOut();
                 } catch (Exception) {
                     fails++;
@@ -48,7 +48,7 @@ namespace OQRPC.presence {
         public static void StartTimeOut() {
             StopTimeOut();
             timeOut = new Timer((_) => {
-                StatusHandler.Stop();
+                PresenceHandler.Stop();
             }, null, 10000, 10000);
         }
 

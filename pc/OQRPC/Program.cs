@@ -37,7 +37,11 @@ namespace OQRPC {
             };
 
             trayIcon.ContextMenuStrip.Items.AddRange(new ToolStripItem[] {
-                new ToolStripMenuItem("Request presence restart", null, (_, e) => { }),
+                new ToolStripMenuItem("Request presence restart", null, (_, e) => {
+                    ApiSender.Post(new JObject {
+                        ["message"] = "startup"
+                    });
+                }),
                 new ToolStripMenuItem("Settings", null, (_, e) => SettingsGui.GetIfOpen<SettingsGui>(true).Show()),
                 new ToolStripSeparator(),
                 new ToolStripMenuItem("Exit", null, (_, e) => {
