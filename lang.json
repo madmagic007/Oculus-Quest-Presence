@@ -2,13 +2,12 @@
 	"com.madmagic.oqrpc": {
 		"details": "Setting up presence"
 	},
-	"com.oculus.vrshell": {
-		"details": "In Oculus Home",
-		"largeImageKey": "oculus"
-	},
 	"com.oculus.systemux": {
 		"details": "In Oculus Home",
 		"largeImageKey": "oculus"
+	},
+	"com.oculus.explore": {
+		"details": "Exploring new games"	
 	},
 	"com.beatgames.beatsaber": {
 		"largeImageKey": "beatsaber"
