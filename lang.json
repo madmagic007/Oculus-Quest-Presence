@@ -9,6 +9,10 @@
 	"com.oculus.explore": {
 		"details": "Exploring new games"	
 	},
+	"com.oculus.store": {
+		"details": "Browsing the store",
+		"state": "what will they buy??"
+	},
 	"com.beatgames.beatsaber": {
 		"largeImageKey": "beatsaber"
 	},
