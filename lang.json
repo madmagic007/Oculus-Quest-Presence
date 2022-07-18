@@ -13,6 +13,9 @@
 		"details": "Browsing the store",
 		"state": "what will they buy??"
 	},
+	"com.oculus.socialplatform": {
+		"details": "browsing the social tab"	
+	},
 	"com.beatgames.beatsaber": {
 		"largeImageKey": "beatsaber"
 	},
