@@ -1,6 +1,6 @@
 package me.madmagic.oqrpc.api;
 
-import com.madmagic.oqrpc.source.*;
+import me.madmagic.oqrpc.source.*;
 import fi.iki.elonen.NanoHTTPD;
 import me.madmagic.oqrpc.source.*;
 import org.json.JSONObject;

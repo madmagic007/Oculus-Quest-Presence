@@ -2,6 +2,7 @@
 using SharpAdbClient;
 using SharpAdbClient.DeviceCommands;
 using System;
+using System.Text;
 using System.Windows.Forms;
 
 namespace OQRPC {
@@ -22,9 +23,9 @@ namespace OQRPC {
         public string TryGetAddress() {
             ConsoleOutputReceiver rec = new ConsoleOutputReceiver();
             foreach (var device in client.GetDevices()) {
-                if (!device.Model.ToLower().Equals("quest")) continue;
+                //if (!device.Model.ToLower().Equals("quest")) continue;
                 client.ExecuteRemoteCommand("ip addr show wlan0 | grep 'link/ether '", device, rec);
-                if (!rec.ToString().ToLower().Contains("2c:26:17")) continue;
+                //if (!rec.ToString().ToLower().Contains("2c:26:17")) continue;
                 this.device = device;
                 rec = new ConsoleOutputReceiver();
                 client.ExecuteRemoteCommand("ip addr show wlan0 | grep 'inet' | awk '{print $2}' | awk -F'/' '{print $1}'", device, rec);

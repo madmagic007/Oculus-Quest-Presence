@@ -18,6 +18,7 @@ namespace OQRPC.api {
             o["pcAddress"] = IPUtils.GetOwnAddress();
             o["sleepWake"] = Config.cfg.sleepWake;
             if (address == "") return null;
+            Console.WriteLine("posting");
             return JObject.Parse(("http://" + address + ":" + ApiSocket.port).PostJsonAsync(o).ReceiveString().Result);
         }
     }

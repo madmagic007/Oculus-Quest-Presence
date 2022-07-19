@@ -53,6 +53,7 @@ public class DeviceInfo {
         String[] data = new String[] {checker.getForegroundApp(c), ""};
 
         try {
+            System.out.println("getting for: " + data[1]);
             PackageInfo packageInfo = c.getPackageManager().getPackageInfo(data[0], PackageManager.GET_META_DATA);
 
             try (ApkFile apkFile = new ApkFile(new File(packageInfo.applicationInfo.sourceDir))) {

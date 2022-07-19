@@ -5,12 +5,12 @@ apply plugin: 'com.android.application'
 //libsDirName = "."
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 31
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.madmagic.oqrpc"
         minSdkVersion 29
-        targetSdkVersion 33
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

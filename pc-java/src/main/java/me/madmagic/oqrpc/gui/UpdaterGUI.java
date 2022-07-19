@@ -37,7 +37,7 @@ public class UpdaterGUI {
         btnInstall.setBounds(152, 7, 89, 23);
         frame.getContentPane().add(btnInstall);
         btnInstall.setVisible(false);
-        btnInstall.addActionListener(e -> UpdateChecker.openUtil());
+        btnInstall.addActionListener(e -> UpdateChecker.runInstaller());
 
         lblApk = new JLabel("Checking for updates");
         lblApk.setBounds(10, 45, 138, 14);

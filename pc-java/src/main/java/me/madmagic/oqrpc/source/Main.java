@@ -4,7 +4,6 @@ import me.madmagic.oqrpc.api.ApiSocket;
 import me.madmagic.oqrpc.api.ApiSender;
 import me.madmagic.oqrpc.gui.SettingsGUI;
 import me.madmagic.oqrpc.gui.AlreadyRunningGUI;
-import mslinks.ShellLink;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -17,7 +16,6 @@ public class Main {
     public static void main(String[] args) {
         os  = System.getProperty("os.name").toLowerCase();
         Config.init();
-        bootInit();
         checkUtil();
 
         try {
@@ -43,22 +41,6 @@ public class Main {
             ApiSender.ask(url, "startup");
         } catch (Exception e) {
             System.out.println("Failed to request service on the quest to start");
-        }
-    }
-
-    private static void bootInit() {
-        if (!os.contains("win")) return;
-        try {
-            File startupFolder = new File(System.getenv("APPDATA") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\");
-            try {
-                new File(startupFolder.getAbsolutePath() + "\\oqrpc.bat").delete();
-            } catch (Exception ignored) {}
-
-            ShellLink sL = ShellLink.createLink(Config.getUpdater());
-            sL.setCMDArgs("boot");
-            sL.saveTo(startupFolder.getPath() + "\\oqrpc.lnk");
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

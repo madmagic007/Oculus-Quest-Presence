@@ -50,7 +50,7 @@ namespace OQRPC.settings {
             bool adbGot = false; ;
             string address = c.address;
             if (c.address == null) {
-                address = au.TryGetAddress();
+                address = au.TryGetAddress().Trim();
                 if (address == null || address.Equals("")) address = null;
                 else adbGot = true;
             }
@@ -70,7 +70,7 @@ namespace OQRPC.settings {
 
             Label txtDelay = new Label {
                 Text = "Presence update delay (Seconds)",
-                Location = new Point(3, GetEndY(txtFeedback) + 10),
+                Location = new Point(3, GetEndY(txtFeedback) + 2),
             };
             Controls.Add(txtDelay);
 
@@ -114,7 +114,7 @@ namespace OQRPC.settings {
             };
             Controls.Add(btnSave);
             btnSave.Click += (_, e) => {
-                if (validated) c.address = tbAddress.Text.Trim();
+                if (validated) c.address = tbAddress.Text;
                 c.boot = cbBoot.Checked;
                 c.sleepWake = cbSleepWake.Checked;
                 c.notifs = cbNotifs.Checked;
@@ -123,7 +123,6 @@ namespace OQRPC.settings {
             };
             
             Show();
-            FormClosed += SettingsGui_FormClosed;
 
             if (au.IsInstalled()) return;
             DialogResult d = MessageBox.Show("OQRPC app was not detected on your quest, install now?", "OQRPC not detected on quest", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -148,10 +147,10 @@ namespace OQRPC.settings {
                 if (mac.Equals("00-00-00-00-00-00")) {
                     txtFeedback.Text = "No device found @" + address;
                     return;
-                } else if (!mac.StartsWith("2C-26-17")) {
+                } /*else if (!mac.StartsWith("2C-26-17")) {
                     txtFeedback.Text = "Device found @" + address + " is not a quest";
                     return;
-                }
+                }*/
 
                 try {
                     JObject o = ApiSender.Post(new JObject {
@@ -167,10 +166,6 @@ namespace OQRPC.settings {
 
             }).Start();
 
-        }
-
-        private void SettingsGui_FormClosed(object sender, FormClosedEventArgs e) {
-            Environment.Exit(0);
         }
 
         private int GetEndY(Control c) {

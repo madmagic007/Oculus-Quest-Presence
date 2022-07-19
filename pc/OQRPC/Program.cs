@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using Oculus_Quest_Presence.Properties;
 using OQRPC.api;
 using OQRPC.settings;
-using System;
+using OQRPC.updating;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
@@ -14,9 +14,6 @@ namespace OQRPC {
 
         [STAThread]
         static void Main(string[] args) {
-            Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true)
-                .SetValue(Resources.tag, Application.ExecutablePath + " boot");
-
             Config.Init();
             if (args.Length > 0 && args[0].Equals("boot") && !Config.cfg.boot) Application.Exit();
 
@@ -26,7 +23,7 @@ namespace OQRPC {
             Application.Run(new Program());
         }
 
-        private static NotifyIcon trayIcon;
+        public static NotifyIcon trayIcon;
 
         public Program() {
             trayIcon = new NotifyIcon {
@@ -42,7 +39,7 @@ namespace OQRPC {
                         ["message"] = "startup"
                     });
                 }),
-                new ToolStripMenuItem("Settings", null, (_, e) => SettingsGui.GetIfOpen<SettingsGui>(true).Show()),
+                new ToolStripMenuItem("Settings", null, (_, e) => SettingsGui.GetIfOpen<SettingsGui>(true)?.Show()),
                 new ToolStripSeparator(),
                 new ToolStripMenuItem("Exit", null, (_, e) => {
                     trayIcon.Dispose();
@@ -54,10 +51,14 @@ namespace OQRPC {
 
             if (Config.cfg.address == null) new SettingsGui();
             else {
-                ApiSender.Post(new JObject {
-                    ["message"] = "startup"
+                Task.Run(() => {
+                    ApiSender.Post(new JObject {
+                        ["message"] = "startup"
+                    });
                 });
             }
+
+            UpdateChecker.Check();
         }
 
         public static void SendNotif(string text) {

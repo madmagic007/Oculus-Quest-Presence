@@ -46,6 +46,7 @@ namespace OQRPC.api {
                     case "online":
                         Program.SendNotif("Presence on your quest has started");
                         Timers.StartRequesting();
+                        DiscordHandler.Init();
                         break;
                     case "offline":
                         PresenceHandler.Stop();

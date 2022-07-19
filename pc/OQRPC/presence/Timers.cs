@@ -33,6 +33,7 @@ namespace OQRPC.presence {
                     if (!game.HasValues) throw new Exception();
                     PresenceHandler.Handle(game);
                     StartTimeOut();
+                    fails = 0;
                 } catch (Exception) {
                     fails++;
                 }

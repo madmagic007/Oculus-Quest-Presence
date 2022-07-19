@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oculus Quest Presence", "Oculus Quest Presence.csproj", "{771F7EA3-22E4-4D1F-BA70-2CA504D1A246}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "..\Setup\Installer\Installer.vdproj", "{46E4A867-1A5B-4112-99C1-262EE2B9754E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{771F7EA3-22E4-4D1F-BA70-2CA504D1A246}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771F7EA3-22E4-4D1F-BA70-2CA504D1A246}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{771F7EA3-22E4-4D1F-BA70-2CA504D1A246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E4A867-1A5B-4112-99C1-262EE2B9754E}.Debug|Any CPU.ActiveCfg = Debug
+		{46E4A867-1A5B-4112-99C1-262EE2B9754E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
