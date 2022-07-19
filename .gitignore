@@ -15,6 +15,7 @@ packages/
 bin/
 obj/
 *.vdproj
+Setup.exe
 
 # Android
 captures/
