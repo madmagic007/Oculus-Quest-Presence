@@ -131,6 +131,10 @@ namespace OQRPC.settings {
                 Program.SendNotif("OQPRC successfully installed on quest");
                 au.Launch();
             }
+
+            FormClosed += (_, _) => {
+                au.Stop();
+            };
         }
 
         private void BtnValidate_Click(object sender, EventArgs e) {
@@ -163,9 +167,8 @@ namespace OQRPC.settings {
                     Console.WriteLine(ex.InnerException);
                     txtFeedback.Text = "Quest found but service didn't respond";
                 }
-
+                Close();
             }).Start();
-
         }
 
         private int GetEndY(Control c) {

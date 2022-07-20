@@ -58,5 +58,9 @@ namespace OQRPC {
         public void Launch() {
             client.ExecuteRemoteCommand("monkey -p com.madmagic.oqrpc 1", device, null);
         }
+
+        public void Stop() {
+            client.KillAdb();
+        }
     }
 }

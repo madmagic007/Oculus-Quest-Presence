@@ -13,7 +13,7 @@ namespace OQRPC.updating {
 
         private JObject o;
 
-        public UpdaterGUI(bool apk, bool self, JObject obj) {
+        public UpdaterGUI(bool apk, bool self, JObject o) {
             this.o = o;
             ClientSize = new Size(230, 70);
             Text = Resources.tag + " update";
@@ -59,14 +59,14 @@ namespace OQRPC.updating {
         private async void BtnSelf_Click(object? sender, EventArgs e) {
             string url = (string)o["installer"];
             string dir = Config.dir + "\\OQRPC.msi";
+            byte[] data = await url.GetBytesAsync();
 
-            using WebClient wc = new();
-            wc.DownloadFileCompleted += (_, _) => {
-                Process.Start(dir);
-                Program.trayIcon.Visible = false;
-                Environment.Exit(0);
-            };
-            wc.DownloadFileAsync(new Uri(url), Config.dir + "\\OQRPC.msi");
+            using FileStream fs = new FileStream(dir, FileMode.Create);
+            fs.Write(data, 0, data.Length);
+
+            Process.Start(dir);
+            Program.trayIcon.Visible = false;
+            Environment.Exit(0);
         }
 
         private int GetEndY(Control c) {
