@@ -15,17 +15,18 @@ namespace OQRPC {
         [STAThread]
         static void Main(string[] args) {
             Config.Init();
+            bool forceUpdate = args.Length > 0 && args[0].Equals("forceUpdate");
             if (args.Length > 0 && args[0].Equals("boot") && !Config.cfg.boot) Application.Exit();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Program());
+            Application.Run(new Program(forceUpdate));
         }
 
         public static NotifyIcon trayIcon;
 
-        public Program() {
+        public Program(bool forceUpdate) {
             trayIcon = new NotifyIcon {
                 Text = Resources.name,
                 Icon = Resources.AppIcon,
@@ -58,7 +59,7 @@ namespace OQRPC {
                 });
             }
 
-            UpdateChecker.Check();
+            UpdateChecker.Check(forceUpdate);
         }
 
         public static void SendNotif(string text) {
