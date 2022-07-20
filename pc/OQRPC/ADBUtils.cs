@@ -43,16 +43,21 @@ namespace OQRPC {
             return pm.Packages.ContainsKey("com.madmagic.oqrpc");
         }
 
-        public void Install() {
+        public void Install(string dir = "") {
             PackageManager pm = new PackageManager(client, device);
-            OpenFileDialog ofd = new OpenFileDialog {
-                Title = "Select OQRPC apk",
-                InitialDirectory = ".",
-                Filter = "APK files (*.apk)|*.apk",
-                Multiselect = false
-            };
-            if (ofd.ShowDialog().Equals(false)) return;
-            pm.InstallPackage(ofd.FileName, reinstall: false);
+
+            if (dir.Equals("")) {
+                OpenFileDialog ofd = new OpenFileDialog {
+                    Title = "Select OQRPC apk",
+                    InitialDirectory = ".",
+                    Filter = "APK files (*.apk)|*.apk",
+                    Multiselect = false
+                };
+                if (ofd.ShowDialog().Equals(false)) return;
+                dir = ofd.FileName;
+            }
+
+            pm.InstallPackage(dir, reinstall: false);
         }
 
         public void Launch() {

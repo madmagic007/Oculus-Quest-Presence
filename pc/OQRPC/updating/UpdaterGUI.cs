@@ -52,21 +52,46 @@ namespace OQRPC.updating {
                 Height = 22,
                 AutoSize = true
             };
+            btnApk.Click += BtnApk_Click;
             btnApk.Location = new Point(ClientSize.Width - btnApk.Width - 5, lblApk.Location.Y - 4);
             Controls.Add(btnApk);
+        }
+
+        private void BtnApk_Click(object? sender, EventArgs e) {
+            string url = (string)o["apkUrl"];
+            string dir = Config.dir + "\\OQRPC.apk";
+            DownloadTo(dir, url).DownloadFileCompleted += (_, _) => {
+                DialogResult d = MessageBox.Show("Updated apk ready to install. Make sure quest is connected via usb", "OQRPC apk update ready to install", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                ADBUtils au = new ADBUtils();
+                if (d == DialogResult.OK) {
+
+                    if (au.TryGetAddress().Equals("")) {
+                        MessageBox.Show("Quest not connected, make sure quest is connected to proceed", "Quest not connected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    au.Install(dir);
+                    Program.SendNotif("OQPRC successfully updated on quest");
+                    au.Launch();
+                    au.Stop();
+                }
+            };
         }
 
         private async void BtnSelf_Click(object? sender, EventArgs e) {
             string url = (string)o["installer"];
             string dir = Config.dir + "\\OQRPC.msi";
-            byte[] data = await url.GetBytesAsync();
+            DownloadTo(dir, url).DownloadFileCompleted += (_, _) => {
+                Process.Start(dir);
+                Program.trayIcon.Visible = false;
+                Environment.Exit(0);
+            };
+        }
 
-            using FileStream fs = new FileStream(dir, FileMode.Create);
-            fs.Write(data, 0, data.Length);
-
-            Process.Start(dir);
-            Program.trayIcon.Visible = false;
-            Environment.Exit(0);
+        private WebClient DownloadTo(string dir, string url) {
+            using WebClient wc = new();
+            wc.DownloadFileAsync(new Uri(url), dir);
+            return wc;
         }
 
         private int GetEndY(Control c) {

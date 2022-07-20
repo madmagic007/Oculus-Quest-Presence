@@ -123,6 +123,9 @@ namespace OQRPC.settings {
             };
             
             Show();
+            FormClosed += (_, _) => {
+                au.Stop();
+            };
 
             if (au.IsInstalled()) return;
             DialogResult d = MessageBox.Show("OQRPC app was not detected on your quest, install now?", "OQRPC not detected on quest", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -131,10 +134,6 @@ namespace OQRPC.settings {
                 Program.SendNotif("OQPRC successfully installed on quest");
                 au.Launch();
             }
-
-            FormClosed += (_, _) => {
-                au.Stop();
-            };
         }
 
         private void BtnValidate_Click(object sender, EventArgs e) {
