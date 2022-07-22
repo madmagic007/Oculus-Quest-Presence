@@ -23,7 +23,6 @@ namespace OQRPC.settings {
 
         public SettingsGui() {
             c = Config.cfg;
-            ADBUtils au = new ADBUtils();
 
             ClientSize = new Size(300, 171);
             Text = Resources.name + " settings";
@@ -47,13 +46,9 @@ namespace OQRPC.settings {
             btnValidate.Location = new Point(ClientSize.Width - btnValidate.Width - 5, GetEndY(txtAddress) + 4);
             btnValidate.Click += BtnValidate_Click;
 
-            bool adbGot = false; ;
+
             string address = c.address;
-            if (c.address == null) {
-                address = au.TryGetAddress().Trim();
-                if (address == null || address.Equals("")) address = null;
-                else adbGot = true;
-            }
+            bool already = address != null;
             this.tbAddress = new TextBox {
                 Text = address ?? "Not Set",
                 Location = new Point(5, btnValidate.Location.Y + 1),
@@ -62,7 +57,7 @@ namespace OQRPC.settings {
             Controls.Add(this.tbAddress);
 
             txtFeedback = new Label {
-                Text = adbGot ? "Address automatically retrieved" : "",
+                Text = already ? "" : "Attempting to get address automatically...",
                 Location = new Point(3, GetEndY(this.tbAddress) + 5),
                 Width = ClientSize.Width - 10
             };
@@ -120,27 +115,41 @@ namespace OQRPC.settings {
                 c.notifs = cbNotifs.Checked;
                 c.delay = (int)nudDelay.Value;
                 Config.Save();
+                Close();
             };
             
             Show();
-            FormClosed += (_, _) => {
-                au.Stop();
-            };
 
-            if (au.IsInstalled()) return;
-            DialogResult d = MessageBox.Show("OQRPC app was not detected on your quest, install now?", "OQRPC not detected on quest", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (d == DialogResult.OK) {
-                au.Install();
-                Program.SendNotif("OQPRC successfully installed on quest");
-                au.Launch();
-            }
+            Task.Run(() => {
+                ADBUtils au = new();
+
+                FormClosed += (_, _) => {
+                    au.Stop();
+                };
+
+                if (!already) {
+                    string adbAddress = au.TryGetAddress();
+                    if (adbAddress != null) {
+                        txtFeedback.Text = "Address automatically retrieved";
+                        tbAddress.Text = adbAddress.Trim();
+                    } else txtFeedback.Text = "Failed to retrieve address automatically";
+                }
+
+                if (au.IsInstalled()) return;
+                DialogResult d = MessageBox.Show("OQRPC app was not detected on your quest, install now?", "OQRPC not detected on quest", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (d == DialogResult.OK) Invoke(() => {
+                    au.Install();
+                    Program.SendNotif("OQPRC successfully installed on quest");
+                    au.Launch();
+                });
+            });
         }
 
         private void BtnValidate_Click(object sender, EventArgs e) {
             string address = tbAddress.Text.Trim();
             validated = false;
 
-            new Task(() => {
+            Task.Run(() => {
                 if (!IPUtils.IsAddress(address) || string.IsNullOrEmpty(address)) {
                     txtFeedback.Text = "Not a valid address";
                     return;
@@ -150,10 +159,10 @@ namespace OQRPC.settings {
                 if (mac.Equals("00-00-00-00-00-00")) {
                     txtFeedback.Text = "No device found @" + address;
                     return;
-                } /*else if (!mac.StartsWith("2C-26-17")) {
+                } else if (!mac.StartsWith("2C-26-17")) {
                     txtFeedback.Text = "Device found @" + address + " is not a quest";
                     return;
-                }*/
+                }
 
                 try {
                     JObject o = ApiSender.Post(new JObject {
@@ -166,8 +175,7 @@ namespace OQRPC.settings {
                     Console.WriteLine(ex.InnerException);
                     txtFeedback.Text = "Quest found but service didn't respond";
                 }
-                Close();
-            }).Start();
+            });
         }
 
         private int GetEndY(Control c) {

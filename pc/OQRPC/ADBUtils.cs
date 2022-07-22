@@ -33,7 +33,7 @@ namespace OQRPC {
                 if (split.Length == 0) continue;
                 return split[0];
             }
-            return "";
+            return null;
         }
 
         public bool IsInstalled() {

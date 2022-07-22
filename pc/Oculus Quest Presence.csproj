@@ -15,11 +15,9 @@
   <ItemGroup>
     <PackageReference Include="DiscordRichPresence" Version="1.0.175" />
     <PackageReference Include="Flurl.Http" Version="3.2.4" />
-    <PackageReference Include="NAudio" Version="2.1.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NAudio.WinForms" Version="2.1.0" />
     <PackageReference Include="NHttp" Version="0.1.9" />
     <PackageReference Include="sharpadbclient" Version="2.3.23" />
-    <PackageReference Include="YoutubeExplode" Version="6.1.2" />
   </ItemGroup>
 
   <ItemGroup>

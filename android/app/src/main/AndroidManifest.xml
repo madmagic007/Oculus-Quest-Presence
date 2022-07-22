@@ -25,13 +25,14 @@
     <uses-permission android:name="android.permission.RECEIVE_LAUNCH_BROADCASTS"/>
 
     <application
-            android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:usesCleartextTraffic="true"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:fullBackupOnly="true"
+            android:allowBackup="true">
 
         <meta-data android:name="com.oculus.supportedDevices" android:value="quest|delmar"/>
 
@@ -40,7 +41,7 @@
                 android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode"
                 android:launchMode="singleTask"
                 android:exported="true"
-                android:resizeableActivity="false">
+                android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
