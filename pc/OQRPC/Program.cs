@@ -16,7 +16,7 @@ namespace OQRPC {
         static void Main(string[] args) {
             Config.Init();
             bool forceUpdate = args.Length > 0 && args[0].Equals("forceUpdate");
-            if (args.Length > 0 && args[0].Equals("boot") && !Config.cfg.boot) Application.Exit();
+            if (args.Length > 0 && args[0].Equals("boot") && !Config.cfg.boot) Environment.Exit(0);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

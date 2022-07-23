@@ -65,7 +65,9 @@ namespace OQRPC {
         }
 
         public void Stop() {
-            client.KillAdb();
+            try {
+                client.KillAdb();
+            } catch (Exception) { } //adb already stopped
         }
     }
 }

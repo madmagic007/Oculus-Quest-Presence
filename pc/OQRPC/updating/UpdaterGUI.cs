@@ -70,16 +70,17 @@ namespace OQRPC.updating {
             string url = (string)o["apkUrl"];
             string dir = Config.dir + "\\OQRPC.apk";
             DownloadTo(dir, url).DownloadFileCompleted += (_, _) => {
-                lblApk.Text = "Finished downloading";
+                lblApk.Text = "Finished download";
                 DialogResult d = MessageBox.Show("Updated apk ready to install. Make sure quest is connected via usb", "OQRPC apk update ready to install", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 ADBUtils au = new ADBUtils();
                 if (d == DialogResult.OK) {
 
                     if (au.TryGetAddress().Equals("")) {
                         MessageBox.Show("Quest not connected, make sure quest is connected to proceed", "Quest not connected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        lblApk.Text = "Failed to install";
                         return;
                     }
-                    lblApk.Text = "Failed to unstall";
 
                     au.Install(dir);
                     Program.SendNotif("OQPRC successfully updated on quest");
