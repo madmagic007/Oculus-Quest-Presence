@@ -159,7 +159,7 @@ namespace OQRPC.settings {
                 if (mac.Equals("00-00-00-00-00-00")) {
                     txtFeedback.Text = "No device found @" + address;
                     return;
-                } else if (!mac.StartsWith("2C-26-17")) {
+                } else if (!mac.StartsWith("2C-26-17") && !mac.StartsWith("80-F3-EF")) {
                     txtFeedback.Text = "Device found @" + address + " is not a quest";
                     return;
                 }
