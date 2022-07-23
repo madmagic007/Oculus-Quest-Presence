@@ -13,6 +13,12 @@ namespace OQRPC.updating {
 
         private JObject o;
 
+        private Button btnSelf;
+        private Button btnApk;
+
+        private Label lblSelf;
+        private Label lblApk;
+
         public UpdaterGUI(bool apk, bool self, JObject o) {
             this.o = o;
             ClientSize = new Size(230, 70);
@@ -22,14 +28,14 @@ namespace OQRPC.updating {
             MaximizeBox = false;
             FormBorderStyle = FormBorderStyle.FixedSingle;
 
-            Label lblSelf = new() {
+            lblSelf = new() {
                 Text = self ? "New version found" : "No new version found",
                 AutoSize = true,
                 Location = new Point(3, 7),
             };
             Controls.Add(lblSelf);
 
-            Button btnSelf = new() {
+            btnSelf = new() {
                 Text = "Download",
                 Enabled = self,
                 Height = 22,
@@ -39,14 +45,14 @@ namespace OQRPC.updating {
             Controls.Add(btnSelf);
             btnSelf.Click += BtnSelf_Click;
 
-            Label lblApk = new() {
+            lblApk = new() {
                 Text = apk ? "New Apk version found" : "No new apk version found",
                 Location = new Point(3, GetEndY(btnSelf) + 10),
                 AutoSize = true
             };
             Controls.Add(lblApk);
 
-            Button btnApk = new() {
+            btnApk = new() {
                 Text = "Download",
                 Enabled = apk,
                 Height = 22,
@@ -58,9 +64,13 @@ namespace OQRPC.updating {
         }
 
         private void BtnApk_Click(object? sender, EventArgs e) {
+            btnApk.Enabled = false;
+            lblApk.Text = "Downloading...";
+
             string url = (string)o["apkUrl"];
             string dir = Config.dir + "\\OQRPC.apk";
             DownloadTo(dir, url).DownloadFileCompleted += (_, _) => {
+                lblApk.Text = "Finished downloading";
                 DialogResult d = MessageBox.Show("Updated apk ready to install. Make sure quest is connected via usb", "OQRPC apk update ready to install", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 ADBUtils au = new ADBUtils();
                 if (d == DialogResult.OK) {
@@ -69,20 +79,33 @@ namespace OQRPC.updating {
                         MessageBox.Show("Quest not connected, make sure quest is connected to proceed", "Quest not connected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+                    lblApk.Text = "Failed to unstall";
 
                     au.Install(dir);
                     Program.SendNotif("OQPRC successfully updated on quest");
                     au.Launch();
                     au.Stop();
+                    lblApk.Text = "Sucesfully updated";
                 }
             };
         }
 
         private async void BtnSelf_Click(object? sender, EventArgs e) {
+            btnSelf.Enabled = false;
+            lblSelf.Text = "Downloading...";
             string url = (string)o["installer"];
             string dir = Config.dir + "\\OQRPC.msi";
             DownloadTo(dir, url).DownloadFileCompleted += (_, _) => {
-                Process.Start(dir);
+                lblSelf.Text = "Starting update...";
+
+                FileInfo f = new FileInfo(dir);
+
+                var p = new Process();
+                p.StartInfo = new ProcessStartInfo(f.FullName) {
+                    UseShellExecute = true
+                };
+                p.Start();
+
                 Program.trayIcon.Visible = false;
                 Environment.Exit(0);
             };
