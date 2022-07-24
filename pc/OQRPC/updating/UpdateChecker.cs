@@ -6,7 +6,7 @@ namespace OQRPC.updating {
 
     class UpdateChecker {
 
-        private static string updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/v3-development/update.json";
+        private static string updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/update.json";
         private static string version = "3.0.0";
 
         public static void Check(bool force) {

@@ -4,9 +4,7 @@ import me.madmagic.oqrpc.api.ApiSocket;
 import me.madmagic.oqrpc.api.ApiSender;
 import me.madmagic.oqrpc.gui.SettingsGUI;
 import me.madmagic.oqrpc.gui.AlreadyRunningGUI;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
 import java.net.*;
 
 public class Main {
@@ -16,7 +14,6 @@ public class Main {
     public static void main(String[] args) {
         os  = System.getProperty("os.name").toLowerCase();
         Config.init();
-        checkUtil();
 
         try {
             new ApiSocket();
@@ -41,17 +38,6 @@ public class Main {
             ApiSender.ask(url, "startup");
         } catch (Exception e) {
             System.out.println("Failed to request service on the quest to start");
-        }
-    }
-
-    private static void checkUtil() {
-        File utilJar = new File(Config.getUpdater());
-        if (utilJar.exists()) utilJar.delete();
-        URL utilUrl = Main.class.getResource("/oqrpc/Util.jar");
-        try {
-            FileUtils.copyURLToFile(utilUrl, utilJar);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

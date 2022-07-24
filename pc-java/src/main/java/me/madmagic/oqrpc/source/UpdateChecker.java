@@ -13,7 +13,7 @@ import java.net.URL;
 public class UpdateChecker {
 
     public static final String version = "3.0.0";
-    private static final String updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/v3-development/update.json";
+    private static final String updateUrl = "https://raw.githubusercontent.com/madmagic007/Oculus-Quest-Presence/master/update.json";
     private static boolean oG;
 
     public static String jar = Main.os.contains("win") ? "New version found" : "No new version found";
