@@ -21,7 +21,7 @@ namespace OQRPC.api {
         protected override void OnRequestReceived(HttpRequestEventArgs e) {
             JObject resp = new JObject();
             if (e.Request.InputStream == null) {
-                WriteResponse(e.Response, "Info will come here whenever I feel like it");
+                WriteResponse(e.Response, "Yep, your pc is running");
                 return;
             }
             using (StreamReader sr = new StreamReader(e.Request.InputStream)) {
