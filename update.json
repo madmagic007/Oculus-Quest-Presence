@@ -3,5 +3,5 @@
   "url": "https://github.com/madmagic007/Oculus-Quest-Presence/raw/master/pc-java/Oculus%20Quest%20Discord%20RPC.jar",
   "apkVersion": "3.0",
   "apkUrl" : "https://github.com/madmagic007/Oculus-Quest-Presence/raw/master/android/OQRPC.apk",
-  "installer": "https://github.com/madmagic007/Oculus-Quest-Presence/raw/master/Setup/OQRPC.msi"
+  "installer": "https://github.com/madmagic007/Oculus-Quest-Presence/raw/v3-development/Setup/OQRPC.msi"
 }
